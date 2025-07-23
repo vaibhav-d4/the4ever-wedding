@@ -7,7 +7,7 @@ import logo3 from "@assets/logo/vy-logo-blue-1.svg";
 import image1 from "@assets/couple/image-1.jpg";
 import image2 from "@assets/couple/image-2.jpg";
 import image3 from "@assets/couple/image-3.jpg";
-// import image4 from "@assets/couple/image-4.jpg";
+import image4 from "@assets/couple/image-4.jpg";
 import { WEDDING_DATE } from "@utils/constants";
 
 const images = [
