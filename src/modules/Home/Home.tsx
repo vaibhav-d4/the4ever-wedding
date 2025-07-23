@@ -5,14 +5,14 @@ import { toUpper as _toUpper } from "lodash";
 // import logo2 from "@assets/logo/vy-logo-black-2.svg";
 import logo3 from "@assets/logo/vy-logo-blue-1.svg";
 import image1 from "@assets/couple/image-1.jpg";
-import image2new from "@assets/couple/image-2.jpg";
+// import image2new from "@assets/couple/image-2.jpg";
 import image3 from "@assets/couple/image-3.jpg";
 // import image4 from "@assets/couple/image-4.jpg";
 import { WEDDING_DATE } from "@utils/constants";
 
 const images = [
   { src: image1, alt: "image-1" },
-  { src: image2new, alt: "image-2" },
+  // { src: image2new, alt: "image-2" },
   { src: image3, alt: "image-3" },
   // { src: image4, alt: "image-4" },
 ];
