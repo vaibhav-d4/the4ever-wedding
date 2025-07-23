@@ -1,11 +1,55 @@
-/* @import "tailwindcss"; */
+@import "tailwindcss";
+
+@theme {
+  --font-brandon-regular: "Brandon Regular", "sans-serif";
+  --font-brandon-medium: "Brandon Medium", "sans-serif";
+  --font-hannah: "Hannah Regular", "sans-serif";
+  --font-malarkey: "Malarkey Regular", "sans-serif";
+  --font-somersette: "Somersette", "sans-serif";
+}
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Brandon Regular", system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
+}
+
+@font-face {
+  font-family: "Brandon Regular";
+  src: url("./fonts/Brandon_reg.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Brandon Medium";
+  src: url("./fonts/Brandon-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hannah Regular";
+  src: url("./fonts/Hannah_Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Malarkey Regular";
+  src: url("./fonts/Malarkey-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Somersette";
+  src: url("./fonts/Somersette.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
