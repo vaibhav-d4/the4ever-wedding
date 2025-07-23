@@ -21,7 +21,17 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@modules/*": ["modules/*"],
+      "@fonts/*": ["fonts/*"],
+      "@utils/*": ["utils/*"]
+    }
   },
   "include": ["src"]
 }
