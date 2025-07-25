@@ -59,8 +59,7 @@ const DateCountDown = ({
       <Grid container spacing={2}>
         {displayView().map(({ value, label }, index, self) => (
           <Grid
-            item
-            xs={4}
+            size={4}
             key={index}
             className={`${index !== self.length - 1 ? "border-r-3" : ""} px-4`}
           >
