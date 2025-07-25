@@ -1,0 +1,22 @@
+import { Box, Fade } from "@mui/material";
+import { useAppSelector } from "@utils/redux/hooks";
+import { MAIN_LOGO_IMAGE, YESHA_AND_VAIBHAV } from "@utils/constants";
+
+const LogoLoader = () => {
+  const isLoading = useAppSelector((state) => state.common.isLoading);
+
+  return (
+    <Box className="absolute flex justify-center items-center px-12 h-full w-full">
+      <Fade in={isLoading} timeout={1000}>
+        <Box>
+          <img src={MAIN_LOGO_IMAGE} alt="Logo" className="h-10/12" />
+          <Box className="text-center text-5xl font-malarkey font-bold mt-12">
+            {YESHA_AND_VAIBHAV}
+          </Box>
+        </Box>
+      </Fade>
+    </Box>
+  );
+};
+
+export default LogoLoader;
