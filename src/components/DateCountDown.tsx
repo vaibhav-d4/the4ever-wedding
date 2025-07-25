@@ -1,6 +1,4 @@
 import { Box, Grid } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   DAYS_LABEL,
   HOURS_LABEL,
@@ -24,9 +22,6 @@ const DateCountDown = ({
   minutes,
   seconds,
 }: IDateCountDown) => {
-  const theme = useTheme();
-  const belowMd = useMediaQuery(theme.breakpoints.down("md"));
-
   const displayView = () => {
     if (months > 0)
       return [
