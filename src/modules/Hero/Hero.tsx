@@ -73,9 +73,17 @@ const Hero = () => {
     </Box>
   );
 
-  if (websiteTypeId === 1) return TYPE_1;
-  else if (websiteTypeId === 2) return TYPE_2;
-  else return TYPE_1;
+  return (
+    <Box>
+      {websiteTypeId === 1 ? (
+        <Box>{TYPE_1}</Box>
+      ) : websiteTypeId === 2 ? (
+        <Box>{TYPE_2}</Box>
+      ) : (
+        <Box>{TYPE_1}</Box>
+      )}
+    </Box>
+  );
 };
 
 export default Hero;

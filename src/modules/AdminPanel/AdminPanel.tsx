@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -11,8 +11,8 @@ import {
 import { WEBSITE_TYPES } from "@utils/constants";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router";
-import { useAppDispatch } from "@utils/redux/hooks";
-import { setWebsiteTypeId } from "@utils/redux/commonSlice";
+import { useAppDispatch, useAppSelector } from "@utils/redux/hooks";
+import { setIsLoggedIn, setWebsiteTypeId } from "@utils/redux/commonSlice";
 
 const AdminPanel = () => {
   const navigate = useNavigate();
@@ -25,6 +25,12 @@ const AdminPanel = () => {
   const [selectedWebsiteId, setSelectedWebsiteId] = useState(
     localStorage.getItem("websiteTypeId") || 1
   );
+
+  const { isLoggedIn } = useAppSelector((state) => state.common);
+
+  useEffect(() => {
+    if (isLoggedIn) setShowPanel(true);
+  }, [isLoggedIn]);
 
   const onPasswordSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -75,6 +81,7 @@ const AdminPanel = () => {
 
     localStorage.setItem("websiteTypeId", selectedWebsiteId as string);
     dispatch(setWebsiteTypeId(selectedWebsiteId));
+    dispatch(setIsLoggedIn(true));
     navigate("/");
   };
 
