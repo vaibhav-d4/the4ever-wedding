@@ -2,8 +2,6 @@ import logo from "@assets/logo/vy-logo-blue-bg-t.png";
 
 export const WEDDING_DATE = "08-Feb-2026";
 
-export const ADMIN_PASSWORD = "vy0404";
-
 export const WEBSITE_TYPES = [
   { label: "Website 1", value: 1 },
   { label: "Website 2", value: 2 },

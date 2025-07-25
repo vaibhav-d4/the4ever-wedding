@@ -8,7 +8,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import { ADMIN_PASSWORD, WEBSITE_TYPES } from "@utils/constants";
+import { WEBSITE_TYPES } from "@utils/constants";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useAppDispatch } from "@utils/redux/hooks";
@@ -29,7 +29,7 @@ const AdminPanel = () => {
   const onPasswordSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (password !== ADMIN_PASSWORD) {
+    if (password !== import.meta.env.VITE_ADMIN_PASSWORD) {
       setError(true);
     } else setShowPanel(true);
   };
