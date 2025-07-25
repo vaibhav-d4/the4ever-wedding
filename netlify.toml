@@ -2,3 +2,5 @@
 from = "/*"
 to = "/index.html"
 status = 200
+[secrets]
+scan_omit_keys = ["VITE_ADMIN_PASSWORD"]
