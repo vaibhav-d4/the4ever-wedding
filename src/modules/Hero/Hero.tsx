@@ -10,10 +10,18 @@ import { useAppDispatch, useAppSelector } from "@utils/redux/hooks";
 import { format } from "date-fns";
 import { toUpper as _toUpper } from "lodash";
 import { setWebsiteTypeId } from "@utils/redux/commonSlice";
+import moment from "moment";
+import { useCountdown } from "@utils/hooks/useCountdown";
+import DateCountDown from "@components/DateCountDown";
 
 const Hero = () => {
   const dispatch = useAppDispatch();
   const { websiteTypeId } = useAppSelector((state) => state.common);
+
+  const weddingDate = moment(WEDDING_DATE).toDate();
+  // const isDateElapsed = moment() > moment(weddingDate);
+
+  const [months, days, hours, minutes, seconds] = useCountdown(weddingDate);
 
   useEffect(() => {
     const storedId = localStorage.getItem("websiteTypeId");
@@ -62,11 +70,20 @@ const Hero = () => {
           </Box>
         </Grid>
         <Grid size={{ xs: 12, sm: 6 }}>
-          <Box className="h-full text-center flex items-center">
-            <span className="text-3xl">
-              Our forever begins on February 08 — and we want you there with us!
-              🌟
-            </span>
+          <Box className="h-full text-center flex flex-col justify-center items-center gap-2">
+            <Box className="text-3xl">
+              From “Yes!” to “I Do” - We are getting marrried and the final
+              countdown has begun! 💞
+            </Box>
+            <Box className="mt-8">
+              <DateCountDown
+                months={months}
+                days={days}
+                hours={hours}
+                minutes={minutes}
+                seconds={seconds}
+              />
+            </Box>
           </Box>
         </Grid>
       </Grid>

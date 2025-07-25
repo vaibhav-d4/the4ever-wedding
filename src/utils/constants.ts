@@ -10,6 +10,12 @@ export const WEBSITE_TYPES = [
 export const LOGO_TIMEOUT = 3000;
 export const CONTENT_MOUNT_TIMEOUT = LOGO_TIMEOUT + 500;
 
+export const MONTHS_LABEL = "Months";
+export const DAYS_LABEL = "Days";
+export const HOURS_LABEL = "Hours";
+export const MINUTES_LABEL = "Mins";
+export const SECONDS_LABEL = "Secs";
+
 export const YESHA_AND_VAIBHAV = "Yesha & Vaibhav";
 export const HASHTAG = "#The4Ever";
 
