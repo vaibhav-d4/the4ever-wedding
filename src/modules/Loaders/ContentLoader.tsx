@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Fade } from "@mui/material";
-import { MAX_WIDTH, YESHA_AND_VAIBHAV } from "@utils/constants";
+import { MAX_WIDTH, Y_AND_V } from "@utils/constants";
 import { useAppSelector } from "@utils/redux/hooks";
 import { Link } from "react-router";
 import { SquareArrowOutUpRight } from "lucide-react";
@@ -29,8 +29,8 @@ const ContentLoader = ({ children }: IContentLoader) => {
         {/* HEADER */}
         {websiteTypeId === 2 && (
           <Box className="w-full border-b-1 shadow-xl">
-            <Box className="text-4xl font-alice-regular my-2 mt-3 text-center">
-              {YESHA_AND_VAIBHAV}
+            <Box className="text-4xl font-alice-regular my-2 mt-3 text-center text-red-400">
+              {Y_AND_V}
             </Box>
           </Box>
         )}

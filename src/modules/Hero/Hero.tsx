@@ -2,8 +2,11 @@ import { useEffect } from "react";
 import { Box, Grid } from "@mui/material";
 import {
   HASHTAG,
+  LOCATION_FULL_NAME,
   MAIN_LOGO_IMAGE,
+  VAIBHAV,
   WEDDING_DATE,
+  YESHA,
   YESHA_AND_VAIBHAV,
 } from "@utils/constants";
 import { useAppDispatch, useAppSelector } from "@utils/redux/hooks";
@@ -13,6 +16,7 @@ import { setWebsiteTypeId } from "@utils/redux/commonSlice";
 import moment from "moment";
 import { useCountdown } from "@utils/hooks/useCountdown";
 import DateCountDown from "@components/DateCountDown";
+import { Calendar, MapPin } from "lucide-react";
 
 const Hero = () => {
   const dispatch = useAppDispatch();
@@ -63,7 +67,7 @@ const Hero = () => {
 
   const TYPE_2 = (
     <Box>
-      <Grid container spacing={2} className="">
+      <Grid container spacing={2} className="mt-10">
         <Grid size={{ xs: 12, sm: 6 }}>
           <Box className="flex justify-center items-center h-full">
             <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-11/12" />
@@ -71,11 +75,12 @@ const Hero = () => {
         </Grid>
         <Grid size={{ xs: 12, sm: 6 }}>
           <Box className="h-full text-center flex flex-col justify-center items-center gap-2">
-            <Box className="text-3xl">
-              From “Yes!” to “I Do” - We are getting marrried and the final
-              countdown has begun! 💞
+            <Box className="text-xl text-black/80">WE'RE GETTING MARRIED</Box>
+            <Box className="font-alice-regular mt-4 text-4xl md:text-5xl lg:text-6xl">
+              {YESHA} <span className="text-red-400">&</span> {VAIBHAV}
             </Box>
-            <Box className="mt-8">
+            {/* COUNTDOWN */}
+            <Box className="mt-4 w-full">
               <DateCountDown
                 months={months}
                 days={days}
@@ -83,6 +88,24 @@ const Hero = () => {
                 minutes={minutes}
                 seconds={seconds}
               />
+            </Box>
+            {/* DATE AND PLACE */}
+            <Box className="mt-12 flex items-center justify-around w-full">
+              <Box className="flex">
+                <Calendar />
+                <span className="ml-2 text-xl">
+                  {moment(WEDDING_DATE).format("MMMM DD, YYYY")}
+                </span>
+              </Box>
+              <Box className="w-px h-8 bg-black/50" />
+              <Box className="flex">
+                <MapPin />{" "}
+                <span className="text-xl ml-2">{LOCATION_FULL_NAME}</span>
+              </Box>
+            </Box>
+            {/* TEXT */}
+            <Box className="mt-8 text-2xl">
+              Join us for a day filled with love, laughter, and celebration
             </Box>
           </Box>
         </Grid>

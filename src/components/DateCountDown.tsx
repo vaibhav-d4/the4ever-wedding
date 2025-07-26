@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import {
   DAYS_LABEL,
   HOURS_LABEL,
@@ -50,21 +50,30 @@ const DateCountDown = ({
   };
 
   return (
-    <Box className="">
-      <Grid container spacing={2}>
-        {displayView().map(({ value, label }, index, self) => (
-          <Grid
-            size={4}
-            key={index}
-            className={`${index !== self.length - 1 ? "border-r-3" : ""} px-4`}
-          >
-            <Box className="">
-              <Box className="text-4xl font-alice-regular">{value}</Box>
-              <Box className="text-4xl">{label}</Box>
+    <Box className="flex justify-center items-center">
+      <Box className="flex items-center w-full justify-around">
+        {displayView().map(({ value, label }, index) => (
+          <Box key={index} className="flex items-center">
+            <Box className="text-center">
+              <Box className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10 shadow-2xl">
+                <Box className="text-6xl md:text-6xl lg:text-7xl font-alice-regular text-red-400 font-bold leading-none">
+                  {value}
+                </Box>
+                <Box className="text-sm md:text-base lg:text-lg text-black/80 font-bold mt-2 uppercase tracking-wider">
+                  {label}
+                </Box>
+              </Box>
             </Box>
-          </Grid>
+
+            {/* Divider - only show if not the last item */}
+            {/* {index < displayView().length - 1 && (
+              <Box className="mx-3 md:mx-4 lg:mx-6 flex items-center">
+                <Box className="w-px h-20 md:h-16 lg:h-20 bg-black/50"></Box>
+              </Box>
+            )} */}
+          </Box>
         ))}
-      </Grid>
+      </Box>
     </Box>
   );
 };

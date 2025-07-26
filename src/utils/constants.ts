@@ -17,7 +17,13 @@ export const MINUTES_LABEL = "Mins";
 export const SECONDS_LABEL = "Secs";
 
 export const YESHA_AND_VAIBHAV = "Yesha & Vaibhav";
+export const Y_AND_V = "Y & V";
+export const YESHA = "Yesha";
+export const VAIBHAV = "Vaibhav";
 export const HASHTAG = "#The4Ever";
+
+export const LOCATION_NAME = "Rajhans Abhinandan";
+export const LOCATION_FULL_NAME = "Rajhans Abhinandan, Bhopal";
 
 export const MAX_WIDTH = 1240;
 
