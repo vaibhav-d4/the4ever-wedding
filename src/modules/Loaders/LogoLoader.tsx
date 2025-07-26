@@ -1,6 +1,6 @@
 import { Box, Fade } from "@mui/material";
 import { useAppSelector } from "@utils/redux/hooks";
-import { LOADER_LOGO, MAIN_LOGO_IMAGE } from "@utils/constants";
+import { LOADER_LOGO } from "@utils/constants";
 
 const LogoLoader = () => {
   const isLoading = useAppSelector((state) => state.common.isLoading);
