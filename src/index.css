@@ -7,6 +7,163 @@
   --font-malarkey: "Malarkey Regular", "sans-serif";
   --font-somersette: "Somersette", "sans-serif";
   --font-alice-regular: "Alice Regular", "sans-serif";
+
+  --color-primary: var(--color-wedding-blue-300);
+
+  /* Wedding theme colors */
+  --color-wedding-blue-50: #f0f4ff;
+  --color-wedding-blue-100: #e0e9ff;
+  --color-wedding-blue-200: #c7d3ff;
+  --color-wedding-blue-300: #a5b8ff;
+  --color-wedding-blue-400: #8190ff;
+  --color-wedding-blue-500: #5d68ff;
+  --color-wedding-blue-600: #3a41ff;
+  --color-wedding-blue-700: #2a2fdb;
+  --color-wedding-blue-800: #2327b3;
+  --color-wedding-blue-900: #1f2391;
+
+  --color-wedding-gold-50: #fffbf0;
+  --color-wedding-gold-100: #fff7e0;
+  --color-wedding-gold-200: #ffedc7;
+  --color-wedding-gold-300: #ffe0a5;
+  --color-wedding-gold-400: #ffd081;
+  --color-wedding-gold-500: #ffc05d;
+  --color-wedding-gold-600: #ffb03a;
+  --color-wedding-gold-700: #ff9f17;
+  --color-wedding-gold-800: #e68a00;
+  --color-wedding-gold-900: #cc7a00;
+
+  --color-wedding-rose-50: #fef2f7;
+  --color-wedding-rose-100: #fde7f0;
+  --color-wedding-rose-200: #fbd0e4;
+  --color-wedding-rose-300: #f8a8d0;
+  --color-wedding-rose-400: #f475b6;
+  --color-wedding-rose-500: #ef4a9c;
+  --color-wedding-rose-600: #e02b7e;
+  --color-wedding-rose-700: #c01f66;
+  --color-wedding-rose-800: #9e1b55;
+  --color-wedding-rose-900: #821a48;
+
+  --color-wedding-sage-50: #f6f8f5;
+  --color-wedding-sage-100: #edf2eb;
+  --color-wedding-sage-200: #dbe5d8;
+  --color-wedding-sage-300: #c1d3bc;
+  --color-wedding-sage-400: #a0bb9a;
+  --color-wedding-sage-500: #7fa078;
+  --color-wedding-sage-600: #63805f;
+  --color-wedding-sage-700: #4f664d;
+  --color-wedding-sage-800: #415240;
+  --color-wedding-sage-900: #374537;
+
+  --color-wedding-cream-50: #fefefe;
+  --color-wedding-cream-100: #fdfcfb;
+  --color-wedding-cream-200: #faf8f4;
+  --color-wedding-cream-300: #f6f2ea;
+  --color-wedding-cream-400: #f0e9dd;
+  --color-wedding-cream-500: #e8dfcf;
+  --color-wedding-cream-600: #d9ccb8;
+  --color-wedding-cream-700: #c4b39d;
+  --color-wedding-cream-800: #a99a84;
+  --color-wedding-cream-900: #8c7f6d;
+
+  --color-wedding-lavender-50: #faf9ff;
+  --color-wedding-lavender-100: #f3f1ff;
+  --color-wedding-lavender-200: #e9e5ff;
+  --color-wedding-lavender-300: #d4ccff;
+  --color-wedding-lavender-400: #b8a9ff;
+  --color-wedding-lavender-500: #9b7cff;
+  --color-wedding-lavender-600: #8b5cf6;
+  --color-wedding-lavender-700: #7c3aed;
+  --color-wedding-lavender-800: #6d28d9;
+  --color-wedding-lavender-900: #5b21b6;
+
+  --color-wedding-peach-50: #fff7ed;
+  --color-wedding-peach-100: #ffedd5;
+  --color-wedding-peach-200: #fed7aa;
+  --color-wedding-peach-300: #fdba74;
+  --color-wedding-peach-400: #fb923c;
+  --color-wedding-peach-500: #f97316;
+  --color-wedding-peach-600: #ea580c;
+  --color-wedding-peach-700: #c2410c;
+  --color-wedding-peach-800: #9a3412;
+  --color-wedding-peach-900: #7c2d12;
+
+  --color-wedding-mint-50: #f0fdfa;
+  --color-wedding-mint-100: #ccfbf1;
+  --color-wedding-mint-200: #99f6e4;
+  --color-wedding-mint-300: #5eead4;
+  --color-wedding-mint-400: #2dd4bf;
+  --color-wedding-mint-500: #14b8a6;
+  --color-wedding-mint-600: #0d9488;
+  --color-wedding-mint-700: #0f766e;
+  --color-wedding-mint-800: #115e59;
+  --color-wedding-mint-900: #134e4a;
+
+  --color-wedding-blush-50: #fdf2f8;
+  --color-wedding-blush-100: #fce7f3;
+  --color-wedding-blush-200: #fbcfe8;
+  --color-wedding-blush-300: #f9a8d4;
+  --color-wedding-blush-400: #f472b6;
+  --color-wedding-blush-500: #ec4899;
+  --color-wedding-blush-600: #db2777;
+  --color-wedding-blush-700: #be185d;
+  --color-wedding-blush-800: #9d174d;
+  --color-wedding-blush-900: #831843;
+
+  --color-wedding-sky-50: #f0f9ff;
+  --color-wedding-sky-100: #e0f2fe;
+  --color-wedding-sky-200: #bae6fd;
+  --color-wedding-sky-300: #7dd3fc;
+  --color-wedding-sky-400: #38bdf8;
+  --color-wedding-sky-500: #0ea5e9;
+  --color-wedding-sky-600: #0284c7;
+  --color-wedding-sky-700: #0369a1;
+  --color-wedding-sky-800: #075985;
+  --color-wedding-sky-900: #0c4a6e;
+
+  --color-wedding-coral-50: #fff5f5;
+  --color-wedding-coral-100: #fed7d7;
+  --color-wedding-coral-200: #fbbfbf;
+  --color-wedding-coral-300: #fca5a5;
+  --color-wedding-coral-400: #f87171;
+  --color-wedding-coral-500: #ef4444;
+  --color-wedding-coral-600: #dc2626;
+  --color-wedding-coral-700: #b91c1c;
+  --color-wedding-coral-800: #991b1b;
+  --color-wedding-coral-900: #7f1d1d;
+
+  --color-wedding-lilac-50: #faf5ff;
+  --color-wedding-lilac-100: #f3e8ff;
+  --color-wedding-lilac-200: #e9d5ff;
+  --color-wedding-lilac-300: #d8b4fe;
+  --color-wedding-lilac-400: #c084fc;
+  --color-wedding-lilac-500: #a855f7;
+  --color-wedding-lilac-600: #9333ea;
+  --color-wedding-lilac-700: #7c3aed;
+  --color-wedding-lilac-800: #6b21a8;
+  --color-wedding-lilac-900: #581c87;
+
+  --color-wedding-seafoam-50: #f0fdf4;
+  --color-wedding-seafoam-100: #dcfce7;
+  --color-wedding-seafoam-200: #bbf7d0;
+  --color-wedding-seafoam-300: #86efac;
+  --color-wedding-seafoam-400: #4ade80;
+  --color-wedding-seafoam-500: #22c55e;
+  --color-wedding-seafoam-600: #16a34a;
+  --color-wedding-seafoam-700: #15803d;
+  --color-wedding-seafoam-800: #166534;
+  --color-wedding-seafoam-900: #14532d;
+
+  --color-wedding-apricot-50: #fffbeb;
+  --color-wedding-apricot-100: #fef3c7;
+  --color-wedding-apricot-200: #fde68a;
+  --color-wedding-apricot-300: #fcd34d;
+  --color-wedding-apricot-400: #fbbf24;
+  --color-wedding-apricot-500: #f59e0b;
+  --color-wedding-apricot-600: #d97706;
+  --color-wedding-apricot-700: #b45309;
+  --color-wedding-apricot-800: #92400e;
+  --color-wedding-apricot-900: #78350f;
 }
 
 :root {

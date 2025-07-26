@@ -77,7 +77,7 @@ const Hero = () => {
           <Box className="h-full text-center flex flex-col justify-center items-center gap-2">
             <Box className="text-xl text-black/80">WE'RE GETTING MARRIED</Box>
             <Box className="font-alice-regular mt-4 text-4xl md:text-5xl lg:text-6xl">
-              {YESHA} <span className="text-blue-300">&</span> {VAIBHAV}
+              {YESHA} <span className="text-primary">&</span> {VAIBHAV}
             </Box>
             {/* COUNTDOWN */}
             <Box className="mt-4 w-full">
