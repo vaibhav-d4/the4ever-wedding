@@ -28,7 +28,7 @@ const ContentLoader = ({ children }: IContentLoader) => {
         </Box>
         {/* HEADER */}
         {websiteTypeId === 2 && (
-          <Box className="w-full border-b-1 shadow-xl">
+          <Box className="w-full border-b-1 border-black/10 shadow-xl">
             <Box className="text-4xl font-alice-regular my-2 mt-3 text-center text-red-400">
               {Y_AND_V}
             </Box>
