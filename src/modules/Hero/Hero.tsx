@@ -67,17 +67,17 @@ const Hero = () => {
 
   const TYPE_2 = (
     <Box>
-      <Grid container spacing={2} className="mt-10">
+      <Grid container spacing={1} className="mt-4">
         <Grid size={{ xs: 12, sm: 6 }}>
           <Box className="flex justify-center items-center h-full">
-            <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-11/12" />
+            <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
           </Box>
         </Grid>
         <Grid size={{ xs: 12, sm: 6 }}>
           <Box className="h-full text-center flex flex-col justify-center items-center gap-2">
             <Box className="text-xl text-black/80">WE'RE GETTING MARRIED</Box>
             <Box className="font-alice-regular mt-4 text-4xl md:text-5xl lg:text-6xl">
-              {YESHA} <span className="text-red-400">&</span> {VAIBHAV}
+              {YESHA} <span className="text-blue-300">&</span> {VAIBHAV}
             </Box>
             {/* COUNTDOWN */}
             <Box className="mt-4 w-full">
@@ -99,7 +99,7 @@ const Hero = () => {
               </Box>
               <Box className="w-px h-8 bg-black/50" />
               <Box className="flex">
-                <MapPin />{" "}
+                <MapPin />
                 <span className="text-xl ml-2">{LOCATION_FULL_NAME}</span>
               </Box>
             </Box>

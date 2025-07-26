@@ -1,4 +1,5 @@
 import logo from "@assets/logo/vy-logo-blue-bg-t.png";
+import loaderLogo from "@assets/logo/loader-logo.png";
 
 export const WEDDING_DATE = "08-Feb-2026";
 
@@ -28,6 +29,7 @@ export const LOCATION_FULL_NAME = "Rajhans Abhinandan, Bhopal";
 export const MAX_WIDTH = 1240;
 
 export const MAIN_LOGO_IMAGE = logo;
+export const LOADER_LOGO = loaderLogo;
 
 export const MENU_ITEMS = [
   {
