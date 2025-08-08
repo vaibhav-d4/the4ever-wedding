@@ -27,7 +27,7 @@ const Home = () => {
       ) : (
         <ContentLoader>
           <Hero />
-          <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey mt-10" />
+          <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey" />
           <Events />
           <GradientDivider />
         </ContentLoader>

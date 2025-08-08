@@ -6,7 +6,7 @@ import {WEDDING_EVENTS} from "@utils/constants";
 const Events = () => {
   return (
     <Box className="">
-      <Box className="text-center text-2xl font-dancing-script my-10">
+      <Box className="text-center text-2xl font-dancing-script my-10 px-4">
         Join us in celebrating these beautiful moments of love, tradition, and togetherness.
       </Box>
       <Grid container spacing={6} className="">
@@ -16,7 +16,7 @@ const Events = () => {
           </Grid>
         ))}
       </Grid>
-      <Box className="text-center text-xl font-brandon-regular my-10">
+      <Box className="text-center text-xl font-brandon-regular my-10 px-4">
         Each event is a cherished memory in our journey. We look forward to celebrating with you!
       </Box>
     </Box>
