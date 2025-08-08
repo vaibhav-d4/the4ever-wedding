@@ -5,6 +5,7 @@ import {
   LOCATION_FULL_NAME,
   LOCATION_GOOGLE_LINK,
   MAIN_LOGO_IMAGE,
+  MAX_WIDTH,
   VAIBHAV,
   WEDDING_DATE,
   YESHA,
@@ -81,8 +82,8 @@ const Hero = () => {
   );
 
   const TYPE_2 = (
-    <Box>
-      <Grid container spacing={1} className="lg:mt-8 px-4">
+    <Box className="flex justify-center">
+      <Grid container spacing={1} className="mt-8 px-4" sx={{maxWidth: MAX_WIDTH}}>
         <Grid size={{xs: 12, sm: 6}}>
           <Box className="flex justify-center items-center h-full">
             <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />

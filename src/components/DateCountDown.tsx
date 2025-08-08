@@ -43,11 +43,11 @@ const DateCountDown = ({months, days, hours, minutes, seconds}: IDateCountDown) 
         {displayView().map(({value, label}, index) => (
           <Box key={index} className="flex items-center">
             <Box className="text-center">
-              <Box className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-black/10 shadow-xl transition-all duration-200 hover:scale-105 hover:shadow-2xl">
-                <Box className="text-6xl md:text-6xl lg:text-7xl font-alice-regular text-primary font-bold leading-none">
+              <Box className="bg-white/10 backdrop-blur-sm rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 border border-black/10 shadow-xl transition-all duration-200 hover:scale-105 hover:shadow-2xl w-26 lg:w-36">
+                <Box className="text-5xl md:text-6xl lg:text-7xl font-alice-regular text-primary font-bold leading-none">
                   {value}
                 </Box>
-                <Box className="text-sm md:text-base lg:text-lg text-black/80 font-bold mt-2 uppercase tracking-wider">
+                <Box className="text-xs md:text-base lg:text-lg text-black/80 font-bold mt-2 uppercase tracking-wider">
                   {label}
                 </Box>
               </Box>

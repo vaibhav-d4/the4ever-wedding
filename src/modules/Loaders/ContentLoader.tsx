@@ -1,6 +1,6 @@
 import React from "react";
 import {Box, Fade} from "@mui/material";
-import {MAX_WIDTH} from "@utils/constants";
+// import {MAX_WIDTH} from "@utils/constants";
 import {Header} from "@modules/Header";
 import {Footer} from "@modules/Footer";
 // import {Link} from "react-router";
@@ -29,7 +29,10 @@ const ContentLoader = ({children}: IContentLoader) => {
         {/* HEADER */}
         <Header />
         <Box className="w-full flex justify-center items-center">
-          <Box className="m-auto w-full px-2" sx={{maxWidth: MAX_WIDTH}}>
+          <Box
+            className="m-auto w-full px-2"
+            // sx={{maxWidth: MAX_WIDTH}}
+          >
             {children}
           </Box>
         </Box>

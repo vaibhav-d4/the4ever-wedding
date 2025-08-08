@@ -17,12 +17,10 @@ const Footer = () => {
         href="https://www.instagram.com/vaibhav_d4/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-black/60 font-semibold hover:text-red-500 transition-colors duration-200 tracking-wide italic font-alice-regular text-lg"
+        className="text-black/60 font-semibold  transition-colors duration-200 tracking-wide italic font-alice-regular text-lg"
         style={{
           transition: "color 0.3s, text-shadow 0.3s"
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.textShadow = "0 0 12px #ff1744")}
-        onMouseLeave={(e) => (e.currentTarget.style.textShadow = "none")}
       >
         Vaibhav
       </a>
