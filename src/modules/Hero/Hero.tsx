@@ -3,6 +3,7 @@ import {Box, Grid} from "@mui/material";
 import {
   HASHTAG,
   LOCATION_FULL_NAME,
+  LOCATION_GOOGLE_LINK,
   MAIN_LOGO_IMAGE,
   VAIBHAV,
   WEDDING_DATE,
@@ -47,6 +48,22 @@ const Hero = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Helper to open Google Calendar with pre-filled event
+  const handleAddToCalendar = () => {
+    const title = "Yesha & Vaibhav's Wedding | #The4Ever";
+    const description = "Join us for a day filled with love, laughter, and celebration - Yesha & Vaibhav | #The4Ever";
+    const location =
+      "Hotel Rajhans Abhinandan, 11, Mile Chaan, Road, opposite to Sahara Estates, near 11 Meel Toll Plaza, Indus Towne, Ratanpur Sadak, Narmadapuram, Bhopal, Madhya Pradesh 462026, India";
+    const startDate = moment(WEDDING_DATE).format("YYYYMMDDTHHmmssZ");
+    const endDate = moment(WEDDING_DATE).add(12, "hours").format("YYYYMMDDTHHmmssZ");
+    const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+      title
+    )}&dates=${startDate}/${endDate}&details=${encodeURIComponent(description)}&location=${encodeURIComponent(
+      location
+    )}&sf=true&output=xml`;
+    window.open(calendarUrl, "_blank");
+  };
+
   const TYPE_1 = (
     <Box className="text-center flex flex-col gap-6 mb-10 justify-center items-center">
       {/* LOGO */}
@@ -65,7 +82,7 @@ const Hero = () => {
 
   const TYPE_2 = (
     <Box>
-      <Grid container spacing={1} className="mt-4">
+      <Grid container spacing={1} className="lg:mt-8 px-4">
         <Grid size={{xs: 12, sm: 6}}>
           <Box className="flex justify-center items-center h-full">
             <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
@@ -81,16 +98,25 @@ const Hero = () => {
             <Box className="mt-4 w-full">
               <DateCountDown months={months} days={days} hours={hours} minutes={minutes} seconds={seconds} />
             </Box>
-            {/* DATE AND PLACE */}
-            <Box className="mt-12 flex items-center justify-around w-full">
-              <Box className="flex">
+            {/* DATE AND PLACE - Responsive layout */}
+            <Box className="mt-12 w-full flex flex-col lg:flex-row lg:items-center lg:justify-around">
+              <Box
+                className="flex justify-center lg:justify-start cursor-pointer px-2 py-1"
+                onClick={handleAddToCalendar}
+                title="Add to calendar"
+              >
                 <Calendar />
                 <span className="ml-2 text-xl">{moment(WEDDING_DATE).format("MMMM DD, YYYY")}</span>
               </Box>
-              <Box className="w-px h-8 bg-black/50" />
-              <Box className="flex">
+              {/* Divider only on large screens */}
+              <Box className="hidden lg:block w-px h-10 bg-black/50 mx-8" />
+              <Box
+                className="flex justify-center lg:justify-end mt-6 lg:mt-0 cursor-pointer px-2 py-1"
+                onClick={() => window.open(LOCATION_GOOGLE_LINK, "_blank")}
+                title="View location on Google Maps"
+              >
                 <MapPin />
-                <span className="text-xl ml-2">{LOCATION_FULL_NAME}</span>
+                <span className="text-xl ml-2 ">{LOCATION_FULL_NAME}</span>
               </Box>
             </Box>
             {/* TEXT */}

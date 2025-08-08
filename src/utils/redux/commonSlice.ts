@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 
 export interface CommonState {
   isLoading: boolean;
@@ -9,7 +9,7 @@ export interface CommonState {
 const initialState: CommonState = {
   isLoading: true,
   isLoggedIn: false,
-  websiteTypeId: Number(localStorage.getItem("websiteTypeId")) || 1,
+  websiteTypeId: Number(localStorage.getItem("websiteTypeId")) || 2
 };
 
 export const commonSlice = createSlice({
@@ -25,11 +25,10 @@ export const commonSlice = createSlice({
     },
     setIsLoggedIn: (state, action) => {
       state.isLoggedIn = action.payload;
-    },
-  },
+    }
+  }
 });
 
-export const { setLoadingState, setWebsiteTypeId, setIsLoggedIn } =
-  commonSlice.actions;
+export const {setLoadingState, setWebsiteTypeId, setIsLoggedIn} = commonSlice.actions;
 
 export default commonSlice.reducer;

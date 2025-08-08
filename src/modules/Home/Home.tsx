@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { useAppDispatch } from "@utils/redux/hooks";
-import { LOGO_TIMEOUT, CONTENT_MOUNT_TIMEOUT } from "@utils/constants";
-import { setLoadingState } from "@utils/redux/commonSlice";
-import { ContentLoader, LogoLoader } from "@modules/Loaders";
-import { Hero } from "@modules/Hero";
-import { Box } from "@mui/material";
+import {useEffect, useState} from "react";
+import {useAppDispatch} from "@utils/redux/hooks";
+import {LOGO_TIMEOUT, CONTENT_MOUNT_TIMEOUT} from "@utils/constants";
+import {setLoadingState} from "@utils/redux/commonSlice";
+import {ContentLoader, LogoLoader} from "@modules/Loaders";
+import {Hero} from "@modules/Hero";
+import {Box} from "@mui/material";
+import {Events} from "@modules/Events";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -25,6 +26,7 @@ const Home = () => {
       ) : (
         <ContentLoader>
           <Hero />
+          <Events />
         </ContentLoader>
       )}
     </Box>

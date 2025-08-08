@@ -25,6 +25,7 @@ export const HASHTAG = "#The4Ever";
 
 export const LOCATION_NAME = "Rajhans Abhinandan";
 export const LOCATION_FULL_NAME = "Rajhans Abhinandan, Bhopal";
+export const LOCATION_GOOGLE_LINK = "https://maps.app.goo.gl/ZafM4K5oUyR3Qebs6";
 
 export const MAX_WIDTH = 1240;
 
