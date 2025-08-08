@@ -1,11 +1,11 @@
 import logo from "@assets/logo/vy-logo-blue-bg-t.png";
 import loaderLogo from "@assets/logo/loader-logo.png";
 
-export const WEDDING_DATE = "08-Feb-2026";
+export const WEDDING_DATE = "08-Feb-2026 06:00:00";
 
 export const WEBSITE_TYPES = [
-  { label: "Website 1", value: 1 },
-  { label: "Website 2", value: 2 },
+  {label: "Website 1", value: 1},
+  {label: "Website 2", value: 2}
 ];
 
 export const LOGO_TIMEOUT = 3000;
@@ -34,14 +34,14 @@ export const LOADER_LOGO = loaderLogo;
 export const MENU_ITEMS = [
   {
     title: "Welcome",
-    href: "/",
+    href: "/"
   },
   {
     title: "People",
-    href: "/people",
+    href: "/people"
   },
   {
     title: "Schedule",
-    href: "/schedule",
-  },
+    href: "/schedule"
+  }
 ];

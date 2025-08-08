@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Box, Grid } from "@mui/material";
+import {useEffect} from "react";
+import {Box, Grid} from "@mui/material";
 import {
   HASHTAG,
   LOCATION_FULL_NAME,
@@ -7,20 +7,20 @@ import {
   VAIBHAV,
   WEDDING_DATE,
   YESHA,
-  YESHA_AND_VAIBHAV,
+  YESHA_AND_VAIBHAV
 } from "@utils/constants";
-import { useAppDispatch, useAppSelector } from "@utils/redux/hooks";
-import { format } from "date-fns";
-import { toUpper as _toUpper } from "lodash";
-import { setWebsiteTypeId } from "@utils/redux/commonSlice";
+import {useAppDispatch, useAppSelector} from "@utils/redux/hooks";
+import {format} from "date-fns";
+import {toUpper as _toUpper} from "lodash";
+import {setWebsiteTypeId} from "@utils/redux/commonSlice";
 import moment from "moment";
-import { useCountdown } from "@utils/hooks/useCountdown";
+import {useCountdown} from "@utils/hooks/useCountdown";
 import DateCountDown from "@components/DateCountDown";
-import { Calendar, MapPin } from "lucide-react";
+import {Calendar, MapPin} from "lucide-react";
 
 const Hero = () => {
   const dispatch = useAppDispatch();
-  const { websiteTypeId } = useAppSelector((state) => state.common);
+  const {websiteTypeId} = useAppSelector((state) => state.common);
 
   const weddingDate = moment(WEDDING_DATE).toDate();
   // const isDateElapsed = moment() > moment(weddingDate);
@@ -55,9 +55,7 @@ const Hero = () => {
       </Box>
 
       {/* DATE */}
-      <Box className="font-hannah text-5xl text-center">
-        {_toUpper(format(WEDDING_DATE, "MMMM dd, yyyy"))}
-      </Box>
+      <Box className="font-hannah text-5xl text-center">{_toUpper(format(WEDDING_DATE, "MMMM dd, yyyy"))}</Box>
 
       {/* Names */}
       <Box className="text-6xl font-malarkey">{YESHA_AND_VAIBHAV}</Box>
@@ -68,12 +66,12 @@ const Hero = () => {
   const TYPE_2 = (
     <Box>
       <Grid container spacing={1} className="mt-4">
-        <Grid size={{ xs: 12, sm: 6 }}>
+        <Grid size={{xs: 12, sm: 6}}>
           <Box className="flex justify-center items-center h-full">
             <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
           </Box>
         </Grid>
-        <Grid size={{ xs: 12, sm: 6 }}>
+        <Grid size={{xs: 12, sm: 6}}>
           <Box className="h-full text-center flex flex-col justify-center items-center gap-2">
             <Box className="text-xl text-black/80">WE'RE GETTING MARRIED</Box>
             <Box className="font-alice-regular mt-4 text-4xl md:text-5xl lg:text-6xl">
@@ -81,21 +79,13 @@ const Hero = () => {
             </Box>
             {/* COUNTDOWN */}
             <Box className="mt-4 w-full">
-              <DateCountDown
-                months={months}
-                days={days}
-                hours={hours}
-                minutes={minutes}
-                seconds={seconds}
-              />
+              <DateCountDown months={months} days={days} hours={hours} minutes={minutes} seconds={seconds} />
             </Box>
             {/* DATE AND PLACE */}
             <Box className="mt-12 flex items-center justify-around w-full">
               <Box className="flex">
                 <Calendar />
-                <span className="ml-2 text-xl">
-                  {moment(WEDDING_DATE).format("MMMM DD, YYYY")}
-                </span>
+                <span className="ml-2 text-xl">{moment(WEDDING_DATE).format("MMMM DD, YYYY")}</span>
               </Box>
               <Box className="w-px h-8 bg-black/50" />
               <Box className="flex">
@@ -104,9 +94,7 @@ const Hero = () => {
               </Box>
             </Box>
             {/* TEXT */}
-            <Box className="mt-8 text-2xl">
-              Join us for a day filled with love, laughter, and celebration
-            </Box>
+            <Box className="mt-8 text-2xl">Join us for a day filled with love, laughter, and celebration</Box>
           </Box>
         </Grid>
       </Grid>
@@ -115,13 +103,7 @@ const Hero = () => {
 
   return (
     <Box>
-      {websiteTypeId === 1 ? (
-        <Box>{TYPE_1}</Box>
-      ) : websiteTypeId === 2 ? (
-        <Box>{TYPE_2}</Box>
-      ) : (
-        <Box>{TYPE_1}</Box>
-      )}
+      {websiteTypeId === 1 ? <Box>{TYPE_1}</Box> : websiteTypeId === 2 ? <Box>{TYPE_2}</Box> : <Box>{TYPE_1}</Box>}
     </Box>
   );
 };
