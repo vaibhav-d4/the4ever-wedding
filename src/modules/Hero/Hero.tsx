@@ -82,8 +82,8 @@ const Hero = () => {
   );
 
   const TYPE_2 = (
-    <Box className="flex justify-center">
-      <Grid container spacing={1} className="mt-8 px-4" sx={{maxWidth: MAX_WIDTH}}>
+    <Box className="mt-8 px-4 flex justify-center items-center">
+      <Grid container spacing={1} className="w-full" sx={{maxWidth: MAX_WIDTH}}>
         <Grid size={{xs: 12, sm: 6}}>
           <Box className="flex justify-center items-center h-full">
             <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
@@ -102,22 +102,28 @@ const Hero = () => {
             {/* DATE AND PLACE - Responsive layout */}
             <Box className="mt-12 w-full flex flex-col lg:flex-row lg:items-center lg:justify-around">
               <Box
-                className="flex justify-center lg:justify-start cursor-pointer px-2 py-1"
+                className="inline-block cursor-pointer px-2 py-1"
                 onClick={handleAddToCalendar}
                 title="Add to calendar"
               >
-                <Calendar />
-                <span className="ml-2 text-xl">{moment(WEDDING_DATE).format("MMMM DD, YYYY")}</span>
+                <span className="inline-block align-middle">
+                  <Calendar />
+                </span>
+                <span className="ml-2 text-xl inline-block align-middle">
+                  {moment(WEDDING_DATE).format("MMMM DD, YYYY")}
+                </span>
               </Box>
               {/* Divider only on large screens */}
               <Box className="hidden lg:block w-px h-10 bg-black/50 mx-8" />
               <Box
-                className="flex justify-center lg:justify-end mt-6 lg:mt-0 cursor-pointer px-2 py-1"
+                className="inline-block mt-6 lg:mt-0 cursor-pointer px-2 py-1"
                 onClick={() => window.open(LOCATION_GOOGLE_LINK, "_blank")}
                 title="View location on Google Maps"
               >
-                <MapPin />
-                <span className="text-xl ml-2 ">{LOCATION_FULL_NAME}</span>
+                <span className="inline-block align-middle">
+                  <MapPin />
+                </span>
+                <span className="text-xl ml-2 inline-block align-middle">{LOCATION_FULL_NAME}</span>
               </Box>
             </Box>
             {/* TEXT */}
