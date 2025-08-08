@@ -1,4 +1,3 @@
-import React from "react";
 import {useAppSelector} from "@utils/redux/hooks";
 import {Box} from "@mui/material";
 import {Y_AND_V} from "@utils/constants";
