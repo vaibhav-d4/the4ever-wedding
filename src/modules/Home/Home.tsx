@@ -6,6 +6,7 @@ import {ContentLoader, LogoLoader} from "@modules/Loaders";
 import {Hero} from "@modules/Hero";
 import {Box} from "@mui/material";
 import {Events} from "@modules/Events";
+import {GradientDivider} from "@components/index";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +27,9 @@ const Home = () => {
       ) : (
         <ContentLoader>
           <Hero />
+          <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey mt-10" />
           <Events />
+          <GradientDivider />
         </ContentLoader>
       )}
     </Box>

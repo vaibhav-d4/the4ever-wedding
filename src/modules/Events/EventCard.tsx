@@ -1,0 +1,31 @@
+import {Box} from "@mui/material";
+
+interface EventCardProps {
+  name: string;
+  image: string;
+  quote: string;
+  info: string;
+}
+
+const CARD_WIDTH = 395;
+const CARD_HEIGHT = 420;
+const IMAGE_HEIGHT = 220;
+
+const EventCard = ({name, image, quote, info}: EventCardProps) => (
+  <Box
+    className={`w-[${CARD_WIDTH}px] h-[${CARD_HEIGHT}px] shadow-xl flex flex-col transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl rounded-2xl`}
+  >
+    <img
+      src={image}
+      alt={name}
+      className={`object-cover w-[${CARD_WIDTH}px] h-[${IMAGE_HEIGHT}px] transition-transform duration-300 ease-in-out group-hover:scale-110 rounded-t-2xl`}
+    />
+    <Box className="m-4 tracking-wide flex flex-col gap-2">
+      <Box className="font-semibold text-3xl mb-1 font-alice-regular text-black/80">{name}</Box>
+      <Box className="font-great-vibes text-2xl text-primary tracking-wider mb-1">"{quote}"</Box>
+      <Box className="text-sm text-gray-500 font-brandon-regular">{info}</Box>
+    </Box>
+  </Box>
+);
+
+export default EventCard;

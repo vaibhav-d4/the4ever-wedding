@@ -1,5 +1,8 @@
 import logo from "@assets/logo/vy-logo-blue-bg-t.png";
 import loaderLogo from "@assets/logo/loader-logo.png";
+// import haldiImg from "@assets/couple/image-1.jpg";
+// import garbaImg from "@assets/couple/image-2.jpg";
+// import weddingImg from "@assets/couple/image-3.jpg";
 
 export const WEDDING_DATE = "08-Feb-2026 06:00:00";
 
@@ -44,5 +47,27 @@ export const MENU_ITEMS = [
   {
     title: "Schedule",
     href: "/schedule"
+  }
+];
+
+export const WEDDING_EVENTS = [
+  {
+    name: "Haldi",
+    image:
+      "https://plus.unsplash.com/premium_photo-1670524465634-93cf255ffa8b?q=80&w=1154&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    quote: "Let the yellow shine and the love bloom.",
+    info: "Haldi ceremony marks the beginning of the wedding festivities, bringing joy and blessings."
+  },
+  {
+    name: "Garba Night",
+    image: "https://i.pinimg.com/1200x/71/d4/f6/71d4f6612bd4d471bdcc184ddbd1a0f2.jpg",
+    quote: "Dance to the rhythm of love and tradition.",
+    info: "A night of music, dance, and celebration with family and friends, making memories that last forever."
+  },
+  {
+    name: "Wedding & Reception",
+    image: "https://i.pinimg.com/1200x/d1/a6/73/d1a6732c996fe5ccb2eb7ecfd2ac38fb.jpg",
+    quote: "Two souls, one journey, endless love.",
+    info: "The grand wedding and reception, where we begin our new chapter together."
   }
 ];

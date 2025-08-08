@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Pacifico&family=Allura&family=Parisienne&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -7,6 +8,11 @@
   --font-malarkey: "Malarkey Regular", "sans-serif";
   --font-somersette: "Somersette", "sans-serif";
   --font-alice-regular: "Alice Regular", "sans-serif";
+  --font-great-vibes: "Great Vibes", cursive;
+  --font-dancing-script: "Dancing Script", cursive;
+  --font-pacifico: "Pacifico", cursive;
+  --font-allura: "Allura", cursive;
+  --font-parisienne: "Parisienne", cursive;
 
   --color-primary: var(--color-wedding-blue-300);
 
@@ -167,8 +173,7 @@
 }
 
 :root {
-  font-family: "Brandon Regular", system-ui, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family: "Brandon Regular", system-ui, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
