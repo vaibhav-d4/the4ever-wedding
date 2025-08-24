@@ -1,5 +1,5 @@
 import logo from "@assets/logo/vy-logo-blue-bg-t.png";
-import loaderLogo from "@assets/logo/loader-logo.png";
+import loaderLogo from "@assets/logo/loader-logo.svg";
 // import haldiImg from "@assets/couple/image-1.jpg";
 // import garbaImg from "@assets/couple/image-2.jpg";
 // import weddingImg from "@assets/couple/image-3.jpg";
