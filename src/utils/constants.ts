@@ -35,6 +35,8 @@ export const MAX_WIDTH = 1240;
 export const MAIN_LOGO_IMAGE = logo;
 export const LOADER_LOGO = loaderLogo;
 
+export const CALENDAR_INVITE_LINK = "https://calendar.app.google/bmsboGN4pBUVhBbT8";
+
 export const MENU_ITEMS = [
   {
     title: "Welcome",

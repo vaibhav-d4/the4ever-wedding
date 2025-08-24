@@ -1,6 +1,7 @@
 import {useEffect} from "react";
 import {Box, Grid} from "@mui/material";
 import {
+  CALENDAR_INVITE_LINK,
   HASHTAG,
   LOCATION_FULL_NAME,
   LOCATION_GOOGLE_LINK,
@@ -49,22 +50,6 @@ const Hero = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Helper to open Google Calendar with pre-filled event
-  const handleAddToCalendar = () => {
-    const title = "Yesha & Vaibhav's Wedding | #The4Ever";
-    const description = "Join us for a day filled with love, laughter, and celebration - Yesha & Vaibhav | #The4Ever";
-    const location =
-      "Hotel Rajhans Abhinandan, 11, Mile Chaan, Road, opposite to Sahara Estates, near 11 Meel Toll Plaza, Indus Towne, Ratanpur Sadak, Narmadapuram, Bhopal, Madhya Pradesh 462026, India";
-    const startDate = moment(WEDDING_DATE).format("YYYYMMDDTHHmmssZ");
-    const endDate = moment(WEDDING_DATE).add(12, "hours").format("YYYYMMDDTHHmmssZ");
-    const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-      title
-    )}&dates=${startDate}/${endDate}&details=${encodeURIComponent(description)}&location=${encodeURIComponent(
-      location
-    )}&sf=true&output=xml`;
-    window.open(calendarUrl, "_blank");
-  };
-
   const TYPE_1 = (
     <Box className="text-center flex flex-col gap-6 mb-10 justify-center items-center">
       {/* LOGO */}
@@ -103,15 +88,16 @@ const Hero = () => {
             <Box className="mt-12 w-full flex flex-col lg:flex-row lg:items-center lg:justify-around">
               <Box
                 className="inline-block cursor-pointer px-2 py-1"
-                onClick={handleAddToCalendar}
-                title="Add to calendar"
+                onClick={() => window.open(CALENDAR_INVITE_LINK, "_blank")}
+                title="Click to add this event to your calendar"
               >
                 <span className="inline-block align-middle">
-                  <Calendar />
+                  <Calendar className="" />
                 </span>
-                <span className="ml-2 text-xl inline-block align-middle">
+                <span className="ml-2 text-xl inline-block align-middle underline decoration-dotted ">
                   {moment(WEDDING_DATE).format("MMMM DD, YYYY")}
                 </span>
+                <span className="block text-xs text-gray-500 mt-1 ">Click to add to calendar</span>
               </Box>
               {/* Divider only on large screens */}
               <Box className="hidden lg:block w-px h-10 bg-black/50 mx-8" />
@@ -127,7 +113,7 @@ const Hero = () => {
               </Box>
             </Box>
             {/* TEXT */}
-            <Box className="mt-8 text-2xl">Join us for a day filled with love, laughter, and celebration</Box>
+            <Box className="mt-8 text-2xl">Counting down to our happily ever after ✨</Box>
           </Box>
         </Grid>
       </Grid>

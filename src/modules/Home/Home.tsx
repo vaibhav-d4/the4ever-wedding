@@ -7,6 +7,7 @@ import {Hero} from "@modules/Hero";
 import {Box} from "@mui/material";
 import {Events} from "@modules/Events";
 import {GradientDivider} from "@components/index";
+import {SignOff} from "@modules/SignOff";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -30,6 +31,7 @@ const Home = () => {
           <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey" />
           <Events />
           <GradientDivider />
+          <SignOff />
         </ContentLoader>
       )}
     </Box>
