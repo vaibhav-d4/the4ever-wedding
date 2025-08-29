@@ -1,10 +1,7 @@
-import logo from "@assets/logo/vy-logo-blue-bg-t.png";
+import logo from "@assets/logo/vy-logo-blue-bg-t.svg";
 import loaderLogo from "@assets/logo/loader-logo.svg";
-// import haldiImg from "@assets/couple/image-1.jpg";
-// import garbaImg from "@assets/couple/image-2.jpg";
-// import weddingImg from "@assets/couple/image-3.jpg";
 
-export const WEDDING_DATE = "08-Feb-2026 06:00:00";
+export const WEDDING_DATE = import.meta.env.VITE_WEDDING_DATE || "08-Feb-2026 06:00:00";
 
 export const WEBSITE_TYPES = [
   {label: "Website 1", value: 1},
@@ -13,6 +10,7 @@ export const WEBSITE_TYPES = [
 
 export const LOGO_TIMEOUT = 3000;
 export const CONTENT_MOUNT_TIMEOUT = LOGO_TIMEOUT + 500;
+export const BACKDROP_BLUR = "sm"; // xs, sm, md, lg, xl, 2xl, 3xl
 
 export const MONTHS_LABEL = "Months";
 export const DAYS_LABEL = "Days";
@@ -35,22 +33,7 @@ export const MAX_WIDTH = 1240;
 export const MAIN_LOGO_IMAGE = logo;
 export const LOADER_LOGO = loaderLogo;
 
-export const CALENDAR_INVITE_LINK = "https://calendar.app.google/bmsboGN4pBUVhBbT8";
-
-export const MENU_ITEMS = [
-  {
-    title: "Welcome",
-    href: "/"
-  },
-  {
-    title: "People",
-    href: "/people"
-  },
-  {
-    title: "Schedule",
-    href: "/schedule"
-  }
-];
+export const CALENDAR_INVITE_LINK = import.meta.env.VITE_CALENDAR_INVITE_LINK;
 
 export const WEDDING_EVENTS = [
   {
@@ -71,5 +54,20 @@ export const WEDDING_EVENTS = [
     image: "https://i.pinimg.com/1200x/d1/a6/73/d1a6732c996fe5ccb2eb7ecfd2ac38fb.jpg",
     quote: "Two souls, one journey, endless love.",
     info: "The grand wedding and reception, where we begin our new chapter together."
+  }
+];
+
+export const MENU_ITEMS = [
+  {
+    title: "Welcome",
+    href: "/"
+  },
+  {
+    title: "People",
+    href: "/people"
+  },
+  {
+    title: "Schedule",
+    href: "/schedule"
   }
 ];

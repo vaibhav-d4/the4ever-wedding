@@ -1,12 +1,18 @@
 import {Box, Fade} from "@mui/material";
 import {useAppSelector} from "@utils/redux/hooks";
-import {LOADER_LOGO} from "@utils/constants";
+import {BACKDROP_BLUR, LOADER_LOGO} from "@utils/constants";
+import clsx from "clsx";
 
 const LogoLoader = () => {
   const isLoading = useAppSelector((state) => state.common.isLoading);
 
   return (
-    <Box className="absolute flex justify-center items-center px-12 h-full w-full bg-white/30 backdrop-blur-md rounded-2xl">
+    <Box
+      className={clsx(
+        "absolute flex justify-center items-center px-12 h-full w-full rounded-2xl",
+        `backdrop-blur-${BACKDROP_BLUR}`
+      )}
+    >
       <Fade in={isLoading} timeout={1000}>
         <Box>
           <img src={LOADER_LOGO} alt="Logo" className="h-64" />

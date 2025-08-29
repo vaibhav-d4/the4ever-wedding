@@ -1,4 +1,6 @@
 import {Box} from "@mui/material";
+import {BACKDROP_BLUR} from "@utils/constants";
+import clsx from "clsx";
 
 interface EventCardProps {
   name: string;
@@ -8,13 +10,15 @@ interface EventCardProps {
 }
 
 const CARD_WIDTH = 395;
-const CARD_HEIGHT = 420;
 const IMAGE_HEIGHT = 220;
 
 const EventCard = ({name, image, quote, info}: EventCardProps) => (
   <Box
-    sx={{width: CARD_WIDTH, height: CARD_HEIGHT}}
-    className="shadow-2xl flex flex-col transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl rounded-2xl bg-white/40 backdrop-blur-md hover:cursor-pointer"
+    sx={{width: CARD_WIDTH}}
+    className={clsx(
+      "shadow-2xl flex flex-col transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl rounded-2xl bg-white/40 hover:cursor-pointer",
+      `backdrop-blur-${BACKDROP_BLUR}`
+    )}
   >
     <img
       src={image}

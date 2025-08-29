@@ -1,5 +1,6 @@
 import {Box} from "@mui/material";
-import {DAYS_LABEL, HOURS_LABEL, MINUTES_LABEL, MONTHS_LABEL, SECONDS_LABEL} from "@utils/constants";
+import {BACKDROP_BLUR, DAYS_LABEL, HOURS_LABEL, MINUTES_LABEL, MONTHS_LABEL, SECONDS_LABEL} from "@utils/constants";
+import clsx from "clsx";
 
 interface IDateCountDown {
   months: number;
@@ -43,7 +44,12 @@ const DateCountDown = ({months, days, hours, minutes, seconds}: IDateCountDown) 
         {displayView().map(({value, label}, index) => (
           <Box key={index} className="flex items-center">
             <Box className="text-center">
-              <Box className="bg-white/40 backdrop-blur-md rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 border border-black/10 shadow-2xl transition-all duration-200 hover:scale-105 hover:shadow-2xl w-26 lg:w-36">
+              <Box
+                className={clsx(
+                  "bg-white/40 rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 border border-black/10 shadow-2xl transition-all duration-200 hover:scale-105 hover:shadow-2xl w-26 lg:w-36",
+                  `backdrop-blur-${BACKDROP_BLUR}`
+                )}
+              >
                 <Box className="text-5xl md:text-6xl lg:text-7xl font-alice-regular text-primary font-bold leading-none">
                   {value}
                 </Box>

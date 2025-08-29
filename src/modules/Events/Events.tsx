@@ -9,12 +9,14 @@ const Events = () => {
       <Box className="text-center text-2xl font-dancing-script my-10 px-4">
         Join us in celebrating these beautiful moments of love, tradition, and togetherness.
       </Box>
-      <Grid container spacing={6} className="px-4">
+      <Grid container spacing={6} className="px-4" justifyContent="center">
         {WEDDING_EVENTS.map((event) => (
           <Grid size={{xs: 12, sm: 6, md: 4}} key={event.name} sx={{display: "flex", justifyContent: "center"}}>
             <EventCard {...event} />
           </Grid>
         ))}
+        {/* Add an empty Grid item to center the last event on md screens if there are exactly 3 events */}
+        {WEDDING_EVENTS.length === 3 && <Grid size={{md: 4}} sx={{display: {xs: "none", md: "block", lg: "none"}}} />}
       </Grid>
       <Box className="text-center text-xl font-brandon-regular my-10 px-4">
         Each event is a cherished memory in our journey. We look forward to celebrating with you!

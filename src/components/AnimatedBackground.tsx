@@ -7,7 +7,7 @@ const COLORS = [
   "rgba(221, 160, 221, 0.18)", // light purple
   "rgba(224, 247, 250, 0.30)" // very light blue
 ];
-const SHAPE_COUNT = 32; // fewer shapes overall
+const SHAPE_COUNT = 35; // fewer shapes overall
 const MIN_RADIUS = 18;
 const MAX_RADIUS = 48;
 const MIN_SPEED = 0.5;
@@ -48,7 +48,7 @@ const AnimatedBackground: React.FC = () => {
 
     // Initialize shapes (bubbles and hearts)
     shapes.current = Array.from({length: SHAPE_COUNT}, () => {
-      const isHeart = Math.random() < 0.7; // HEARRTS COUNT
+      const isHeart = Math.random() < 0.8; // HEARTS COUNT
       return {
         x: randomBetween(0, window.innerWidth),
         y: randomBetween(0, window.innerHeight),

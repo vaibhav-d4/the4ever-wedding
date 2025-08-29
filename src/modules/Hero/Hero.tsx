@@ -20,6 +20,7 @@ import moment from "moment";
 import {useCountdown} from "@utils/hooks/useCountdown";
 import DateCountDown from "@components/DateCountDown";
 import {Calendar, MapPin} from "lucide-react";
+import clsx from "clsx";
 
 const Hero = () => {
   const dispatch = useAppDispatch();
@@ -67,14 +68,14 @@ const Hero = () => {
   );
 
   const TYPE_2 = (
-    <Box className="mt-8 px-4 flex justify-center items-center">
+    <Box className={clsx("px-4 flex justify-center items-center", "mt-8 md:mt-28")}>
       <Grid container spacing={1} className="w-full" sx={{maxWidth: MAX_WIDTH}}>
-        <Grid size={{xs: 12, sm: 6}}>
+        <Grid size={{xs: 12, md: 6}}>
           <Box className="flex justify-center items-center h-full">
             <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
           </Box>
         </Grid>
-        <Grid size={{xs: 12, sm: 6}}>
+        <Grid size={{xs: 12, md: 6}}>
           <Box className="h-full text-center flex flex-col justify-center items-center gap-2">
             <Box className="text-xl text-black/80">WE'RE GETTING MARRIED</Box>
             <Box className="font-alice-regular mt-4 text-4xl md:text-5xl lg:text-6xl">
