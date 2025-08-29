@@ -10,7 +10,7 @@ export const WEBSITE_TYPES = [
 
 export const LOGO_TIMEOUT = 3000;
 export const CONTENT_MOUNT_TIMEOUT = LOGO_TIMEOUT + 500;
-export const BACKDROP_BLUR = "md"; // xs, sm, md, lg, xl, 2xl, 3xl
+export const BACKDROP_BLUR = "backdrop-blur-md"; // xs, sm, md, lg, xl, 2xl, 3xl
 
 export const MONTHS_LABEL = "Months";
 export const DAYS_LABEL = "Days";

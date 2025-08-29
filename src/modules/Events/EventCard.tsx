@@ -17,7 +17,7 @@ const EventCard = ({name, image, quote, info}: EventCardProps) => (
     sx={{width: CARD_WIDTH}}
     className={clsx(
       "shadow-2xl flex flex-col transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl rounded-2xl bg-white/40 hover:cursor-pointer",
-      `backdrop-blur-${BACKDROP_BLUR}`
+      `${BACKDROP_BLUR}`
     )}
   >
     <img

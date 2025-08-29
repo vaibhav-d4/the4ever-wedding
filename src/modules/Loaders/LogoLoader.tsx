@@ -8,10 +8,7 @@ const LogoLoader = () => {
 
   return (
     <Box
-      className={clsx(
-        "absolute flex justify-center items-center px-12 h-full w-full rounded-2xl",
-        `backdrop-blur-${BACKDROP_BLUR}`
-      )}
+      className={clsx("absolute flex justify-center items-center px-12 h-full w-full rounded-2xl", `${BACKDROP_BLUR}`)}
     >
       <Fade in={isLoading} timeout={1000}>
         <Box>

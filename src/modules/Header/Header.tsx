@@ -15,7 +15,7 @@ const Header = () => {
         <Box
           className={clsx(
             "w-full border-b-1 border-black/10 shadow-xl bg-white/30 fixed top-0 left-0 z-30",
-            `backdrop-blur-${BACKDROP_BLUR}`
+            `${BACKDROP_BLUR}`
           )}
         >
           <Box className="text-5xl font-alice-regular my-2 mt-3 text-center text-primary">

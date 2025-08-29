@@ -47,7 +47,7 @@ const DateCountDown = ({months, days, hours, minutes, seconds}: IDateCountDown) 
               <Box
                 className={clsx(
                   "bg-white/40 rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 border border-black/10 shadow-2xl transition-all duration-200 hover:scale-105 hover:shadow-2xl w-26 lg:w-36",
-                  `backdrop-blur-${BACKDROP_BLUR}`
+                  `${BACKDROP_BLUR}`
                 )}
               >
                 <Box className="text-5xl md:text-6xl lg:text-7xl font-alice-regular text-primary font-bold leading-none">
