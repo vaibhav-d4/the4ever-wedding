@@ -12,18 +12,38 @@ import {SignOff} from "@modules/SignOff";
 const Home = () => {
   const dispatch = useAppDispatch();
   const [mounted, setMounted] = useState(false);
+  const [pageLoaded, setPageLoaded] = useState(false);
   // const weddingDate = moment(WEDDING_DATE).toDate();
   // const isDateElapsed = moment() > moment(weddingDate);
 
   useEffect(() => {
-    setTimeout(() => dispatch(setLoadingState(false)), LOGO_TIMEOUT);
-    setTimeout(() => setMounted(() => true), CONTENT_MOUNT_TIMEOUT);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const handleLoad = () => {
+      setPageLoaded(true);
+    };
+    if (document.readyState === "complete") {
+      setPageLoaded(true);
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
+
+  useEffect(() => {
+    if (!pageLoaded) return;
+    const logoTimeout = setTimeout(() => dispatch(setLoadingState(false)), LOGO_TIMEOUT);
+    const contentTimeout = setTimeout(() => setMounted(true), CONTENT_MOUNT_TIMEOUT);
+    return () => {
+      clearTimeout(logoTimeout);
+      clearTimeout(contentTimeout);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageLoaded]);
 
   return (
     <Box>
-      {!mounted ? (
+      {!pageLoaded || !mounted ? (
         <LogoLoader />
       ) : (
         <ContentLoader>
