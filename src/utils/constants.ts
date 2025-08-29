@@ -1,5 +1,6 @@
 import logo from "@assets/logo/vy-logo-blue-bg-t.svg";
 import loaderLogo from "@assets/logo/loader-logo.svg";
+// import haldiImage from "@assets/events/haldi-couple-1.svg";
 
 export const WEDDING_DATE = import.meta.env.VITE_WEDDING_DATE || "08-Feb-2026 06:00:00";
 
@@ -40,6 +41,7 @@ export const WEDDING_EVENTS = [
     name: "Haldi",
     image:
       "https://plus.unsplash.com/premium_photo-1670524465634-93cf255ffa8b?q=80&w=1154&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    // image: haldiImage,
     quote: "Let the yellow shine and the love bloom.",
     info: "Haldi ceremony marks the beginning of the wedding festivities, bringing joy and blessings."
   },

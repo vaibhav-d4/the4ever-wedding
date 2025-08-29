@@ -1,5 +1,5 @@
-import {useEffect} from "react";
-import {Box, Grid} from "@mui/material";
+import {useEffect, useState} from "react";
+import {Box, Grid, Fade} from "@mui/material";
 import {
   CALENDAR_INVITE_LINK,
   HASHTAG,
@@ -22,7 +22,11 @@ import DateCountDown from "@components/DateCountDown";
 import {Calendar, MapPin} from "lucide-react";
 import clsx from "clsx";
 
-const Hero = () => {
+interface HeroProps {
+  onFadeInComplete?: () => void;
+}
+
+const Hero = ({onFadeInComplete}: HeroProps) => {
   const dispatch = useAppDispatch();
   const {websiteTypeId} = useAppSelector((state) => state.common);
 
@@ -30,6 +34,12 @@ const Hero = () => {
   // const isDateElapsed = moment() > moment(weddingDate);
 
   const [months, days, hours, minutes, seconds] = useCountdown(weddingDate);
+
+  // Sequential fade-in states for TYPE_2
+  const [showLogo, setShowLogo] = useState(false);
+  const [showText, setShowText] = useState(false);
+  const [showCountdown, setShowCountdown] = useState(false);
+  const [showCalendarLocation, setShowCalendarLocation] = useState(false);
 
   useEffect(() => {
     const storedId = localStorage.getItem("websiteTypeId");
@@ -50,6 +60,24 @@ const Hero = () => {
     dispatch(setWebsiteTypeId(id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Sequential fade-in for TYPE_2
+  useEffect(() => {
+    if (websiteTypeId === 2) {
+      setTimeout(() => setShowLogo(true), 100);
+      setTimeout(() => setShowText(true), 1100);
+      setTimeout(() => setShowCountdown(true), 2100);
+      setTimeout(() => {
+        setShowCalendarLocation(true);
+        if (onFadeInComplete) {
+          setTimeout(onFadeInComplete, 1000); // Wait for last fade to finish
+        }
+      }, 3100);
+    } else if (onFadeInComplete) {
+      // For TYPE_1, call immediately
+      onFadeInComplete();
+    }
+  }, [websiteTypeId, onFadeInComplete]);
 
   const TYPE_1 = (
     <Box className="text-center flex flex-col gap-6 mb-10 justify-center items-center">
@@ -72,49 +100,61 @@ const Hero = () => {
       <Grid container spacing={1} className="w-full" sx={{maxWidth: MAX_WIDTH}}>
         <Grid size={{xs: 12, md: 6}}>
           <Box className="flex justify-center items-center h-full">
-            <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
+            <Fade in={showLogo} timeout={1000}>
+              <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
+            </Fade>
           </Box>
         </Grid>
         <Grid size={{xs: 12, md: 6}}>
           <Box className="h-full text-center flex flex-col justify-center items-center gap-2">
-            <Box className="text-xl text-black/80">WE'RE GETTING MARRIED</Box>
-            <Box className="font-alice-regular mt-4 text-4xl md:text-5xl lg:text-6xl">
-              {YESHA} <span className="text-primary">&</span> {VAIBHAV}
-            </Box>
+            <Fade in={showText} timeout={1000}>
+              <Box className="text-xl text-black/80">WE'RE GETTING MARRIED</Box>
+            </Fade>
+            <Fade in={showText} timeout={1000}>
+              <Box className="font-alice-regular mt-4 text-4xl md:text-5xl lg:text-6xl">
+                {YESHA} <span className="text-primary">&</span> {VAIBHAV}
+              </Box>
+            </Fade>
             {/* COUNTDOWN */}
-            <Box className="mt-4 w-full">
-              <DateCountDown months={months} days={days} hours={hours} minutes={minutes} seconds={seconds} />
-            </Box>
+            <Fade in={showCountdown} timeout={1000}>
+              <Box className="mt-4 w-full">
+                <DateCountDown months={months} days={days} hours={hours} minutes={minutes} seconds={seconds} />
+              </Box>
+            </Fade>
             {/* DATE AND PLACE - Responsive layout */}
-            <Box className="mt-12 w-full flex flex-col lg:flex-row lg:items-center lg:justify-around">
-              <Box
-                className="inline-block cursor-pointer px-2 py-1"
-                onClick={() => window.open(CALENDAR_INVITE_LINK, "_blank")}
-                title="Click to add this event to your calendar"
-              >
-                <span className="inline-block align-middle">
-                  <Calendar className="" />
-                </span>
-                <span className="ml-2 text-xl inline-block align-middle underline decoration-dotted ">
-                  {moment(WEDDING_DATE).format("MMMM DD, YYYY")}
-                </span>
-                <span className="block text-xs text-gray-500 mt-1 ">Click to add to calendar</span>
+            <Fade in={showCalendarLocation} timeout={1000}>
+              <Box className="mt-12 w-full flex flex-col lg:flex-row lg:items-center lg:justify-around">
+                <Box
+                  className="inline-block cursor-pointer px-2 py-1"
+                  onClick={() => window.open(CALENDAR_INVITE_LINK, "_blank")}
+                  title="Click to add this event to your calendar"
+                >
+                  <span className="inline-block align-middle">
+                    <Calendar className="" />
+                  </span>
+                  <span className="ml-2 text-xl inline-block align-middle underline decoration-dotted ">
+                    {moment(WEDDING_DATE).format("MMMM DD, YYYY")}
+                  </span>
+                  <span className="block text-xs text-gray-500 mt-1 ">Click to add to calendar</span>
+                </Box>
+                {/* Divider only on large screens */}
+                <Box className="hidden lg:block w-px h-10 bg-black/50 mx-8" />
+                <Box
+                  className="inline-block mt-6 lg:mt-0 cursor-pointer px-2 py-1"
+                  onClick={() => window.open(LOCATION_GOOGLE_LINK, "_blank")}
+                  title="View location on Google Maps"
+                >
+                  <span className="inline-block align-middle">
+                    <MapPin />
+                  </span>
+                  <span className="text-xl ml-2 inline-block align-middle">{LOCATION_FULL_NAME}</span>
+                </Box>
               </Box>
-              {/* Divider only on large screens */}
-              <Box className="hidden lg:block w-px h-10 bg-black/50 mx-8" />
-              <Box
-                className="inline-block mt-6 lg:mt-0 cursor-pointer px-2 py-1"
-                onClick={() => window.open(LOCATION_GOOGLE_LINK, "_blank")}
-                title="View location on Google Maps"
-              >
-                <span className="inline-block align-middle">
-                  <MapPin />
-                </span>
-                <span className="text-xl ml-2 inline-block align-middle">{LOCATION_FULL_NAME}</span>
-              </Box>
-            </Box>
+            </Fade>
             {/* TEXT */}
-            <Box className="mt-8 text-2xl">Counting down to our happily ever after ✨</Box>
+            <Fade in={showCalendarLocation} timeout={1000}>
+              <Box className="mt-8 text-2xl">Counting down to our happily ever after ✨</Box>
+            </Fade>
           </Box>
         </Grid>
       </Grid>
