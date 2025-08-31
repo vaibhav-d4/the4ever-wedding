@@ -20,16 +20,16 @@ const Invite = () => {
   const weddingDayNum = moment(WEDDING_DATE).format("DD");
 
   return (
-    <Box className="min-h-screen py-10 px-2 mt-20">
+    <Box className="min-h-screen flex flex-col justify-center items-center py-10 px-2">
       <Header />
-      <Box className="flex justify-center items-center">
+      <Box className="flex justify-center items-center w-full">
         <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="w-3xs mb-8" />
       </Box>
       <Box
-        className="relative w-full max-w-xl mx-auto shadow-2xl rounded-3xl border border-gray-200 backdrop-blur-xs mb-20"
+        className="max-w-xl w-11/12 shadow-2xl rounded-3xl border border-gray-200 backdrop-blur-xs mb-20"
         style={{background: "rgba(255, 255, 200, 0.4)"}}
       >
-        <img src={floralTopLeft} alt="Floral Decoration" className="absolute w-1/2 rounded-tl-3xl" />
+        <img src={floralTopLeft} alt="Floral Decoration" className="absolute w-1/2 rounded-tl-3xl left-0 top-0" />
         <Box className="text-center">
           {displayName && (
             <Box className="font-alice-regular text-2xl text-gray-700 mb-8 mt-20">
