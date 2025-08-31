@@ -7,6 +7,8 @@ import GradientDivider from "@components/GradientDivider";
 import {Footer} from "@modules/Footer";
 import Hashtag from "@components/Hashtag";
 import Header from "@modules/Header/Header";
+import floralTopLeft from "@assets/invite/floral-top-left.svg";
+import floralBottomRight from "@assets/invite/floral-bottom-right.svg";
 
 const Invite = () => {
   const {user_name} = useParams();
@@ -24,12 +26,13 @@ const Invite = () => {
         <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="w-3xs mb-8" />
       </Box>
       <Box
-        className="relative w-full max-w-xl mx-auto shadow-2xl rounded-3xl p-4 border border-gray-200 backdrop-blur-xs mb-20"
+        className="relative w-full max-w-xl mx-auto shadow-2xl rounded-3xl border border-gray-200 backdrop-blur-xs mb-20"
         style={{background: "rgba(255, 255, 200, 0.4)"}}
       >
+        <img src={floralTopLeft} alt="Floral Decoration" className="absolute w-1/2 rounded-tl-3xl" />
         <Box className="text-center">
           {displayName && (
-            <Box className="font-alice-regular text-2xl text-gray-700 my-8">
+            <Box className="font-alice-regular text-2xl text-gray-700 mb-8 mt-20">
               Dear <span className="font-dancing-script text-4xl text-primary">{startCase(displayName)}</span>
             </Box>
           )}
@@ -53,10 +56,18 @@ const Invite = () => {
         </Box>
 
         <Box className="flex justify-center mb-8">
-          <span className="mt-8 hover:cursor-pointer hover:text-gray-500 text-gray-400" onClick={() => navigate("/")}>
+          <span
+            className="mt-8 mb-16 hover:cursor-pointer hover:text-gray-500 text-gray-400"
+            onClick={() => navigate("/")}
+          >
             Explore →
           </span>
         </Box>
+        <img
+          src={floralBottomRight}
+          alt="Floral Decoration"
+          className="absolute w-1/2 right-0 bottom-0 rounded-br-3xl"
+        />
       </Box>
       <Box className="text-center mt-8">
         <Hashtag />
