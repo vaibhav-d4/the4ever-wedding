@@ -1,6 +1,7 @@
+import React from "react";
 import {Box} from "@mui/material";
 
-const GradientDivider = ({title, className}: {title?: string; className?: string}) => {
+const GradientDivider = ({title, className}: {title?: React.ReactNode; className?: string}) => {
   return (
     <Box className="flex items-center my-10">
       <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-500"></span>

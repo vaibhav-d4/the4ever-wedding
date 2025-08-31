@@ -3,6 +3,7 @@ import {Box, Fade} from "@mui/material";
 // import {MAX_WIDTH} from "@utils/constants";
 import {Header} from "@modules/Header";
 import {Footer} from "@modules/Footer";
+import Hashtag from "@components/Hashtag";
 // import {Link} from "react-router";
 // import {SquareArrowOutUpRight} from "lucide-react";
 
@@ -35,6 +36,9 @@ const ContentLoader = ({children}: IContentLoader) => {
           >
             {children}
           </Box>
+        </Box>
+        <Box className="text-center mt-8">
+          <Hashtag />
         </Box>
         <Footer />
       </Box>
