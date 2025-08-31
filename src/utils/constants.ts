@@ -1,6 +1,8 @@
 import logo from "@assets/logo/vy-logo-blue-bg-t.svg";
 import loaderLogo from "@assets/logo/loader-logo.svg";
-// import haldiImage from "@assets/events/haldi-couple-1.svg";
+import haldiImage from "@assets/events/haldi-temp-1.jpg";
+import garbaImage from "@assets/events/sangeet-temp-1.jpg";
+import weddingImage from "@assets/events/wedding-temp-1.jpg";
 
 export const WEDDING_DATE = import.meta.env.VITE_WEDDING_DATE || "08-Feb-2026 06:00:00";
 
@@ -42,18 +44,21 @@ export const WEDDING_EVENTS = [
     image:
       "https://plus.unsplash.com/premium_photo-1670524465634-93cf255ffa8b?q=80&w=1154&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     // image: haldiImage,
+    eventImage: haldiImage,
     quote: "Let the yellow shine and the love bloom.",
     info: "Haldi ceremony marks the beginning of the wedding festivities, bringing joy and blessings."
   },
   {
     name: "Garba Night",
     image: "https://i.pinimg.com/1200x/71/d4/f6/71d4f6612bd4d471bdcc184ddbd1a0f2.jpg",
+    eventImage: garbaImage,
     quote: "Dance to the rhythm of love and tradition.",
     info: "A night of music, dance, and celebration with family and friends, making memories that last forever."
   },
   {
     name: "Wedding & Reception",
     image: "https://i.pinimg.com/1200x/d1/a6/73/d1a6732c996fe5ccb2eb7ecfd2ac38fb.jpg",
+    eventImage: weddingImage,
     quote: "Two souls, one journey, endless love.",
     info: "The grand wedding and reception, where we begin our new chapter together."
   }
