@@ -29,7 +29,7 @@ const Invite = () => {
         className="max-w-xl w-11/12 shadow-2xl rounded-3xl border border-gray-200 backdrop-blur-xs mb-20"
         style={{background: "rgba(255, 255, 200, 0.4)"}}
       >
-        <img src={floralTopLeft} alt="Floral Decoration" className="absolute w-1/2 rounded-tl-3xl left-0 top-0" />
+        <img src={floralTopLeft} alt="Floral Decoration" className="absolute w-1/2 rounded-tl-3xl left-0 top-0 -z-1" />
         <Box className="text-center">
           {displayName && (
             <Box className="font-alice-regular text-2xl text-gray-700 mb-8 mt-20">
@@ -57,7 +57,7 @@ const Invite = () => {
 
         <Box className="flex justify-center mb-8">
           <span
-            className="mt-8 mb-16 hover:cursor-pointer hover:text-gray-500 text-gray-400"
+            className="mt-8 mb-16 hover:cursor-pointer hover:text-gray-500 text-gray-400  px-16 py-3 border rounded-2xl"
             onClick={() => navigate("/")}
           >
             Explore →
@@ -66,7 +66,7 @@ const Invite = () => {
         <img
           src={floralBottomRight}
           alt="Floral Decoration"
-          className="absolute w-1/2 right-0 bottom-0 rounded-br-3xl"
+          className="absolute w-1/2 right-0 bottom-0 rounded-br-3xl -z-1"
         />
       </Box>
       <Box className="text-center mt-8">

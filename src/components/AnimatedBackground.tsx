@@ -7,7 +7,7 @@ const COLORS = [
   "rgba(221, 160, 221, 0.18)", // light purple
   "rgba(224, 247, 250, 0.30)" // very light blue
 ];
-const SHAPE_COUNT = 35; // fewer shapes overall
+const SHAPE_COUNT = 50; // fewer shapes overall
 const MIN_RADIUS = 18;
 const MAX_RADIUS = 48;
 const MIN_SPEED = 0.5;
