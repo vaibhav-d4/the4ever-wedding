@@ -9,6 +9,7 @@ import Hashtag from "@components/Hashtag";
 import Header from "@modules/Header/Header";
 import floralTopLeft from "@assets/invite/floral-top-left.svg";
 import floralBottomRight from "@assets/invite/floral-bottom-right.svg";
+import {logEvent} from "@utils/analytics";
 
 const Invite = () => {
   const {user_name} = useParams();
@@ -58,7 +59,10 @@ const Invite = () => {
         <Box className="flex justify-center mb-8">
           <span
             className="mt-8 mb-16 hover:cursor-pointer hover:text-gray-500 text-gray-400  px-16 py-3 border rounded-2xl"
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/");
+              logEvent("explore_click", {section: "Invite Page"});
+            }}
           >
             Explore →
           </span>

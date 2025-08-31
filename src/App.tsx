@@ -6,8 +6,11 @@ import {Home} from "@modules/Home";
 import {AdminPanel} from "@modules/AdminPanel";
 import {Invite} from "@modules/Invite";
 import AnimatedBackground from "./components/AnimatedBackground";
+import usePageTracking from "@utils/hooks/usePageTracking";
 
 const App = () => {
+  usePageTracking();
+
   return (
     <Box sx={{position: "relative", minHeight: "100vh", overflow: "hidden"}}>
       <AnimatedBackground />

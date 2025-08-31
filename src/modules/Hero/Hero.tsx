@@ -21,6 +21,7 @@ import {useCountdown} from "@utils/hooks/useCountdown";
 import DateCountDown from "@components/DateCountDown";
 import {Calendar, MapPin} from "lucide-react";
 import clsx from "clsx";
+import {logCalendarClick} from "@utils/analytics";
 
 interface HeroProps {
   onFadeInComplete?: () => void;
@@ -126,7 +127,10 @@ const Hero = ({onFadeInComplete}: HeroProps) => {
               <Box className="mt-12 w-full flex flex-col lg:flex-row lg:items-center lg:justify-around">
                 <Box
                   className="inline-block cursor-pointer px-2 py-1"
-                  onClick={() => window.open(CALENDAR_INVITE_LINK, "_blank")}
+                  onClick={() => {
+                    window.open(CALENDAR_INVITE_LINK, "_blank");
+                    logCalendarClick();
+                  }}
                   title="Click to add this event to your calendar"
                 >
                   <span className="inline-block align-middle">
