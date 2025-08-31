@@ -22,7 +22,7 @@ const Invite = () => {
   return (
     <Box className="min-h-screen flex flex-col justify-center items-center py-10 px-2">
       <Header />
-      <Box className="flex justify-center items-center w-full">
+      <Box className="flex justify-center items-center w-full mt-20">
         <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="w-3xs mb-8" />
       </Box>
       <Box
