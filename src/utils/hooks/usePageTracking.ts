@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {useLocation} from "react-router";
-import {logEvent, logPageView} from "@utils/analytics";
+import {logEvent, logPageView, setBaseParams} from "@utils/analytics";
 
 declare global {
   interface Navigator {
@@ -22,6 +22,16 @@ const usePageTracking = () => {
   const screenRes = `${window.screen.width}x${window.screen.height}`;
 
   useEffect(() => {
+    // Set global base params for analytics
+    setBaseParams({
+      location,
+      browser,
+      language,
+      platform,
+      isMobile,
+      screenRes
+    });
+
     logPageView(location.pathname + location.search);
 
     logEvent("custom_device_info", {
@@ -32,6 +42,15 @@ const usePageTracking = () => {
       screenRes
     });
   }, [location, browser, language, platform, isMobile, screenRes]);
+
+  return {
+    location,
+    browser,
+    language,
+    platform,
+    isMobile,
+    screenRes
+  };
 };
 
 export default usePageTracking;

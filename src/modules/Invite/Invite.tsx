@@ -1,5 +1,6 @@
+import {useEffect} from "react";
 import {Box} from "@mui/material";
-import {WEDDING_DATE, VAIBHAV, YESHA, MAIN_LOGO_IMAGE} from "@utils/constants";
+import {WEDDING_DATE, VAIBHAV, YESHA, MAIN_LOGO_IMAGE, HASHTAG} from "@utils/constants";
 import {useParams, useNavigate} from "react-router";
 import moment from "moment";
 import {startCase} from "lodash";
@@ -14,11 +15,21 @@ import {logEvent} from "@utils/analytics";
 const Invite = () => {
   const {user_name} = useParams();
   const navigate = useNavigate();
+
   const displayName = user_name && decodeURIComponent(user_name);
   const weddingDay = moment(WEDDING_DATE).format("dddd");
   const weddingYear = moment(WEDDING_DATE).format("YYYY");
   const weddingMonth = moment(WEDDING_DATE).format("MMM");
   const weddingDayNum = moment(WEDDING_DATE).format("DD");
+
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = `You're Invited ${startCase(displayName)}! | ${HASHTAG}`;
+    logEvent("page_view", {page: "Invite Page", user: displayName || "Guest"});
+    return () => {
+      document.title = previousTitle;
+    };
+  }, [displayName]);
 
   return (
     <Box className="min-h-screen flex flex-col justify-center items-center py-10 px-2">
@@ -61,7 +72,7 @@ const Invite = () => {
             className="mt-8 mb-16 hover:cursor-pointer hover:text-gray-500 text-gray-400  px-16 py-3 border rounded-2xl"
             onClick={() => {
               navigate("/");
-              logEvent("explore_click", {section: "Invite Page"});
+              logEvent("explore_click", {page: "Invite Page", user: displayName || "Guest"});
             }}
           >
             Explore →
