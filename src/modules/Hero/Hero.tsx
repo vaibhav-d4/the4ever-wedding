@@ -107,7 +107,7 @@ const ContentAfterDateElapsed = () => (
         <p className="text-2xl text-primary font-alice-regular">
           Our hearts are overflowing with joy and gratitude! ✨
         </p>
-        <div className="font-great-vibes text-3xl text-gray-700/90 leading-snug tracking-wider">
+        <div className="font-dancing-script text-2xl text-gray-800/90 leading-snug">
           <p className="">
             Thank you for being part of our magical day and for filling it with your love, laughter, and warmth. Every
             smile, every hug, and every moment shared has been etched in our hearts forever. Your presence made our
@@ -122,8 +122,8 @@ const ContentAfterDateElapsed = () => (
       </div>
 
       <div className="">
-        <p className="text-2xl mb-2 font-alice-regular text-gray-900/70">With endless love & gratitude,</p>
-        <p className="py-6 text-3xl text-primary font-amsterdam">{YESHA_AND_VAIBHAV}</p>
+        <p className="text-xl mb-2 font-alice-regular text-gray-900/70">With endless love & gratitude,</p>
+        <p className="py-6 text-2xl text-primary font-amsterdam">{YESHA_AND_VAIBHAV}</p>
       </div>
     </div>
   </Box>
