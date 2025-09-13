@@ -8,8 +8,8 @@ import GradientDivider from "@components/GradientDivider";
 import {Footer} from "@modules/Footer";
 import Hashtag from "@components/Hashtag";
 import Header from "@modules/Header/Header";
-import floralTopLeft from "@assets/invite/floral-top-left.svg";
-import floralBottomRight from "@assets/invite/floral-bottom-right.svg";
+import floralTopLeft from "@assets/common/floral-top-left.svg";
+import floralBottomRight from "@assets/common/floral-bottom-right.svg";
 import {logEvent} from "@utils/analytics";
 
 const Invite = () => {

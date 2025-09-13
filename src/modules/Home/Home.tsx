@@ -7,6 +7,7 @@ import {Hero} from "@modules/Hero";
 import {Box} from "@mui/material";
 import {Events} from "@modules/Events";
 import {GradientDivider} from "@components/index";
+import CapturedMoments from "@components/CapturedMoments";
 import {SignOff} from "@modules/SignOff";
 import {Fade} from "@mui/material";
 import {useInView} from "@utils/hooks/useInView";
@@ -61,6 +62,7 @@ const Home = () => {
               <div ref={eventsRef}>
                 <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey" />
                 <Events />
+                <CapturedMoments />
               </div>
             </Fade>
           )}
