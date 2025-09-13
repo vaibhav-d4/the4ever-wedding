@@ -102,7 +102,7 @@ export default Hero;
 
 const ContentAfterDateElapsed = () => (
   <Box className="mx-auto py-6">
-    <div className="space-y-8">
+    <div className="text-center space-y-8">
       <div className="space-y-6">
         <p className="text-2xl text-primary font-alice-regular">
           Our hearts are overflowing with joy and gratitude! ✨
