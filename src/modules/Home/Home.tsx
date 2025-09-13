@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useAppDispatch} from "@utils/redux/hooks";
-import {LOGO_TIMEOUT, CONTENT_MOUNT_TIMEOUT} from "@utils/constants";
+import {LOGO_TIMEOUT, CONTENT_MOUNT_TIMEOUT, WEDDING_DATE} from "@utils/constants";
 import {setLoadingState} from "@utils/redux/commonSlice";
 import {ContentLoader, LogoLoader} from "@modules/Loaders";
 import {Hero} from "@modules/Hero";
@@ -10,13 +10,14 @@ import {GradientDivider} from "@components/index";
 import {SignOff} from "@modules/SignOff";
 import {Fade} from "@mui/material";
 import {useInView} from "@utils/hooks/useInView";
+import moment from "moment";
 
 const Home = () => {
   const dispatch = useAppDispatch();
   const [mounted, setMounted] = useState(false);
   const [pageLoaded, setPageLoaded] = useState(false);
-  // const weddingDate = moment(WEDDING_DATE).toDate();
-  // const isDateElapsed = moment() > moment(weddingDate);
+  const weddingDate = moment(WEDDING_DATE).toDate();
+  const isDateElapsed = moment() > moment(weddingDate);
 
   // Intersection observer refs and states for fade-in
   const [eventsRef, eventsInView] = useInView({threshold: 0.1});
@@ -55,12 +56,14 @@ const Home = () => {
       ) : (
         <ContentLoader>
           <Hero />
-          <Fade in={eventsInView} timeout={1000}>
-            <div ref={eventsRef}>
-              <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey" />
-              <Events />
-            </div>
-          </Fade>
+          {!isDateElapsed && (
+            <Fade in={eventsInView} timeout={1000}>
+              <div ref={eventsRef}>
+                <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey" />
+                <Events />
+              </div>
+            </Fade>
+          )}
           <Fade in={dividerInView} timeout={1000}>
             <div ref={dividerRef}>
               <GradientDivider />

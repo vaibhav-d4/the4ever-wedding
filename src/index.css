@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Pacifico&family=Allura&family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Pacifico&family=Allura&family=Parisienne&family=Caveat&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -13,6 +13,9 @@
   --font-pacifico: "Pacifico", cursive;
   --font-allura: "Allura", cursive;
   --font-parisienne: "Parisienne", cursive;
+  --font-caveat: "Caveat", cursive;
+  --font-amsterdam: "Amsterdam", cursive;
+  --font-rottering: "Rottering", cursive;
 
   --color-primary: var(--color-wedding-blue-400);
 
@@ -220,6 +223,20 @@ body {
 @font-face {
   font-family: "Alice Regular";
   src: url("./fonts/Alice-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Amsterdam";
+  src: url("./fonts/amsterdam.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rottering";
+  src: url("./fonts/rottering.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
