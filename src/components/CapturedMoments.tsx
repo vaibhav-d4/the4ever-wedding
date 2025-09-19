@@ -100,7 +100,7 @@ const GridCornerText = ({
 }) => (
   <div
     className={clsx(
-      "relative flex items-center justify-center font-dancing-script text-5xl text-black/70",
+      "relative flex items-center justify-center font-dancing-script text-4xl sm:text-5xl text-black/80 py-8 sm:py-0 font-bold",
       position === "top-left" && "col-start-1 col-end-2 row-start-1 row-end-2",
       position === "bottom-right" && "col-start-3 col-end-4 row-start-3 row-end-4",
       className
@@ -110,11 +110,14 @@ const GridCornerText = ({
       src={lightBgFloral}
       alt="Floral background"
       className={clsx(
-        "absolute inset-0 w-full h-full object-contain opacity-20 -z-20 scale-150",
-        position === "top-left" && "rotate-20",
-        position === "bottom-right" && "rotate-160"
+        // Responsive sizing and positioning for mobile/tablet
+        "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-1",
+        "opacity-20 pointer-events-none select-none",
+        "w-[300px] h-[300px] scale-150 lg:scale-150 object-contain",
+        position === "top-left" && "rotate-20  mt-20",
+        position === "bottom-right" && "rotate-200 -mt-20"
       )}
     />
-    <span className="relative z-10">{text}</span>
+    <span className="relative z-10 text-center drop-shadow-lg">{text}</span>
   </div>
 );
