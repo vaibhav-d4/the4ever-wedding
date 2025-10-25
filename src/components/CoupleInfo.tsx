@@ -14,7 +14,7 @@ const CoupleInfo: React.FC = () => {
       <Box className="my-8">
         <Box className="text-center font-alice-regular text-xl">{THE_COUPLE_INFO.subtitle}</Box>
         <Box className="text-center text-primary text-xl font-semibold">{THE_COUPLE_INFO.couple_tagline}</Box>
-        <Box className="text-center mt-4  font-dancing-script text-2xl">{THE_COUPLE_INFO.couple_description}</Box>
+        {/* <Box className="text-center mt-4  font-dancing-script text-2xl">{THE_COUPLE_INFO.couple_description}</Box> */}
       </Box>
       <Box className={clsx('max-w-full lg:max-w-[90%] mx-auto px-4')}>
         {/* Use single column on small screens and grid layout on md+ */}
