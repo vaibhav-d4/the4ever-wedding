@@ -102,6 +102,27 @@ export const THE_COUPLE_INFO = {
 
 export const GALLERY_IMAGES = [galleryImg1, galleryImg2, galleryImg3, galleryImg4, galleryImg5];
 
+export const ACCOMMODATION_INFO = [
+  {
+    id: '1',
+    title: '📍 About the Destination',
+    description:
+      'Our wedding venue, Rajhans Abhinandan, Bhopal, M.P., beautifully blends charm, comfort, and elegance — the perfect place to celebrate the beginning of our forever. Surrounded by the warmth of the city and the joy of togetherness, it sets a stunning stage for our special day. Join us in this vibrant and graceful setting as we celebrate love, laughter, and new beginnings.'
+  },
+  {
+    id: '2',
+    title: '✈️ Travel',
+    description:
+      "Reaching Rajhans Abhinandan is simple and convenient. The venue is well-connected by road, rail, and air — just a short drive from Raja Bhoj Airport and Bhopal Junction Railway Station. Whether you're traveling from near or far, the journey to our celebration promises to be smooth, scenic, and filled with excitement."
+  },
+  {
+    id: '3',
+    title: '🏨 Accommodation',
+    description:
+      "We're thrilled to welcome you to Rajhans Abhinandan, Bhopal, for our wedding celebrations! To make your stay as delightful and memorable as the festivities themselves, we've arranged comfortable and elegant accommodations for our guests right at the venue. We can't wait to share this special occasion with you and create memories that will last a lifetime. Your presence will make our celebration truly complete. See you soon!"
+  }
+];
+
 export const QUOTE_INFO = {
   text: 'You are my today and All of my tomorrows.',
   author: 'Leo Christopher'

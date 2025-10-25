@@ -14,6 +14,7 @@ import {useInView} from '@utils/hooks/useInView';
 import moment from 'moment';
 import CoupleInfo from '@components/CoupleInfo';
 import Quote from '@components/Quote';
+import Accommodation from '@components/Accommodation';
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -24,10 +25,12 @@ const Home = () => {
 
   // Intersection observer refs and states for fade-in
   const [eventsRef, eventsInView] = useInView({threshold: 0.1});
-  const [dividerRef, dividerInView] = useInView({threshold: 0.1});
+  const [divider1Ref, divider1InView] = useInView({threshold: 0.1});
+  const [divider2Ref, divider2InView] = useInView({threshold: 0.1});
   const [momentsRef, momentsInView] = useInView({threshold: 0.1});
   const [coupleInfoRef, coupleInfoInView] = useInView({threshold: 0.1});
   const [quoteRef, quoteInView] = useInView({threshold: 0.1});
+  const [accommodationRef, accommodationInView] = useInView({threshold: 0.1});
   const [signOffRef, signOffInView] = useInView({threshold: 0.1});
 
   useEffect(() => {
@@ -85,8 +88,18 @@ const Home = () => {
               <CapturedMoments />
             </div>
           </Fade>
-          <Fade in={dividerInView} timeout={1000}>
-            <div ref={dividerRef}>
+          <Fade in={divider1InView} timeout={1000}>
+            <div ref={divider1Ref}>
+              <GradientDivider />
+            </div>
+          </Fade>
+          <Fade in={accommodationInView} timeout={1000}>
+            <div ref={accommodationRef}>
+              <Accommodation />
+            </div>
+          </Fade>
+          <Fade in={divider2InView} timeout={1000}>
+            <div ref={divider2Ref}>
               <GradientDivider />
             </div>
           </Fade>
