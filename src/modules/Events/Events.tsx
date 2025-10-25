@@ -6,7 +6,7 @@ import GradientDivider from '@components/GradientDivider';
 
 const Events = () => {
   return (
-    <Box className="mt-30">
+    <Box className="mx-30 mt-10 mb-20">
       <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey" />
       <Box className="text-center text-2xl font-dancing-script my-10 px-4">
         Join us in celebrating these beautiful moments of love, tradition, and togetherness.
@@ -20,7 +20,7 @@ const Events = () => {
         {/* Add an empty Grid item to center the last event on md screens if there are exactly 3 events */}
         {WEDDING_EVENTS.length === 3 && <Grid size={{md: 4}} sx={{display: {xs: 'none', md: 'block', lg: 'none'}}} />}
       </Grid>
-      <Box className="text-center text-xl font-brandon-regular my-10 px-4">
+      <Box className="text-center text-xl font-brandon-regular my-20 px-4">
         Each event is a cherished memory in our journey. We look forward to celebrating with you!
       </Box>
     </Box>

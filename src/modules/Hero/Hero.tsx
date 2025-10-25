@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import {Box, Grid, Fade} from "@mui/material";
+import {useEffect, useState} from 'react';
+import {Box, Grid, Fade} from '@mui/material';
 import {
   CALENDAR_INVITE_LINK,
   HASHTAG,
@@ -11,17 +11,17 @@ import {
   WEDDING_DATE,
   YESHA,
   YESHA_AND_VAIBHAV
-} from "@utils/constants";
-import {useAppDispatch, useAppSelector} from "@utils/redux/hooks";
-import {format} from "date-fns";
-import {toUpper as _toUpper} from "lodash";
-import {setWebsiteTypeId} from "@utils/redux/commonSlice";
-import moment from "moment";
-import {useCountdown} from "@utils/hooks/useCountdown";
-import DateCountDown from "@components/DateCountDown";
-import {Calendar, MapPin} from "lucide-react";
-import clsx from "clsx";
-import {logCalendarClick} from "@utils/analytics";
+} from '@utils/constants';
+import {useAppDispatch, useAppSelector} from '@utils/redux/hooks';
+import {format} from 'date-fns';
+import {toUpper as _toUpper} from 'lodash';
+import {setWebsiteTypeId} from '@utils/redux/commonSlice';
+import moment from 'moment';
+import {useCountdown} from '@utils/hooks/useCountdown';
+import DateCountDown from '@components/DateCountDown';
+import {Calendar, MapPin} from 'lucide-react';
+import clsx from 'clsx';
+import {logCalendarClick} from '@utils/analytics';
 
 interface HeroProps {
   onFadeInComplete?: () => void;
@@ -35,9 +35,10 @@ const Hero = ({onFadeInComplete}: HeroProps) => {
   const isDateElapsed = moment() > moment(weddingDate);
 
   const [showLogo, setShowLogo] = useState(false);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    const storedId = localStorage.getItem("websiteTypeId");
+    const storedId = localStorage.getItem('websiteTypeId');
     let id: number;
     if (storedId !== null) {
       id = Number(storedId);
@@ -58,26 +59,34 @@ const Hero = ({onFadeInComplete}: HeroProps) => {
 
   useEffect(() => {
     setTimeout(() => setShowLogo(true), 100);
+    setTimeout(() => setShowText(true), 4000);
   }, [websiteTypeId]);
 
   const MainContent = (
-    <Box className={clsx("px-4 flex justify-center items-center", "mt-8 md:mt-28")}>
-      <Grid container spacing={1} className="w-full" sx={{maxWidth: MAX_WIDTH}}>
-        <Grid size={{xs: 12, md: 6}}>
-          <Box className="flex justify-center items-center h-full">
-            <Fade in={showLogo} timeout={1000}>
-              <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
-            </Fade>
-          </Box>
+    <Box>
+      <Box className={clsx('px-4 flex justify-center items-center', 'mt-8 md:mt-28')}>
+        <Grid container spacing={1} className="w-full" sx={{maxWidth: MAX_WIDTH}}>
+          <Grid size={{xs: 12, md: 6}}>
+            <Box className="flex justify-center items-center h-full">
+              <Fade in={showLogo} timeout={1000}>
+                <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
+              </Fade>
+            </Box>
+          </Grid>
+          <Grid size={{xs: 12, md: 6}}>
+            {!isDateElapsed ? (
+              <ContentBeforeDateElapsed onFadeInComplete={onFadeInComplete} />
+            ) : (
+              <ContentAfterDateElapsed />
+            )}
+          </Grid>
         </Grid>
-        <Grid size={{xs: 12, md: 6}}>
-          {!isDateElapsed ? (
-            <ContentBeforeDateElapsed onFadeInComplete={onFadeInComplete} />
-          ) : (
-            <ContentAfterDateElapsed />
-          )}
-        </Grid>
-      </Grid>
+      </Box>
+      {!isDateElapsed && (
+        <Fade in={showText} timeout={1000}>
+          <Box className="mt-12 text-2xl text-center">Counting down to our happily ever after ✨</Box>
+        </Fade>
+      )}
     </Box>
   );
 
@@ -171,7 +180,7 @@ const ContentBeforeDateElapsed = ({onFadeInComplete}: {onFadeInComplete?: () => 
           <Box
             className="inline-block cursor-pointer px-2 py-1"
             onClick={() => {
-              window.open(CALENDAR_INVITE_LINK, "_blank");
+              window.open(CALENDAR_INVITE_LINK, '_blank');
               logCalendarClick();
             }}
             title="Click to add this event to your calendar"
@@ -180,7 +189,7 @@ const ContentBeforeDateElapsed = ({onFadeInComplete}: {onFadeInComplete?: () => 
               <Calendar className="" />
             </span>
             <span className="ml-2 text-xl inline-block align-middle underline decoration-dotted ">
-              {moment(WEDDING_DATE).format("MMMM DD, YYYY")}
+              {moment(WEDDING_DATE).format('MMMM DD, YYYY')}
             </span>
             <span className="block text-xs text-gray-500 mt-1 ">Click to add to calendar</span>
           </Box>
@@ -188,7 +197,7 @@ const ContentBeforeDateElapsed = ({onFadeInComplete}: {onFadeInComplete?: () => 
           <Box className="hidden lg:block w-px h-10 bg-black/50 mx-8" />
           <Box
             className="inline-block mt-6 lg:mt-0 cursor-pointer px-2 py-1"
-            onClick={() => window.open(LOCATION_GOOGLE_LINK, "_blank")}
+            onClick={() => window.open(LOCATION_GOOGLE_LINK, '_blank')}
             title="View location on Google Maps"
           >
             <span className="inline-block align-middle">
@@ -197,10 +206,6 @@ const ContentBeforeDateElapsed = ({onFadeInComplete}: {onFadeInComplete?: () => 
             <span className="text-xl ml-2 inline-block align-middle">{LOCATION_FULL_NAME}</span>
           </Box>
         </Box>
-      </Fade>
-      {/* TEXT */}
-      <Fade in={showCalendarLocation} timeout={1000}>
-        <Box className="mt-8 text-2xl">Counting down to our happily ever after ✨</Box>
       </Fade>
     </Box>
   );
@@ -215,7 +220,7 @@ const Type1 = () => (
     </Box>
 
     {/* DATE */}
-    <Box className="font-hannah text-5xl text-center">{_toUpper(format(WEDDING_DATE, "MMMM dd, yyyy"))}</Box>
+    <Box className="font-hannah text-5xl text-center">{_toUpper(format(WEDDING_DATE, 'MMMM dd, yyyy'))}</Box>
 
     {/* Names */}
     <Box className="text-6xl font-malarkey">{YESHA_AND_VAIBHAV}</Box>

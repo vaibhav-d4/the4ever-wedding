@@ -70,6 +70,11 @@ const Home = () => {
               <CoupleInfo />
             </div>
           </Fade>
+          <Fade in={quoteInView} timeout={1000}>
+            <div ref={quoteRef}>
+              <Quote />
+            </div>
+          </Fade>
           {!isDateElapsed && (
             <Fade in={eventsInView} timeout={1000}>
               <div ref={eventsRef}>
@@ -77,11 +82,7 @@ const Home = () => {
               </div>
             </Fade>
           )}
-          <Fade in={quoteInView} timeout={1000}>
-            <div ref={quoteRef}>
-              <Quote />
-            </div>
-          </Fade>
+
           {/* <Fade in={momentsInView} timeout={1000}>
             <div ref={momentsRef}>
               <CapturedMoments />

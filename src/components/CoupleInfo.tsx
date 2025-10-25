@@ -6,7 +6,7 @@ import {THE_COUPLE_INFO} from '@utils/constants';
 
 const CoupleInfo: React.FC = () => {
   return (
-    <Box className="px-4 relative mt-50 mb-16">
+    <Box className="px-4 relative mt-30  mb-16">
       <GradientDivider
         title={<Box className={clsx('flex items-center justify-center gap-4')}>{THE_COUPLE_INFO.title}</Box>}
         className="text-5xl lg:text-7xl font-malarkey"
