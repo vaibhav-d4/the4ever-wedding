@@ -3,7 +3,8 @@ import loaderLogo from '@assets/logo/loader-logo.svg';
 import haldiImage from '@assets/events/haldi-temp-1.jpg';
 import garbaImage from '@assets/events/sangeet-temp-1.jpg';
 import weddingImage from '@assets/events/wedding-temp-1.jpg';
-import coupleLogo from '@assets/couple/couple-info-logo-bg-floral.svg';
+// import coupleLogo from '@assets/couple/couple-info-logo-bg-floral.svg';
+import coupleLogo from '@assets/couple/couple-info-2.svg';
 import {default as galleryImg1} from '@assets/couple/left-1.jpg';
 import {default as galleryImg2} from '@assets/couple/mid-1.jpg';
 import {default as galleryImg3} from '@assets/couple/mid-2.jpeg';
@@ -107,19 +108,19 @@ export const ACCOMMODATION_INFO = [
     id: '1',
     title: '📍 About the Destination',
     description:
-      'Our wedding venue, Rajhans Abhinandan, Bhopal, M.P., beautifully blends charm, comfort, and elegance — the perfect place to celebrate the beginning of our forever. Surrounded by the warmth of the city and the joy of togetherness, it sets a stunning stage for our special day. Join us in this vibrant and graceful setting as we celebrate love, laughter, and new beginnings.'
+      'Our wedding venue, Rajhans Abhinandan, Bhopal, beautifully blends charm, comfort, and elegance — the perfect place to begin our forever. Surrounded by warmth and joy, it sets the ideal stage for our special day.'
   },
   {
     id: '2',
     title: '✈️ Travel',
     description:
-      "Reaching Rajhans Abhinandan is simple and convenient. The venue is well-connected by road, rail, and air — just a short drive from Raja Bhoj Airport and Bhopal Junction Railway Station. Whether you're traveling from near or far, the journey to our celebration promises to be smooth, scenic, and filled with excitement."
+      'Conveniently connected by road, rail, and air, Rajhans Abhinandan is just a short drive from Raja Bhoj Airport and Bhopal Junction. Your journey to our celebration will be smooth and scenic.'
   },
   {
     id: '3',
     title: '🏨 Accommodation',
     description:
-      "We're thrilled to welcome you to Rajhans Abhinandan, Bhopal, for our wedding celebrations! To make your stay as delightful and memorable as the festivities themselves, we've arranged comfortable and elegant accommodations for our guests right at the venue. We can't wait to share this special occasion with you and create memories that will last a lifetime. Your presence will make our celebration truly complete. See you soon!"
+      "We're excited to welcome you to Rajhans Abhinandan! Comfortable stay arrangements have been made at the venue so you can relax and enjoy every moment. Your presence will make our celebration truly special. See you there!"
   }
 ];
 
