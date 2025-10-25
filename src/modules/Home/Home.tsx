@@ -26,7 +26,6 @@ const Home = () => {
   // Intersection observer refs and states for fade-in
   const [eventsRef, eventsInView] = useInView({threshold: 0.1});
   const [divider1Ref, divider1InView] = useInView({threshold: 0.1});
-  const [divider2Ref, divider2InView] = useInView({threshold: 0.1});
   // const [momentsRef, momentsInView] = useInView({threshold: 0.1});
   const [coupleInfoRef, coupleInfoInView] = useInView({threshold: 0.1});
   const [quoteRef, quoteInView] = useInView({threshold: 0.1});
@@ -101,11 +100,6 @@ const Home = () => {
               </Fade>
             </>
           )}
-          <Fade in={divider2InView} timeout={1000}>
-            <div ref={divider2Ref}>
-              <GradientDivider />
-            </div>
-          </Fade>
           <Fade in={signOffInView} timeout={1000}>
             <div ref={signOffRef}>
               <SignOff />

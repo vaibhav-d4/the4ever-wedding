@@ -54,13 +54,6 @@ const Accommodation: React.FC = () => {
           <span className="block text-xs text-gray-500 mt-1 ">View the venue on Google Maps</span>
         </Box>
       </Box>
-
-      <Box className="my-20 flex flex-col items-center gap-10 px-4">
-        <Box className="text-3xl text-center">
-          Together with our families, we invite you to our wedding celebration 💝
-        </Box>
-        <Box className="text-5xl text-center">Thank You!</Box>
-      </Box>
     </Box>
   );
 };

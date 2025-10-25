@@ -1,31 +1,41 @@
-import {useEffect} from "react";
-import {Box} from "@mui/material";
-import {WEDDING_DATE, VAIBHAV, YESHA, MAIN_LOGO_IMAGE, HASHTAG} from "@utils/constants";
-import {useParams, useNavigate} from "react-router";
-import moment from "moment";
-import {startCase} from "lodash";
-import GradientDivider from "@components/GradientDivider";
-import {Footer} from "@modules/Footer";
-import Hashtag from "@components/Hashtag";
-import Header from "@modules/Header/Header";
-import floralTopLeft from "@assets/common/floral-top-left.svg";
-import floralBottomRight from "@assets/common/floral-bottom-right.svg";
-import {logEvent} from "@utils/analytics";
+import {useEffect} from 'react';
+import {Box} from '@mui/material';
+import {
+  WEDDING_DATE,
+  VAIBHAV,
+  YESHA,
+  MAIN_LOGO_IMAGE,
+  HASHTAG,
+  LOCATION_GOOGLE_LINK,
+  LOCATION_FULL_NAME
+} from '@utils/constants';
+import {useParams, useNavigate} from 'react-router';
+import moment from 'moment';
+import {startCase} from 'lodash';
+import GradientDivider from '@components/GradientDivider';
+import {Footer} from '@modules/Footer';
+import Hashtag from '@components/Hashtag';
+import Header from '@modules/Header/Header';
+import floralTopLeft from '@assets/common/floral-top-left.svg';
+import {logEvent} from '@utils/analytics';
+import CoupleInfo from '@components/CoupleInfo';
+import {SignOff} from '@modules/SignOff';
+import {MapPin, MoveRight} from 'lucide-react';
 
 const Invite = () => {
   const {user_name} = useParams();
   const navigate = useNavigate();
 
   const displayName = user_name && decodeURIComponent(user_name);
-  const weddingDay = moment(WEDDING_DATE).format("dddd");
-  const weddingYear = moment(WEDDING_DATE).format("YYYY");
-  const weddingMonth = moment(WEDDING_DATE).format("MMM");
-  const weddingDayNum = moment(WEDDING_DATE).format("DD");
+  const weddingDay = moment(WEDDING_DATE).format('dddd');
+  const weddingYear = moment(WEDDING_DATE).format('YYYY');
+  const weddingMonth = moment(WEDDING_DATE).format('MMM');
+  const weddingDayNum = moment(WEDDING_DATE).format('DD');
 
   useEffect(() => {
     const previousTitle = document.title;
     document.title = `You're Invited ${startCase(displayName)}! | ${HASHTAG}`;
-    logEvent("page_view", {page: "Invite Page", user: displayName || "Guest"});
+    logEvent('page_view', {page: 'Invite Page', user: displayName || 'Guest'});
     return () => {
       document.title = previousTitle;
     };
@@ -39,9 +49,14 @@ const Invite = () => {
       </Box>
       <Box
         className="max-w-xl w-11/12 shadow-2xl rounded-3xl border border-gray-200 backdrop-blur-xs mb-20"
-        style={{background: "rgba(255, 255, 200, 0.4)"}}
+        style={{background: 'rgba(255, 255, 200, 0.4)'}}
       >
-        <img src={floralTopLeft} alt="Floral Decoration" className="absolute w-1/2 rounded-tl-3xl left-0 top-0 -z-1" />
+        <img
+          src={floralTopLeft}
+          alt="Floral Decoration"
+          className="absolute w-1/2 rounded-tl-3xl left-0 top-0 -z-1"
+          loading="lazy"
+        />
         <Box className="text-center">
           {displayName && (
             <Box className="font-alice-regular text-2xl text-gray-700 mb-8 mt-20">
@@ -66,24 +81,56 @@ const Invite = () => {
 
           <Box className="font-alice-regular text-3xl text-gray-700 mb-2 italic tracking-wide">Save The Date</Box>
         </Box>
+        <Box className="flex justify-center">
+          <Box
+            className="mt-8 text-center cursor-pointer max-w-fit p-2"
+            onClick={() => window.open(LOCATION_GOOGLE_LINK, '_blank')}
+            title="View location"
+          >
+            <span className="inline-block align-middle">
+              <MapPin />
+            </span>
+            <span className="text-xl ml-2 inline-block align-middle underline decoration-dotted">
+              {LOCATION_FULL_NAME}
+            </span>
+            <span className="block text-xs text-gray-500 mt-1 ">View the venue on Google Maps</span>
+          </Box>
+        </Box>
 
         <Box className="flex justify-center mb-8">
           <span
-            className="mt-8 mb-16 hover:cursor-pointer hover:text-gray-500 text-gray-400  px-16 py-3 border rounded-2xl"
+            className="mt-12 mb-16 hover:cursor-pointer hover:text-gray-500 text-gray-400  px-16 py-3 border rounded-2xl hover:bg-amber-100"
             onClick={() => {
-              navigate("/");
-              logEvent("explore_click", {page: "Invite Page", user: displayName || "Guest"});
+              navigate('/');
+              logEvent('explore_click', {page: 'Invite Page', user: displayName || 'Guest'});
             }}
           >
             Explore →
           </span>
         </Box>
         <img
-          src={floralBottomRight}
+          src={floralTopLeft}
           alt="Floral Decoration"
-          className="absolute w-1/2 right-0 bottom-0 rounded-br-3xl -z-1"
+          className="absolute w-1/2 right-0 bottom-0 rounded-br-3xl -z-1 rotate-180"
+          loading="lazy"
         />
       </Box>
+      <Box className="-mt-10">
+        <CoupleInfo />
+      </Box>
+
+      <Box className="flex justify-center mb-8">
+        <span
+          className="mt-8 hover:cursor-pointer hover:text-gray-500 text-gray-400  px-28 py-6 border rounded-2xl hover:bg-amber-100 text-2xl flex justify-center items-center gap-2"
+          onClick={() => {
+            navigate('/');
+            logEvent('explore_click', {page: 'Invite Page', user: displayName || 'Guest'});
+          }}
+        >
+          Explore <MoveRight />
+        </span>
+      </Box>
+      <SignOff />
       <Box className="text-center mt-8">
         <Hashtag />
       </Box>
