@@ -68,7 +68,7 @@ const EventCard = ({name, image, quote, info, eventImage, date, time, dressCode,
         <div className={clsx('flex flex-col md:flex-row gap-8 w-full')}>
           {/* Image on left for desktop, top for mobile */}
           <div className="w-full md:w-1/2 flex justify-center items-center mb-4 md:mb-0">
-            <img src={eventImage} alt={name} className="rounded-2xl h-[300px] w-full" loading="lazy" />
+            <img src={eventImage} alt={name} className="rounded-2xl h-[200px] md:h-[300px] w-full" loading="lazy" />
           </div>
           {/* Content on right for desktop, below for mobile */}
           <div className="flex flex-col items-start w-full md:w-1/2">
