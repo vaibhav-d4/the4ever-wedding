@@ -1,13 +1,13 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect} from 'react';
 
 const COLORS = [
-  "rgba(173, 216, 230, 0.35)", // light blue
-  "rgba(179, 229, 252, 0.25)", // lighter blue
-  "rgba(255, 182, 193, 0.22)", // light pink
-  "rgba(221, 160, 221, 0.18)", // light purple
-  "rgba(224, 247, 250, 0.30)" // very light blue
+  'rgba(173, 216, 230, 0.35)', // light blue
+  'rgba(179, 229, 252, 0.25)', // lighter blue
+  'rgba(255, 182, 193, 0.22)', // light pink
+  'rgba(221, 160, 221, 0.18)', // light purple
+  'rgba(224, 247, 250, 0.30)' // very light blue
 ];
-const SHAPE_COUNT = 50; // fewer shapes overall
+const SHAPE_COUNT = 75; // fewer shapes overall
 const MIN_RADIUS = 18;
 const MAX_RADIUS = 48;
 const MIN_SPEED = 0.5;
@@ -36,7 +36,7 @@ const AnimatedBackground: React.FC = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const resize = () => {
@@ -44,7 +44,7 @@ const AnimatedBackground: React.FC = () => {
       canvas.height = window.innerHeight;
     };
     resize();
-    window.addEventListener("resize", resize);
+    window.addEventListener('resize', resize);
 
     // Initialize shapes (bubbles and hearts)
     shapes.current = Array.from({length: SHAPE_COUNT}, () => {
@@ -115,7 +115,7 @@ const AnimatedBackground: React.FC = () => {
     };
     animate();
     return () => {
-      window.removeEventListener("resize", resize);
+      window.removeEventListener('resize', resize);
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
   }, []);
@@ -124,14 +124,14 @@ const AnimatedBackground: React.FC = () => {
     <canvas
       ref={canvasRef}
       style={{
-        position: "fixed",
+        position: 'fixed',
         top: 0,
         left: 0,
-        width: "100vw",
-        height: "100vh",
+        width: '100vw',
+        height: '100vh',
         zIndex: -1,
-        pointerEvents: "none",
-        transition: "background 1s"
+        pointerEvents: 'none',
+        transition: 'background 1s'
       }}
     />
   );

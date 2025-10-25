@@ -1,26 +1,15 @@
 import React from 'react';
-// import {Heart} from "lucide-react";
 import {Box} from '@mui/material';
-import image1 from '../assets/couple/image-1.jpg';
-import image2 from '../assets/couple/image-2.jpg';
-import image3 from '../assets/couple/image-3.jpg';
-import image4 from '../assets/couple/image-4.jpg';
-import image5 from '../assets/couple/image-1.jpg';
 import lightBgFloral from '@assets/common/single-black-floral-moments.svg';
-import GradientDivider from './GradientDivider';
+// import GradientDivider from './GradientDivider';
 import clsx from 'clsx';
-
-const images = [image1, image2, image3, image4, image5];
+import {GALLERY_IMAGES} from '@utils/constants';
 
 const CapturedMoments: React.FC = () => {
   return (
-    <div className="px-4 relative mb-32">
-      <GradientDivider title="Moments" className="text-5xl lg:text-7xl font-malarkey" />
-      <Box className="flex justify-center items-center mb-8">
-        {/* <Heart size={72} strokeWidth={1} className="text-primary" /> */}
-      </Box>
-      {/* Divider with heart */}
-      <div
+    <Box className="px-4 relative mb-32">
+      {/* <GradientDivider title="Snaps" className="text-5xl lg:text-7xl font-malarkey" /> */}
+      <Box
         className={clsx(
           `max-w-[1240px] mx-auto my-10 relative z-[1]`,
           'flex flex-col gap-6',
@@ -30,17 +19,17 @@ const CapturedMoments: React.FC = () => {
         {/* Sweet Text */}
         <GridCornerText text="Sweet..." position="top-left" className="" />
         {/* First image (spans 2 rows in grid, normal in flex) */}
-        <GridSideImage imgSrc={images[0]} position="left" className="" />
+        <GridSideImage imgSrc={GALLERY_IMAGES[0]} position="left" className="" />
         {/* Second column images */}
-        <GridCenterImage imgSrc={images[3]} position="top" className="" />
-        <GridCenterImage imgSrc={images[2]} position="center" className="" />
-        <GridCenterImage imgSrc={images[3]} position="bottom" className="" />
+        <GridCenterImage imgSrc={GALLERY_IMAGES[1]} position="top" className="" />
+        <GridCenterImage imgSrc={GALLERY_IMAGES[2]} position="center" className="" />
+        <GridCenterImage imgSrc={GALLERY_IMAGES[3]} position="bottom" className="" />
         {/* Third column image (spans 2 rows in grid, normal in flex) */}
-        <GridSideImage imgSrc={images[1]} position="right" className="" />
+        <GridSideImage imgSrc={GALLERY_IMAGES[4]} position="right" className="" />
         {/* Memories Text */}
         <GridCornerText text="Memories..." position="bottom-right" className="" />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

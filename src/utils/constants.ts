@@ -4,6 +4,11 @@ import haldiImage from '@assets/events/haldi-temp-1.jpg';
 import garbaImage from '@assets/events/sangeet-temp-1.jpg';
 import weddingImage from '@assets/events/wedding-temp-1.jpg';
 import coupleLogo from '@assets/couple/couple-info-logo-bg-floral.svg';
+import {default as galleryImg1} from '@assets/couple/left-1.jpg';
+import {default as galleryImg2} from '@assets/couple/mid-1.jpg';
+import {default as galleryImg3} from '@assets/couple/mid-2.jpeg';
+import {default as galleryImg4} from '@assets/couple/mid-3.jpg';
+import {default as galleryImg5} from '@assets/couple/right-1.jpg';
 
 export const WEDDING_DATE = import.meta.env.VITE_WEDDING_DATE || '08-Feb-2026 06:00:00';
 // export const WEDDING_DATE = '08-Feb-2026 06:00:00';
@@ -67,7 +72,7 @@ export const WEDDING_EVENTS = [
 ];
 
 export const THE_COUPLE_INFO = {
-  title: 'The Couple',
+  title: 'Couple',
   subtitle: '💍 Meet the Bride & Groom',
   couple_tagline: 'Two hearts, two personalities - perfectly balanced.',
   couple_description:
@@ -93,6 +98,13 @@ export const THE_COUPLE_INFO = {
     description:
       "With a heart as tender as her smile, Yesha carries an aura of grace that softens every moment around her. Her laughter feels like sunshine - bright, pure, and full of warmth. She believes in love that's gentle yet powerful, finding beauty in every emotion and meaning in every connection. Her compassion, charm, and quiet strength make her the soul of every story she's part of."
   }
+};
+
+export const GALLERY_IMAGES = [galleryImg1, galleryImg2, galleryImg3, galleryImg4, galleryImg5];
+
+export const QUOTE_INFO = {
+  text: 'You are my today and All of my tomorrows.',
+  author: 'Leo Christopher'
 };
 
 export const MENU_ITEMS = [

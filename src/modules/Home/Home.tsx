@@ -13,6 +13,7 @@ import {Fade} from '@mui/material';
 import {useInView} from '@utils/hooks/useInView';
 import moment from 'moment';
 import CoupleInfo from '@components/CoupleInfo';
+import Quote from '@components/Quote';
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -26,6 +27,7 @@ const Home = () => {
   const [dividerRef, dividerInView] = useInView({threshold: 0.1});
   const [momentsRef, momentsInView] = useInView({threshold: 0.1});
   const [coupleInfoRef, coupleInfoInView] = useInView({threshold: 0.1});
+  const [quoteRef, quoteInView] = useInView({threshold: 0.1});
   const [signOffRef, signOffInView] = useInView({threshold: 0.1});
 
   useEffect(() => {
@@ -71,6 +73,11 @@ const Home = () => {
           <Fade in={coupleInfoInView} timeout={1000}>
             <div ref={coupleInfoRef}>
               <CoupleInfo />
+            </div>
+          </Fade>
+          <Fade in={quoteInView} timeout={1000}>
+            <div ref={quoteRef}>
+              <Quote />
             </div>
           </Fade>
           <Fade in={momentsInView} timeout={1000}>

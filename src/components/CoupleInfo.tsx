@@ -20,7 +20,7 @@ const CoupleInfo: React.FC = () => {
         {/* Use single column on small screens and grid layout on md+ */}
         <Box className="grid grid-cols-1 md:grid-cols-5 grid-rows-auto md:grid-rows-5 gap-6 md:gap-0 relative">
           {/* Bride block - centered on mobile, positioned on md+ */}
-          <Box className="md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-3 pr-4 md:pr-20 z-10 text-center md:text-left bg-amber-100 p-6 rounded-4xl">
+          <Box className="md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-3 pr-4 md:pr-20 z-10 text-center md:text-left bg-amber-100/50 backdrop-blur-xs p-6 rounded-4xl">
             <span className="text-6xl m-3 block font-malarkey">{THE_COUPLE_INFO.bride.name}</span>
             <span className="text-md block text-wedding-blue-500">{THE_COUPLE_INFO.bride.tagline}</span>
             <p className="mt-3 text-sm">{THE_COUPLE_INFO.bride.description}</p>
@@ -37,7 +37,7 @@ const CoupleInfo: React.FC = () => {
           </Box>
 
           {/* Groom block - centered on mobile, positioned on md+ */}
-          <Box className="md:col-start-4 md:col-end-6 md:row-start-4 md:row-end-6 pl-4 md:pl-20 text-center md:text-right z-10 bg-amber-100 p-6 rounded-4xl">
+          <Box className="md:col-start-4 md:col-end-6 md:row-start-4 md:row-end-6 pl-4 md:pl-20 text-center md:text-right z-10 bg-amber-100/50 backdrop-blur-xs p-6 rounded-4xl">
             <span className="text-6xl m-3 block font-malarkey">{THE_COUPLE_INFO.groom.name}</span>
             <span className="text-md block text-wedding-blue-500">{THE_COUPLE_INFO.groom.tagline}</span>
             <p className="mt-3 text-sm">{THE_COUPLE_INFO.groom.description}</p>
