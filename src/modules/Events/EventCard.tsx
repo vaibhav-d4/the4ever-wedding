@@ -1,9 +1,9 @@
-import {useState} from "react";
-import {Box, Fade} from "@mui/material";
-import {BACKDROP_BLUR} from "@utils/constants";
-import {useInView} from "@utils/hooks/useInView";
-import EventDetailsModal from "@components/EventDetailsModal";
-import clsx from "clsx";
+import {useState} from 'react';
+import {Box, Fade} from '@mui/material';
+import {BACKDROP_BLUR} from '@utils/constants';
+import {useInView} from '@utils/hooks/useInView';
+import EventDetailsModal from '@components/EventDetailsModal';
+import clsx from 'clsx';
 
 interface EventCardProps {
   name: string;
@@ -11,12 +11,16 @@ interface EventCardProps {
   eventImage: string;
   quote: string;
   info: string;
+  date: string;
+  time: string;
+  dressCode: string;
+  description: string;
 }
 
-const CARD_MAX_WIDTH = 395;
-const IMAGE_HEIGHT = 200;
+const CARD_MAX_WIDTH = 400;
+const IMAGE_HEIGHT = 220;
 
-const EventCard = ({name, image, quote, info, eventImage}: EventCardProps) => {
+const EventCard = ({name, image, quote, info, eventImage, date, time, dressCode, description}: EventCardProps) => {
   const [ref, inView] = useInView({threshold: 0.1});
   const [open, setOpen] = useState(false);
 
@@ -33,27 +37,25 @@ const EventCard = ({name, image, quote, info, eventImage}: EventCardProps) => {
               minWidth: 0
             }}
             className={clsx(
-              "shadow-2xl flex flex-col transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl rounded-2xl bg-white/40 hover:cursor-pointer w-full",
+              'shadow-2xl flex flex-col transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl rounded-2xl bg-white/40 hover:cursor-pointer w-full',
               `${BACKDROP_BLUR}`
             )}
             onClick={handleOpen}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") handleOpen();
+              if (e.key === 'Enter' || e.key === ' ') handleOpen();
             }}
           >
             <img
               src={image}
               alt={name}
               style={{
-                height: IMAGE_HEIGHT,
-                objectFit: "cover",
-                objectPosition: "top"
+                height: IMAGE_HEIGHT
               }}
               className="object-cover object-top transition-transform duration-300 ease-in-out group-hover:scale-110 rounded-t-2xl w-full"
             />
-            <Box className="m-4 mt-6 tracking-wide flex flex-col gap-2">
+            <Box className="m-4 tracking-wide flex flex-col gap-2">
               <Box className="font-semibold text-3xl mb-1 font-alice-regular text-black/80">{name}</Box>
               <Box className="font-great-vibes text-2xl text-primary tracking-wider mb-1">"{quote}"</Box>
               <Box className="text-sm text-gray-500 font-brandon-regular">{info}</Box>
@@ -62,26 +64,37 @@ const EventCard = ({name, image, quote, info, eventImage}: EventCardProps) => {
           </Box>
         </div>
       </Fade>
-      <EventDetailsModal open={open} onClose={handleClose} maxWidth={700}>
-        <div className={clsx("flex flex-col md:flex-row items-center gap-8 w-full")}>
+      <EventDetailsModal open={open} onClose={handleClose} maxWidth={900}>
+        <div className={clsx('flex flex-col md:flex-row gap-8 w-full')}>
           {/* Image on left for desktop, top for mobile */}
           <div className="w-full md:w-1/2 flex justify-center items-center mb-4 md:mb-0">
-            <img
-              src={eventImage}
-              alt={name}
-              className="rounded-2xl  w-full max-w-xs md:max-w-full object-cover object-center"
-              loading="lazy"
-            />
+            <img src={eventImage} alt={name} className="rounded-2xl h-[300px] w-full" loading="lazy" />
           </div>
           {/* Content on right for desktop, below for mobile */}
-          <div className="flex flex-col items-center md:items-start w-full md:w-1/2">
-            <div className="font-semibold text-3xl mb-2 font-alice-regular text-black/90 text-center md:text-left">
-              {name}
+          <div className="flex flex-col items-start w-full md:w-1/2">
+            <div className="text-center  w-full">
+              <div className="font-semibold text-2xl mb-2 font-alice-regular text-black/90 md:text-left">{name}</div>
+              <div className="font-great-vibes text-xl text-primary tracking-wider mb-3 md:text-left">"{quote}"</div>
             </div>
-            <div className="font-great-vibes text-2xl text-primary tracking-wider mb-3 text-center md:text-left">
-              "{quote}"
+            <br />
+
+            <div>
+              <span className="font-semibold">Date: </span>
+              <span>{date}</span>
             </div>
-            <div className="text-base text-gray-700 font-brandon-regular text-center md:text-left">{info}</div>
+            <br />
+            <div>
+              <span className="font-semibold">Time: </span>
+
+              <span className="whitespace-pre-line">{time}</span>
+            </div>
+            <br />
+            <div>
+              <span className="font-semibold">Dress Code: </span>
+              <span>{dressCode}</span>
+            </div>
+            <br />
+            <div className="font-caveat text-2xl">{description}</div>
           </div>
         </div>
       </EventDetailsModal>

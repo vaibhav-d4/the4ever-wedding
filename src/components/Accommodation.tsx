@@ -1,6 +1,22 @@
 import React from 'react';
 import {Box, Grid} from '@mui/material';
-import {ACCOMMODATION_INFO} from '@utils/constants';
+import {ACCOMMODATION_INFO, LOCATION_FULL_NAME, LOCATION_GOOGLE_LINK, LOCATION_NAME} from '@utils/constants';
+import {MapPin} from 'lucide-react';
+
+// Helper to render the description while highlighting LOCATION_NAME occurrences
+const renderWithHighlight = (text: string) => {
+  if (!text || !LOCATION_NAME) return text;
+  return text.split(LOCATION_NAME).flatMap((part, i, arr) =>
+    i === arr.length - 1
+      ? [part]
+      : [
+          part,
+          <span key={i} className="text-wedding-blue-500">
+            {LOCATION_NAME}
+          </span>
+        ]
+  );
+};
 
 const Accommodation: React.FC = () => {
   return (
@@ -14,7 +30,7 @@ const Accommodation: React.FC = () => {
           <Grid size={{xs: 12, sm: 6, md: 4}} key={event.id} sx={{display: 'flex', justifyContent: 'center'}}>
             <Box className="border rounded-lg p-6 shadow-2xl max-w-md bg-white/10 backdrop-blur-sm">
               <h2 className="text-2xl font-brandon-bold mb-4 font-semibold">{event.title}</h2>
-              <p className="text-base font-brandon-regular">{event.description}</p>
+              <p className="text-base font-brandon-regular">{renderWithHighlight(event.description)}</p>
             </Box>
           </Grid>
         ))}
@@ -23,6 +39,28 @@ const Accommodation: React.FC = () => {
           <Grid size={{md: 4}} sx={{display: {xs: 'none', md: 'block', lg: 'none'}}} />
         )}
       </Grid>
+      <Box className="flex justify-center">
+        <Box
+          className="mt-12 text-center cursor-pointer max-w-fit p-2"
+          onClick={() => window.open(LOCATION_GOOGLE_LINK, '_blank')}
+          title="View location"
+        >
+          <span className="inline-block align-middle">
+            <MapPin />
+          </span>
+          <span className="text-xl ml-2 inline-block align-middle underline decoration-dotted">
+            {LOCATION_FULL_NAME}
+          </span>
+          <span className="block text-xs text-gray-500 mt-1 ">View the venue on Google Maps</span>
+        </Box>
+      </Box>
+
+      <Box className="my-20 flex flex-col items-center gap-10 px-4">
+        <Box className="text-3xl text-center">
+          Together with our families, we invite you to our wedding celebration 💝
+        </Box>
+        <Box className="text-5xl text-center">Thank You!</Box>
+      </Box>
     </Box>
   );
 };

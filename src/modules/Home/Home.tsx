@@ -87,16 +87,20 @@ const Home = () => {
               <CapturedMoments />
             </div>
           </Fade> */}
-          <Fade in={divider1InView} timeout={1000}>
-            <div ref={divider1Ref}>
-              <GradientDivider />
-            </div>
-          </Fade>
-          <Fade in={accommodationInView} timeout={1000}>
-            <div ref={accommodationRef}>
-              <Accommodation />
-            </div>
-          </Fade>
+          {!isDateElapsed && (
+            <>
+              <Fade in={divider1InView} timeout={1000}>
+                <div ref={divider1Ref}>
+                  <GradientDivider />
+                </div>
+              </Fade>
+              <Fade in={accommodationInView} timeout={1000}>
+                <div ref={accommodationRef}>
+                  <Accommodation />
+                </div>
+              </Fade>
+            </>
+          )}
           <Fade in={divider2InView} timeout={1000}>
             <div ref={divider2Ref}>
               <GradientDivider />

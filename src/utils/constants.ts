@@ -1,18 +1,20 @@
 import logo from '@assets/logo/vy-logo-blue-bg-t.svg';
 import loaderLogo from '@assets/logo/loader-logo.svg';
-import haldiImage from '@assets/events/haldi-temp-1.jpg';
-import garbaImage from '@assets/events/sangeet-temp-1.jpg';
-import weddingImage from '@assets/events/wedding-temp-1.jpg';
-// import coupleLogo from '@assets/couple/couple-info-logo-bg-floral.svg';
+import haldiMainImg from '@assets/events/haldi-main-1.svg';
+import haldiEventImg from '@assets/events/haldi-event-1.svg';
+import garbaMainImg from '@assets/events/garba-main-1.svg';
+import weddingEventImg from '@assets/events/wedding-event-1.svg';
+import weddingMainImg from '@assets/events/wedding-main-1.svg';
+import garbaEventImg from '@assets/events/garba-event-1.svg';
 import coupleLogo from '@assets/couple/couple-info-2.svg';
-import {default as galleryImg1} from '@assets/couple/left-1.jpg';
-import {default as galleryImg2} from '@assets/couple/mid-1.jpg';
-import {default as galleryImg3} from '@assets/couple/mid-2.jpeg';
-import {default as galleryImg4} from '@assets/couple/mid-3.jpg';
-import {default as galleryImg5} from '@assets/couple/right-1.jpg';
+import galleryImg1 from '@assets/couple/left-1.jpg';
+import galleryImg2 from '@assets/couple/mid-1.jpg';
+import galleryImg3 from '@assets/couple/mid-2.jpeg';
+import galleryImg4 from '@assets/couple/mid-3.jpg';
+import galleryImg5 from '@assets/couple/right-1.jpg';
 
 export const WEDDING_DATE = import.meta.env.VITE_WEDDING_DATE || '08-Feb-2026 06:00:00';
-// export const WEDDING_DATE = '08-Feb-2026 06:00:00';
+// export const WEDDING_DATE = '08-Feb-2025 06:00:00';
 
 export const WEBSITE_TYPES = [
   {label: 'Website 1', value: 1},
@@ -48,27 +50,40 @@ export const CALENDAR_INVITE_LINK = import.meta.env.VITE_CALENDAR_INVITE_LINK;
 
 export const WEDDING_EVENTS = [
   {
-    name: 'Haldi',
-    image:
-      'https://plus.unsplash.com/premium_photo-1670524465634-93cf255ffa8b?q=80&w=1154&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    // image: haldiImage,
-    eventImage: haldiImage,
+    name: '✨ Haldi Ceremony',
+    image: haldiMainImg,
+    eventImage: haldiEventImg,
     quote: 'Let the yellow shine and the love bloom.',
-    info: 'Haldi ceremony marks the beginning of the wedding festivities, bringing joy and blessings.'
+    info: 'Haldi ceremony marks the beginning of the wedding festivities, bringing joy and blessings.',
+    date: '7th February 2026',
+    time: '1 PM onwards (followed by lunch)',
+    dressCode: 'Bright yellow & floral',
+    description:
+      "Let's kick off the celebrations with sunshine, smiles, and a splash of color. Join us for a joyful afternoon as we celebrate love and laughter amidst the glow of haldi and blooming hues."
   },
   {
-    name: 'Garba Night',
-    image: 'https://i.pinimg.com/1200x/71/d4/f6/71d4f6612bd4d471bdcc184ddbd1a0f2.jpg',
-    eventImage: garbaImage,
+    name: '💍 Ring Ceremony & Garba Night',
+    image: garbaMainImg,
+    eventImage: garbaEventImg,
     quote: 'Dance to the rhythm of love and tradition.',
-    info: 'A night of music, dance, and celebration with family and friends, making memories that last forever.'
+    info: 'A night of music, dance, and celebration with family and friends, making memories that last forever.',
+    date: '7th February 2026',
+    time: '7 PM onwards — Ring Ceremony, followed by Garba Night and Dinner',
+    dressCode: 'Indo-Western multicolor glam',
+    description:
+      'An evening of sparkle and celebration awaits! Celebrate love and tradition as we exchange rings and dance the night away in vibrant hues and festive beats.'
   },
   {
-    name: 'Wedding & Reception',
-    image: 'https://i.pinimg.com/1200x/d1/a6/73/d1a6732c996fe5ccb2eb7ecfd2ac38fb.jpg',
-    eventImage: weddingImage,
+    name: '💫 Wedding & Reception',
+    image: weddingMainImg,
+    eventImage: weddingEventImg,
     quote: 'Two souls, one journey, endless love.',
-    info: 'The grand wedding and reception, where we begin our new chapter together.'
+    info: 'The grand wedding and reception, where we begin our new chapter together.',
+    date: '8th February 2026',
+    time: '11 AM - Baarat Aagman\n12 PM - Wedding Ceremony\n1:30 PM - Reception\n',
+    dressCode: 'Elegant & pastel shades of Indian attire',
+    description:
+      'A day of love, vows, and togetherness. Join us as we tie the knot in an elegant wedding ceremony, followed by a graceful reception to celebrate the start of our forever.'
   }
 ];
 
