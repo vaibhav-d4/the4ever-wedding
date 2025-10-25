@@ -76,25 +76,20 @@ const EventCard = ({name, image, quote, info, eventImage, date, time, dressCode,
               <div className="font-semibold text-2xl mb-2 font-alice-regular text-black/90 md:text-left">{name}</div>
               <div className="font-great-vibes text-xl text-primary tracking-wider mb-3 md:text-left">"{quote}"</div>
             </div>
-            <br />
-
             <div>
               <span className="font-semibold">Date: </span>
               <span>{date}</span>
             </div>
-            <br />
             <div>
               <span className="font-semibold">Time: </span>
 
               <span className="whitespace-pre-line">{time}</span>
             </div>
-            <br />
             <div>
               <span className="font-semibold">Dress Code: </span>
               <span>{dressCode}</span>
             </div>
-            <br />
-            <div className="font-caveat text-2xl">{description}</div>
+            <div className="font-caveat text-xl mt-3">{description}</div>
           </div>
         </div>
       </EventDetailsModal>
