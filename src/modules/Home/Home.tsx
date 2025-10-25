@@ -1,17 +1,18 @@
-import {useEffect, useState} from "react";
-import {useAppDispatch} from "@utils/redux/hooks";
-import {LOGO_TIMEOUT, CONTENT_MOUNT_TIMEOUT, WEDDING_DATE} from "@utils/constants";
-import {setLoadingState} from "@utils/redux/commonSlice";
-import {ContentLoader, LogoLoader} from "@modules/Loaders";
-import {Hero} from "@modules/Hero";
-import {Box} from "@mui/material";
-import {Events} from "@modules/Events";
-import {GradientDivider} from "@components/index";
-import CapturedMoments from "@components/CapturedMoments";
-import {SignOff} from "@modules/SignOff";
-import {Fade} from "@mui/material";
-import {useInView} from "@utils/hooks/useInView";
-import moment from "moment";
+import {useEffect, useState} from 'react';
+import {useAppDispatch} from '@utils/redux/hooks';
+import {LOGO_TIMEOUT, CONTENT_MOUNT_TIMEOUT, WEDDING_DATE} from '@utils/constants';
+import {setLoadingState} from '@utils/redux/commonSlice';
+import {ContentLoader, LogoLoader} from '@modules/Loaders';
+import {Hero} from '@modules/Hero';
+import {Box} from '@mui/material';
+import {Events} from '@modules/Events';
+import {GradientDivider} from '@components/index';
+import CapturedMoments from '@components/CapturedMoments';
+import {SignOff} from '@modules/SignOff';
+import {Fade} from '@mui/material';
+import {useInView} from '@utils/hooks/useInView';
+import moment from 'moment';
+import CoupleInfo from '@components/CoupleInfo';
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -23,19 +24,21 @@ const Home = () => {
   // Intersection observer refs and states for fade-in
   const [eventsRef, eventsInView] = useInView({threshold: 0.1});
   const [dividerRef, dividerInView] = useInView({threshold: 0.1});
+  const [momentsRef, momentsInView] = useInView({threshold: 0.1});
+  const [coupleInfoRef, coupleInfoInView] = useInView({threshold: 0.1});
   const [signOffRef, signOffInView] = useInView({threshold: 0.1});
 
   useEffect(() => {
     const handleLoad = () => {
       setPageLoaded(true);
     };
-    if (document.readyState === "complete") {
+    if (document.readyState === 'complete') {
       setPageLoaded(true);
     } else {
-      window.addEventListener("load", handleLoad);
+      window.addEventListener('load', handleLoad);
     }
     return () => {
-      window.removeEventListener("load", handleLoad);
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 
@@ -62,10 +65,19 @@ const Home = () => {
               <div ref={eventsRef}>
                 <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey" />
                 <Events />
-                <CapturedMoments />
               </div>
             </Fade>
           )}
+          <Fade in={coupleInfoInView} timeout={1000}>
+            <div ref={coupleInfoRef}>
+              <CoupleInfo />
+            </div>
+          </Fade>
+          <Fade in={momentsInView} timeout={1000}>
+            <div ref={momentsRef}>
+              <CapturedMoments />
+            </div>
+          </Fade>
           <Fade in={dividerInView} timeout={1000}>
             <div ref={dividerRef}>
               <GradientDivider />

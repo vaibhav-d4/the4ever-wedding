@@ -1,5 +1,5 @@
-import React from "react";
-import {Box} from "@mui/material";
+import React from 'react';
+import {Box} from '@mui/material';
 
 const GradientDivider = ({title, className}: {title?: React.ReactNode; className?: string}) => {
   return (

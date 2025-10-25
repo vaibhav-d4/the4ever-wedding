@@ -14,8 +14,8 @@ const images = [image1, image2, image3, image4, image5];
 
 const CapturedMoments: React.FC = () => {
   return (
-    <div className="px-4 relative my-32">
-      <GradientDivider title="Captured Moments" className="text-5xl lg:text-7xl font-malarkey" />
+    <div className="px-4 relative mb-32">
+      <GradientDivider title="Moments" className="text-5xl lg:text-7xl font-malarkey" />
       <Box className="flex justify-center items-center mb-8">
         {/* <Heart size={72} strokeWidth={1} className="text-primary" /> */}
       </Box>
