@@ -6,7 +6,7 @@ import GradientDivider from '@components/GradientDivider';
 
 const Events = () => {
   return (
-    <Box className="mt-50">
+    <Box className="mt-30">
       <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey" />
       <Box className="text-center text-2xl font-dancing-script my-10 px-4">
         Join us in celebrating these beautiful moments of love, tradition, and togetherness.

@@ -60,7 +60,7 @@ const Invite = () => {
         <Box className="text-center">
           {displayName && (
             <Box className="font-alice-regular text-2xl text-gray-700 mb-8 mt-20">
-              Dear <span className="font-dancing-script text-4xl text-primary">{startCase(displayName)}</span>
+              Dear <span className="font-malarkey text-5xl text-primary">{startCase(displayName)}</span>
             </Box>
           )}
 
@@ -68,9 +68,9 @@ const Invite = () => {
             Please join us for the wedding of
           </Box>
           <Box className="mb-8">
-            <span className="block font-malarkey text-7xl text-gray-800 mb-2">{YESHA}</span>
+            <span className="block font-amsterdam text-5xl text-gray-800/90 mb-4">{YESHA}</span>
             <span className="block font-parisienne text-5xl text-primary">&</span>
-            <span className="block font-malarkey text-7xl text-gray-800 mt-2">{VAIBHAV}</span>
+            <span className="block font-amsterdam text-5xl text-gray-800/90 mt-4">{VAIBHAV}</span>
           </Box>
           <Box className="text-center font-alice-regular mb-8">
             <Box className="text-xl text-gray-600 -mb-10">{weddingDay.toUpperCase()}</Box>
@@ -90,7 +90,7 @@ const Invite = () => {
             <span className="inline-block align-middle">
               <MapPin />
             </span>
-            <span className="text-xl ml-2 inline-block align-middle underline decoration-dotted">
+            <span className="text-xl ml-2 inline-block align-middle underline decoration-dotted text-gray-700">
               {LOCATION_FULL_NAME}
             </span>
             <span className="block text-xs text-gray-500 mt-1 ">View the venue on Google Maps</span>

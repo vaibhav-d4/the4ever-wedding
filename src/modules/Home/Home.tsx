@@ -64,6 +64,12 @@ const Home = () => {
       ) : (
         <ContentLoader>
           <Hero />
+
+          <Fade in={coupleInfoInView} timeout={1000}>
+            <div ref={coupleInfoRef}>
+              <CoupleInfo />
+            </div>
+          </Fade>
           {!isDateElapsed && (
             <Fade in={eventsInView} timeout={1000}>
               <div ref={eventsRef}>
@@ -71,11 +77,6 @@ const Home = () => {
               </div>
             </Fade>
           )}
-          <Fade in={coupleInfoInView} timeout={1000}>
-            <div ref={coupleInfoRef}>
-              <CoupleInfo />
-            </div>
-          </Fade>
           <Fade in={quoteInView} timeout={1000}>
             <div ref={quoteRef}>
               <Quote />
