@@ -86,7 +86,7 @@ export const THE_COUPLE_INFO = {
     motherName: 'Mrs. Neela Dholakia',
     tagline: "He's the strength behind every smile and the warmth in every moment.",
     description:
-      "A dreamer with a grounded heart, Vaibhav moves through life with purpose and passion. His presence brings comfort, his words carry sincerity, and his smile holds a quiet magic that makes everything feel lighter. Behind his calm confidence lies a heart that loves deeply and stands unwavering for those he cherishes. He's the steady rhythm to life's song — strong, kind, and endlessly devoted."
+      "Vaibhav is thoughtful, expressive, and endlessly caring. Known for overthinking every little detail (and making sure everything's just right!), he balances Yesha's calm with his lively curiosity. His big heart, sense of humor, and love for Yesha make him the perfect partner in every way."
   },
   bride: {
     name: YESHA,
@@ -96,7 +96,7 @@ export const THE_COUPLE_INFO = {
     motherName: 'Mrs. Bela Shah',
     tagline: "She's the calm in every chaos and the joy in every heartbeat.",
     description:
-      "With a heart as tender as her smile, Yesha carries an aura of grace that softens every moment around her. Her laughter feels like sunshine - bright, pure, and full of warmth. She believes in love that's gentle yet powerful, finding beauty in every emotion and meaning in every connection. Her compassion, charm, and quiet strength make her the soul of every story she's part of."
+      "Yesha is calm, kind, and full of warmth. Her gentle nature and easy smile bring peace wherever she goes. Always thoughtful and composed, she's the steady heartbeat in every storm — the kind of person who makes everyone feel at ease just by being around."
   }
 };
 

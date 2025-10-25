@@ -7,7 +7,7 @@ import {Hero} from '@modules/Hero';
 import {Box} from '@mui/material';
 import {Events} from '@modules/Events';
 import {GradientDivider} from '@components/index';
-import CapturedMoments from '@components/CapturedMoments';
+// import CapturedMoments from '@components/CapturedMoments';
 import {SignOff} from '@modules/SignOff';
 import {Fade} from '@mui/material';
 import {useInView} from '@utils/hooks/useInView';
@@ -27,7 +27,7 @@ const Home = () => {
   const [eventsRef, eventsInView] = useInView({threshold: 0.1});
   const [divider1Ref, divider1InView] = useInView({threshold: 0.1});
   const [divider2Ref, divider2InView] = useInView({threshold: 0.1});
-  const [momentsRef, momentsInView] = useInView({threshold: 0.1});
+  // const [momentsRef, momentsInView] = useInView({threshold: 0.1});
   const [coupleInfoRef, coupleInfoInView] = useInView({threshold: 0.1});
   const [quoteRef, quoteInView] = useInView({threshold: 0.1});
   const [accommodationRef, accommodationInView] = useInView({threshold: 0.1});
@@ -83,11 +83,11 @@ const Home = () => {
               <Quote />
             </div>
           </Fade>
-          <Fade in={momentsInView} timeout={1000}>
+          {/* <Fade in={momentsInView} timeout={1000}>
             <div ref={momentsRef}>
               <CapturedMoments />
             </div>
-          </Fade>
+          </Fade> */}
           <Fade in={divider1InView} timeout={1000}>
             <div ref={divider1Ref}>
               <GradientDivider />
