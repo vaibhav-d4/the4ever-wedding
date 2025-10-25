@@ -68,7 +68,6 @@ const Home = () => {
           {!isDateElapsed && (
             <Fade in={eventsInView} timeout={1000}>
               <div ref={eventsRef}>
-                <GradientDivider title="Events" className="text-5xl lg:text-7xl font-malarkey" />
                 <Events />
               </div>
             </Fade>
