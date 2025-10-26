@@ -63,7 +63,7 @@ const DateCountDown = ({
                   `${BACKDROP_BLUR}`
                 )}
               >
-                <Box className='text-4xl md:text-5xl lg:text-6xl font-alice-regular text-primary font-bold leading-none'>
+                <Box className='text-5xl lg:text-6xl font-alice-regular text-primary font-bold leading-none'>
                   {value}
                 </Box>
                 <Box className='text-xs md:text-base lg:text-lg text-black/80 font-bold mt-2 uppercase tracking-wider'>
