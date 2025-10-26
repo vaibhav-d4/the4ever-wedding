@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
-import {Box, Grid, Fade} from '@mui/material';
+import { useEffect, useState } from 'react';
+import { Box, Grid, Fade } from '@mui/material';
 import {
   CALENDAR_INVITE_LINK,
   HASHTAG,
@@ -10,26 +10,26 @@ import {
   VAIBHAV,
   WEDDING_DATE,
   YESHA,
-  YESHA_AND_VAIBHAV
+  YESHA_AND_VAIBHAV,
 } from '@utils/constants';
-import {useAppDispatch, useAppSelector} from '@utils/redux/hooks';
-import {format} from 'date-fns';
-import {toUpper as _toUpper} from 'lodash';
-import {setWebsiteTypeId} from '@utils/redux/commonSlice';
+import { useAppDispatch, useAppSelector } from '@utils/redux/hooks';
+import { format } from 'date-fns';
+import { toUpper as _toUpper } from 'lodash';
+import { setWebsiteTypeId } from '@utils/redux/commonSlice';
 import moment from 'moment';
-import {useCountdown} from '@utils/hooks/useCountdown';
+import { useCountdown } from '@utils/hooks/useCountdown';
 import DateCountDown from '@components/DateCountDown';
-import {Calendar, MapPin} from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 import clsx from 'clsx';
-import {logCalendarClick} from '@utils/analytics';
+import { logCalendarClick } from '@utils/analytics';
 
 interface HeroProps {
   onFadeInComplete?: () => void;
 }
 
-const Hero = ({onFadeInComplete}: HeroProps) => {
+const Hero = ({ onFadeInComplete }: HeroProps) => {
   const dispatch = useAppDispatch();
-  const {websiteTypeId} = useAppSelector((state) => state.common);
+  const { websiteTypeId } = useAppSelector((state) => state.common);
 
   const weddingDate = moment(WEDDING_DATE).toDate();
   const isDateElapsed = moment() > moment(weddingDate);
@@ -64,16 +64,30 @@ const Hero = ({onFadeInComplete}: HeroProps) => {
 
   const MainContent = (
     <Box>
-      <Box className={clsx('px-4 flex justify-center items-center', 'mt-8 md:mt-28')}>
-        <Grid container spacing={1} className="w-full" sx={{maxWidth: MAX_WIDTH}}>
-          <Grid size={{xs: 12, md: 6}}>
-            <Box className="flex justify-center items-center h-full">
+      <Box
+        className={clsx(
+          'px-4 flex justify-center items-center',
+          'mt-8 md:mt-28'
+        )}
+      >
+        <Grid
+          container
+          spacing={1}
+          className='w-full'
+          sx={{ maxWidth: MAX_WIDTH }}
+        >
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box className='flex justify-center items-center h-full'>
               <Fade in={showLogo} timeout={1000}>
-                <img src={MAIN_LOGO_IMAGE} alt="logo-image" className="h-8/12" />
+                <img
+                  src={MAIN_LOGO_IMAGE}
+                  alt='logo-image'
+                  className='h-8/12'
+                />
               </Fade>
             </Box>
           </Grid>
-          <Grid size={{xs: 12, md: 6}}>
+          <Grid size={{ xs: 12, md: 6 }}>
             {!isDateElapsed ? (
               <ContentBeforeDateElapsed onFadeInComplete={onFadeInComplete} />
             ) : (
@@ -84,7 +98,9 @@ const Hero = ({onFadeInComplete}: HeroProps) => {
       </Box>
       {!isDateElapsed && (
         <Fade in={showText} timeout={1000}>
-          <Box className="mt-12 text-2xl text-center">Counting down to our happily ever after ✨</Box>
+          <Box className='mt-12 text-2xl text-center'>
+            Counting down to our happily ever after ✨
+          </Box>
         </Fade>
       )}
     </Box>
@@ -110,35 +126,46 @@ const Hero = ({onFadeInComplete}: HeroProps) => {
 export default Hero;
 
 const ContentAfterDateElapsed = () => (
-  <Box className="mx-auto py-6">
-    <div className="text-center space-y-8">
-      <div className="space-y-6">
-        <p className="text-2xl text-primary font-alice-regular">
+  <Box className='mx-auto py-6'>
+    <div className='text-center space-y-8'>
+      <div className='space-y-6'>
+        <p className='text-2xl text-primary font-alice-regular'>
           Our hearts are overflowing with joy and gratitude! ✨
         </p>
-        <div className="font-dancing-script text-2xl text-gray-800/90 leading-snug">
-          <p className="">
-            Thank you for being part of our magical day and for filling it with your love, laughter, and warmth. Every
-            smile, every hug, and every moment shared has been etched in our hearts forever. Your presence made our
-            celebration truly extraordinary, and we couldn't have imagined a more perfect beginning to our forever.
+        <div className='font-dancing-script text-2xl text-gray-800/90 leading-snug'>
+          <p className=''>
+            Thank you for being part of our magical day and for filling it with
+            your love, laughter, and warmth. Every smile, every hug, and every
+            moment shared has been etched in our hearts forever. Your presence
+            made our celebration truly extraordinary, and we couldn't have
+            imagined a more perfect beginning to our forever.
           </p>
           <br />
-          <p className="">
-            From the dance floor shenanigans to the heartfelt toasts, you've helped create memories that we'll cherish
-            for a lifetime. We feel incredibly blessed to have such wonderful people in our lives! 🥂
+          <p className=''>
+            From the dance floor shenanigans to the heartfelt toasts, you've
+            helped create memories that we'll cherish for a lifetime. We feel
+            incredibly blessed to have such wonderful people in our lives! 🥂
           </p>
         </div>
       </div>
 
-      <div className="">
-        <p className="text-xl mb-2 font-alice-regular text-gray-900/70">With endless love & gratitude,</p>
-        <p className="py-6 text-2xl text-primary font-amsterdam">{YESHA_AND_VAIBHAV}</p>
+      <div className=''>
+        <p className='text-xl mb-2 font-alice-regular text-gray-900/70'>
+          With endless love & gratitude,
+        </p>
+        <p className='py-6 text-2xl text-primary font-amsterdam'>
+          {YESHA_AND_VAIBHAV}
+        </p>
       </div>
     </div>
   </Box>
 );
 
-const ContentBeforeDateElapsed = ({onFadeInComplete}: {onFadeInComplete?: () => void}) => {
+const ContentBeforeDateElapsed = ({
+  onFadeInComplete,
+}: {
+  onFadeInComplete?: () => void;
+}) => {
   const weddingDate = moment(WEDDING_DATE).toDate();
 
   const [months, days, hours, minutes, seconds] = useCountdown(weddingDate);
@@ -159,51 +186,66 @@ const ContentBeforeDateElapsed = ({onFadeInComplete}: {onFadeInComplete?: () => 
   }, [onFadeInComplete]);
 
   return (
-    <Box className="h-full text-center flex flex-col justify-center items-center gap-2">
+    <Box className='h-full text-center flex flex-col justify-center items-center gap-2'>
       <Fade in={showText} timeout={1000}>
-        <Box className="text-xl text-black/80">WE'RE GETTING MARRIED</Box>
+        <Box className='text-xl text-black/80'>WE'RE GETTING MARRIED</Box>
       </Fade>
       <Fade in={showText} timeout={1000}>
-        <Box className="font-alice-regular mt-4 text-4xl md:text-5xl lg:text-6xl">
-          {YESHA} <span className="text-primary">&</span> {VAIBHAV}
+        <Box className='font-alice-regular mt-4 text-4xl md:text-5xl lg:text-6xl'>
+          {YESHA} <span className='text-primary'>&</span> {VAIBHAV}
         </Box>
       </Fade>
       {/* COUNTDOWN */}
       <Fade in={showCountdown} timeout={1000}>
-        <Box className="mt-4 w-full">
-          <DateCountDown months={months} days={days} hours={hours} minutes={minutes} seconds={seconds} />
+        <Box className='mt-4 w-full'>
+          <DateCountDown
+            months={months}
+            days={days}
+            hours={hours}
+            minutes={minutes}
+            seconds={seconds}
+          />
         </Box>
       </Fade>
       {/* DATE AND PLACE - Responsive layout */}
       <Fade in={showCalendarLocation} timeout={1000}>
-        <Box className="mt-12 w-full flex flex-col lg:flex-row lg:items-center lg:justify-around">
+        <Box className='mt-12 w-full flex flex-col lg:flex-row lg:items-center lg:justify-around'>
           <Box
-            className="inline-block cursor-pointer px-2 py-1"
+            className='inline-block cursor-pointer px-2 py-1'
             onClick={() => {
               window.open(CALENDAR_INVITE_LINK, '_blank');
               logCalendarClick();
             }}
-            title="Click to add this event to your calendar"
+            title='Click to add this event to your calendar'
           >
-            <span className="inline-block align-middle">
-              <Calendar className="" />
+            <span className='inline-block align-middle'>
+              <Calendar className='' />
             </span>
-            <span className="ml-2 text-xl inline-block align-middle underline decoration-dotted ">
+            <span className='ml-2 text-xl inline-block align-middle underline decoration-dotted underline-offset-2'>
               {moment(WEDDING_DATE).format('MMMM DD, YYYY')}
             </span>
-            <span className="block text-xs text-gray-500 mt-1 ">Click to add to calendar</span>
+            <span className='block text-xs text-gray-500 mt-1 '>
+              Click to add to calendar
+            </span>
           </Box>
           {/* Divider only on large screens */}
-          <Box className="hidden lg:block w-px h-10 bg-black/50 mx-8" />
-          <Box
-            className="inline-block mt-6 lg:mt-0 cursor-pointer px-2 py-1"
-            onClick={() => window.open(LOCATION_GOOGLE_LINK, '_blank')}
-            title="View location on Google Maps"
-          >
-            <span className="inline-block align-middle">
-              <MapPin />
-            </span>
-            <span className="text-xl ml-2 inline-block align-middle">{LOCATION_FULL_NAME}</span>
+          <Box className='hidden lg:block w-px h-10 bg-black/50 mx-8' />
+          <Box className='flex justify-center'>
+            <Box
+              className='mt-6 lg:mt-0 text-center cursor-pointer max-w-fit p-2'
+              onClick={() => window.open(LOCATION_GOOGLE_LINK, '_blank')}
+              title='View location'
+            >
+              <span className='inline-block align-middle'>
+                <MapPin />
+              </span>
+              <span className='text-xl ml-2 inline-block align-middle underline decoration-dotted underline-offset-2'>
+                {LOCATION_FULL_NAME}
+              </span>
+              <span className='block text-xs text-gray-500 mt-1 '>
+                View the venue on Google Maps
+              </span>
+            </Box>
           </Box>
         </Box>
       </Fade>
@@ -213,17 +255,19 @@ const ContentBeforeDateElapsed = ({onFadeInComplete}: {onFadeInComplete?: () => 
 
 // @deprecated
 const Type1 = () => (
-  <Box className="text-center flex flex-col gap-6 mb-10 justify-center items-center">
+  <Box className='text-center flex flex-col gap-6 mb-10 justify-center items-center'>
     {/* LOGO */}
-    <Box className="flex justify-center gap-8 mt-4">
-      <img src={MAIN_LOGO_IMAGE} alt="Logo" className="h-64" />
+    <Box className='flex justify-center gap-8 mt-4'>
+      <img src={MAIN_LOGO_IMAGE} alt='Logo' className='h-64' />
     </Box>
 
     {/* DATE */}
-    <Box className="font-hannah text-5xl text-center">{_toUpper(format(WEDDING_DATE, 'MMMM dd, yyyy'))}</Box>
+    <Box className='font-hannah text-5xl text-center'>
+      {_toUpper(format(WEDDING_DATE, 'MMMM dd, yyyy'))}
+    </Box>
 
     {/* Names */}
-    <Box className="text-6xl font-malarkey">{YESHA_AND_VAIBHAV}</Box>
-    <Box className="font-bold text-3xl -mt-2">{HASHTAG}</Box>
+    <Box className='text-6xl font-malarkey'>{YESHA_AND_VAIBHAV}</Box>
+    <Box className='font-bold text-3xl -mt-2'>{HASHTAG}</Box>
   </Box>
 );
