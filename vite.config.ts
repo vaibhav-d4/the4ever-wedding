@@ -23,8 +23,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           'vendor': ['react', 'react-dom'],
-          'ui': ['@components'],
-          'modules': ['@modules']
+          'ui': ['@components']
         },
         // Add hash to chunk filenames for better caching
         chunkFileNames: 'assets/js/[name]-[hash].js',
