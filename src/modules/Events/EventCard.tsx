@@ -82,10 +82,10 @@ const EventCard = ({
               <Box className='font-great-vibes text-2xl text-primary tracking-wider mb-1'>
                 "{quote}"
               </Box>
-              <Box className='text-sm text-gray-500 font-brandon-regular'>
+              <Box className='text-sm text-gray-800 font-brandon-regular'>
                 {info}
               </Box>
-              <Box className='text-xs text-gray-300 font-brandon-regular mt-2 text-right'>
+              <Box className='text-xs text-gray-600 font-brandon-regular mt-2 text-right'>
                 More details →
               </Box>
             </Box>

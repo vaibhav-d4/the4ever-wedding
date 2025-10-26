@@ -62,7 +62,7 @@ export const WEDDING_EVENTS = [
       "Let's kick off the celebrations with sunshine, smiles, and a splash of color. Join us for a joyful afternoon as we celebrate love and laughter amidst the glow of haldi and blooming hues."
   },
   {
-    name: '💍 Rhythm & Rings',
+    name: '💍 Rings & Rhythm',
     image: garbaMainImg,
     eventImage: garbaEventImg,
     quote: 'Dance to the rhythm of love and tradition.',
