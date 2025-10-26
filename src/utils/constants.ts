@@ -50,7 +50,7 @@ export const CALENDAR_INVITE_LINK = import.meta.env.VITE_CALENDAR_INVITE_LINK;
 
 export const WEDDING_EVENTS = [
   {
-    name: '✨ Haldi Ceremony',
+    name: '✨ Golden Glow',
     image: haldiMainImg,
     eventImage: haldiEventImg,
     quote: 'Let the yellow shine and the love bloom.',
@@ -62,7 +62,7 @@ export const WEDDING_EVENTS = [
       "Let's kick off the celebrations with sunshine, smiles, and a splash of color. Join us for a joyful afternoon as we celebrate love and laughter amidst the glow of haldi and blooming hues."
   },
   {
-    name: '💍 Ring Ceremony & Garba Night',
+    name: '💍 Rhythm & Rings',
     image: garbaMainImg,
     eventImage: garbaEventImg,
     quote: 'Dance to the rhythm of love and tradition.',
@@ -74,7 +74,7 @@ export const WEDDING_EVENTS = [
       'An evening of sparkle and celebration awaits! Celebrate love and tradition as we exchange rings and dance the night away in vibrant hues and festive beats.'
   },
   {
-    name: '💫 Wedding & Reception',
+    name: '💫 Wedding Bliss',
     image: weddingMainImg,
     eventImage: weddingEventImg,
     quote: 'Two souls, one journey, endless love.',
