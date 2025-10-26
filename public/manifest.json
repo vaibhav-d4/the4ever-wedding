@@ -47,19 +47,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "shortcuts": [
-    {
-      "name": "View Events",
-      "short_name": "Events",
-      "description": "View wedding events details",
-      "url": "/#events"
-    },
-    {
-      "name": "RSVP",
-      "short_name": "RSVP",
-      "description": "RSVP for the wedding",
-      "url": "/#rsvp"
-    }
   ]
 }
