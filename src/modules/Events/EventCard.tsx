@@ -127,7 +127,9 @@ const EventCard = ({
               <span className='font-semibold'>Dress Code: </span>
               <span>{dressCode}</span>
             </div>
-            <div className='font-caveat text-xl mt-3'>{description}</div>
+            <div className='font-caveat text-xl mt-3 mb-12 lg:mb-6 leading-tight pr-4 lg:pr-8'>
+              {description}
+            </div>
           </div>
         </div>
       </EventDetailsModal>

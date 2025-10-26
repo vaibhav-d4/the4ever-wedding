@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Zoom, Backdrop, IconButton, Box } from '@mui/material';
 import clsx from 'clsx';
 import { X } from 'lucide-react';
+import floralTopLeft from '@assets/common/floral-top-left.svg';
 
 interface EventDetailsModalProps {
   open: boolean;
@@ -51,6 +52,12 @@ const EventDetailsModal: React.FC<EventDetailsModalProps> = ({
             'transition-all duration-500'
           )}
         >
+          <img
+            src={floralTopLeft}
+            alt='Floral Decoration'
+            className='absolute w-[50%] lg:w-[25%] rounded-tl-3xl left-0 top-0 -z-1'
+            loading='lazy'
+          />
           <IconButton
             aria-label='close'
             onClick={onClose}
@@ -61,6 +68,12 @@ const EventDetailsModal: React.FC<EventDetailsModalProps> = ({
           <div className='w-full flex flex-col items-center justify-center p-8'>
             {children}
           </div>
+          <img
+            src={floralTopLeft}
+            alt='Floral Decoration'
+            className='absolute w-[50%] lg:w-[25%] right-0 bottom-0 rounded-br-3xl -z-1 rotate-180'
+            loading='lazy'
+          />
         </Box>
       </Zoom>
     </Modal>
