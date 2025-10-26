@@ -24,7 +24,7 @@ const Footer = () => {
           href='https://www.instagram.com/vaibhav_d4/'
           target='_blank'
           rel='noopener noreferrer'
-          className='text-black/60 font-semibold  transition-colors duration-200 tracking-wide italic font-alice-regular text-lg underline decoration-dotted underline-offset-2'
+          className='text-black/60 font-semibold transition-colors duration-200 tracking-wide font-alice-regular text-lg underline decoration-dotted underline-offset-2'
           style={{
             transition: 'color 0.3s, text-shadow 0.3s',
           }}
