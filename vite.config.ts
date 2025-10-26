@@ -16,5 +16,26 @@ export default defineConfig({
       '@fonts': path.resolve(__dirname, 'src/fonts'),
       '@utils': path.resolve(__dirname, 'src/utils')
     }
+  },
+  build: {
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': ['react', 'react-dom'],
+          'ui': ['@components'],
+          'modules': ['@modules']
+        },
+        // Add hash to chunk filenames for better caching
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
+      }
+    },
+    // Enable source maps for production
+    sourcemap: true,
+    // Enable minification optimizations
+    minify: 'terser',
+    target: 'es2018'
   }
 });

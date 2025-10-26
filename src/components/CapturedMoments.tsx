@@ -1,13 +1,13 @@
 import React from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
 import lightBgFloral from '@assets/common/single-black-floral-moments.svg';
-// import GradientDivider from './GradientDivider';
 import clsx from 'clsx';
-import {GALLERY_IMAGES} from '@utils/constants';
+import { GALLERY_IMAGES } from '@utils/constants';
+import LazyImage from './LazyImage';
 
 const CapturedMoments: React.FC = () => {
   return (
-    <Box className="px-4 relative mb-32">
+    <Box className='px-4 relative mb-32'>
       {/* <GradientDivider title="Snaps" className="text-5xl lg:text-7xl font-malarkey" /> */}
       <Box
         className={clsx(
@@ -17,17 +17,41 @@ const CapturedMoments: React.FC = () => {
         )}
       >
         {/* Sweet Text */}
-        <GridCornerText text="Sweet..." position="top-left" className="" />
+        <GridCornerText text='Sweet...' position='top-left' className='' />
         {/* First image (spans 2 rows in grid, normal in flex) */}
-        <GridSideImage imgSrc={GALLERY_IMAGES[0]} position="left" className="" />
+        <GridSideImage
+          imgSrc={GALLERY_IMAGES[0]}
+          position='left'
+          className=''
+        />
         {/* Second column images */}
-        <GridCenterImage imgSrc={GALLERY_IMAGES[1]} position="top" className="" />
-        <GridCenterImage imgSrc={GALLERY_IMAGES[2]} position="center" className="" />
-        <GridCenterImage imgSrc={GALLERY_IMAGES[3]} position="bottom" className="" />
+        <GridCenterImage
+          imgSrc={GALLERY_IMAGES[1]}
+          position='top'
+          className=''
+        />
+        <GridCenterImage
+          imgSrc={GALLERY_IMAGES[2]}
+          position='center'
+          className=''
+        />
+        <GridCenterImage
+          imgSrc={GALLERY_IMAGES[3]}
+          position='bottom'
+          className=''
+        />
         {/* Third column image (spans 2 rows in grid, normal in flex) */}
-        <GridSideImage imgSrc={GALLERY_IMAGES[4]} position="right" className="" />
+        <GridSideImage
+          imgSrc={GALLERY_IMAGES[4]}
+          position='right'
+          className=''
+        />
         {/* Memories Text */}
-        <GridCornerText text="Memories..." position="bottom-right" className="" />
+        <GridCornerText
+          text='Memories...'
+          position='bottom-right'
+          className=''
+        />
       </Box>
     </Box>
   );
@@ -38,7 +62,7 @@ export default CapturedMoments;
 const GridSideImage = ({
   imgSrc,
   position,
-  className
+  className,
 }: {
   imgSrc: string;
   position: 'left' | 'right';
@@ -52,11 +76,10 @@ const GridSideImage = ({
       className
     )}
   >
-    <img
+    <LazyImage
       src={imgSrc}
       alt={`Wedding moment - ${position} side`}
-      className="object-cover w-full h-full rounded-xl"
-      loading="lazy"
+      className='object-cover w-full h-full rounded-xl'
     />
   </div>
 );
@@ -64,7 +87,7 @@ const GridSideImage = ({
 const GridCenterImage = ({
   imgSrc,
   position,
-  className
+  className,
 }: {
   imgSrc: string;
   position: 'top' | 'center' | 'bottom';
@@ -79,11 +102,10 @@ const GridCenterImage = ({
       className
     )}
   >
-    <img
+    <LazyImage
       src={imgSrc}
       alt={`Wedding moment - ${position}`}
-      className="object-cover w-full h-72 rounded-xl"
-      loading="lazy"
+      className='object-cover w-full h-72 rounded-xl'
     />
   </div>
 );
@@ -91,7 +113,7 @@ const GridCenterImage = ({
 const GridCornerText = ({
   text,
   position,
-  className
+  className,
 }: {
   text: string;
   position: 'top-left' | 'bottom-right';
@@ -101,13 +123,14 @@ const GridCornerText = ({
     className={clsx(
       'relative flex items-center justify-center font-dancing-script text-4xl sm:text-5xl text-black/80 py-8 sm:py-0 font-bold',
       position === 'top-left' && 'col-start-1 col-end-2 row-start-1 row-end-2',
-      position === 'bottom-right' && 'col-start-3 col-end-4 row-start-3 row-end-4',
+      position === 'bottom-right' &&
+        'col-start-3 col-end-4 row-start-3 row-end-4',
       className
     )}
   >
-    <img
+    <LazyImage
       src={lightBgFloral}
-      alt="Floral background"
+      alt='Floral background'
       className={clsx(
         // Responsive sizing and positioning for mobile/tablet
         'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-1',
@@ -117,6 +140,6 @@ const GridCornerText = ({
         position === 'bottom-right' && 'rotate-200 -mt-20'
       )}
     />
-    <span className="relative z-10 text-center drop-shadow-lg">{text}</span>
+    <span className='relative z-10 text-center drop-shadow-lg'>{text}</span>
   </div>
 );

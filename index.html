@@ -4,12 +4,85 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vy-logo-bg-black-font-1.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preload all fonts -->
+    <link rel="preload" href="/src/fonts/Brandon_reg.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/src/fonts/Brandon-medium.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/src/fonts/Hannah_Regular.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/src/fonts/Alice-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/src/fonts/Malarkey-Regular.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/src/fonts/Somersette.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/src/fonts/amsterdam.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/src/fonts/rottering.otf" as="font" type="font/otf" crossorigin />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/vy-logo-bg-black-font-1.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/src/main.tsx" as="script" type="text/javascript" />
+    <link rel="preload" href="/src/index.css" as="style" />
+    <link rel="preload" href="/src/App.css" as="style" />
+    
+    <!-- DNS Prefetch and Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    
+    <!-- Material Icons with preload -->
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    
+    <!-- Font loading optimization -->
+    <style>
+      /* Font Face Declarations */
+      @font-face {
+        font-family: 'Brandon Regular';
+        src: url('/src/fonts/Brandon_reg.otf') format('opentype');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Brandon Medium';
+        src: url('/src/fonts/Brandon-medium.otf') format('opentype');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Hannah Regular';
+        src: url('/src/fonts/Hannah_Regular.otf') format('opentype');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Alice Regular';
+        src: url('/src/fonts/Alice-Regular.ttf') format('truetype');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Malarkey';
+        src: url('/src/fonts/Malarkey-Regular.otf') format('opentype');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Somersette';
+        src: url('/src/fonts/Somersette.otf') format('opentype');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Amsterdam';
+        src: url('/src/fonts/amsterdam.ttf') format('truetype');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Rottering';
+        src: url('/src/fonts/rottering.otf') format('opentype');
+        font-display: swap;
+      }
+    </style>
+    
+    <!-- Meta tags for SEO and social sharing -->
     <title>Yesha & Vaibhav Wedding | #The4Ever</title>
-    <meta
-      name="description"
-      content="Two hearts, one story - Join Yesha & Vaibhav as they say 'I do' and begin their forever. #The4Ever"
-    />
+    <meta name="description" content="Two hearts, one story - Join Yesha & Vaibhav as they say 'I do' and begin their forever. #The4Ever" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Yesha & Vaibhav Wedding | #The4Ever" />
+    <meta property="og:description" content="Two hearts, one story - Join Yesha & Vaibhav as they say 'I do' and begin their forever. #The4Ever" />
+    <meta property="og:type" content="website" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D2Z6E83LMM"></script>
     <script>
