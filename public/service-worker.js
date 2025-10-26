@@ -1,16 +1,10 @@
 // Service Worker for The4Ever Wedding Site
-const CACHE_NAME = 'the4ever-wedding-cache-v1';
+// Use a simple cache version so we can update it on new deployments.
+const CACHE_VERSION = 'v2';
+const CACHE_NAME = `the4ever-wedding-cache-${CACHE_VERSION}`;
 
-const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/assets/js/main.js',
-  '/assets/js/vendor.js',
-  '/assets/js/ui.js',
-  '/assets/js/modules.js',
-  '/assets/css/index.css',
-  '/vy-logo-bg-black-font-1.svg',
-];
+// Only cache known static assets (avoid hard-coded unhashed JS filenames)
+const STATIC_ASSETS = ['/', '/index.html', '/vy-logo-bg-black-font-1.svg'];
 
 // Image assets to cache
 const IMAGE_ASSETS = [
@@ -56,6 +50,9 @@ const FONT_FILES = [
 ];
 
 self.addEventListener('install', (event) => {
+  // Activate new service worker faster
+  self.skipWaiting();
+
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll([...STATIC_ASSETS, ...FONT_FILES, ...IMAGE_ASSETS]);
@@ -65,30 +62,55 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((name) => name !== CACHE_NAME)
-          .map((name) => caches.delete(name))
-      );
-    })
+    caches
+      .keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames
+            .filter((name) => name !== CACHE_NAME)
+            .map((name) => caches.delete(name))
+        );
+      })
+      .then(() => {
+        // Claim clients so the new service worker takes effect immediately
+        return self.clients.claim();
+      })
   );
 });
 
 self.addEventListener('fetch', (event) => {
+  const req = event.request;
+
+  // Treat navigation / HTML requests as network-first so users get updates
+  const acceptHeader = req.headers.get('accept') || '';
+  const isNavigate =
+    req.mode === 'navigate' || acceptHeader.includes('text/html');
+
+  if (isNavigate) {
+    event.respondWith(
+      fetch(req)
+        .then((networkResp) => {
+          // Update the cache for navigation responses
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put('/index.html', networkResp.clone());
+          });
+          return networkResp;
+        })
+        .catch(() => {
+          return caches.match('/index.html');
+        })
+    );
+    return;
+  }
+
+  // For other requests, try cache first then network
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      // If the request is in cache, return it
-      if (response) {
-        return response;
-      }
+    caches.match(req).then((response) => {
+      if (response) return response;
 
-      // Clone the request because it can only be used once
-      const fetchRequest = event.request.clone();
-
+      const fetchRequest = req.clone();
       return fetch(fetchRequest)
         .then((response) => {
-          // Check if response is valid
           if (
             !response ||
             response.status !== 200 ||
@@ -97,19 +119,14 @@ self.addEventListener('fetch', (event) => {
             return response;
           }
 
-          // Clone the response because it can only be used once
           const responseToCache = response.clone();
-
           caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
+            cache.put(req, responseToCache);
           });
 
           return response;
         })
-        .catch(() => {
-          // Return cached response if fetch fails
-          return caches.match(event.request);
-        });
+        .catch(() => caches.match(req));
     })
   );
 });
