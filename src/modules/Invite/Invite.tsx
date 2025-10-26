@@ -150,7 +150,7 @@ const Invite = () => {
 
       <Box className='flex justify-center mb-8'>
         <span
-          className='mt-8 hover:cursor-pointer hover:text-gray-500 text-gray-400  px-28 py-6 border rounded-2xl hover:bg-amber-100 text-2xl flex justify-center items-center gap-2'
+          className='mt-8 hover:cursor-pointer hover:text-gray-700 text-gray-500  px-28 py-6 border rounded-2xl bg-white/40 hover:bg-amber-100/40 backdrop-blur-xs text-2xl flex justify-center items-center gap-2'
           onClick={() => {
             navigate('/');
             logEvent('explore_click', {
