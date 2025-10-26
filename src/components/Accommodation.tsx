@@ -2,11 +2,15 @@ import React from 'react';
 import { Box, Grid } from '@mui/material';
 import {
   ACCOMMODATION_INFO,
+  CALENDAR_INVITE_LINK,
   LOCATION_FULL_NAME,
   LOCATION_GOOGLE_LINK,
   LOCATION_NAME,
+  WEDDING_DATE,
 } from '@utils/constants';
-import { MapPin } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
+import { logCalendarClick } from '@utils/analytics';
+import moment from 'moment';
 
 // Helper to render the description while highlighting LOCATION_NAME occurrences
 const renderWithHighlight = (text: string) => {
@@ -55,9 +59,27 @@ const Accommodation: React.FC = () => {
           />
         )}
       </Grid>
-      <Box className='flex justify-center'>
+      <Box className='flex flex-col md:flex-row justify-center items-center gap-0 md:gap-24 mt-16'>
         <Box
-          className='mt-12 text-center cursor-pointer max-w-fit p-2'
+          className='inline-block cursor-pointer px-2 py-1'
+          onClick={() => {
+            window.open(CALENDAR_INVITE_LINK, '_blank');
+            logCalendarClick();
+          }}
+          title='Click to add this event to your calendar'
+        >
+          <span className='inline-block align-middle'>
+            <Calendar className='' />
+          </span>
+          <span className='ml-2 text-xl inline-block align-middle underline decoration-dotted underline-offset-2'>
+            {moment(WEDDING_DATE).format('MMMM DD, YYYY')}
+          </span>
+          <span className='block text-xs text-gray-500 mt-1 text-center'>
+            Click to add to calendar
+          </span>
+        </Box>
+        <Box
+          className='mt-6 md:mt-0 text-center cursor-pointer max-w-fit p-2'
           onClick={() => window.open(LOCATION_GOOGLE_LINK, '_blank')}
           title='View location'
         >
