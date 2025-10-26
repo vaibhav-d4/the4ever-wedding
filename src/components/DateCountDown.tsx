@@ -1,6 +1,13 @@
-import {Box} from "@mui/material";
-import {BACKDROP_BLUR, DAYS_LABEL, HOURS_LABEL, MINUTES_LABEL, MONTHS_LABEL, SECONDS_LABEL} from "@utils/constants";
-import clsx from "clsx";
+import { Box } from '@mui/material';
+import {
+  BACKDROP_BLUR,
+  DAYS_LABEL,
+  HOURS_LABEL,
+  MINUTES_LABEL,
+  MONTHS_LABEL,
+  SECONDS_LABEL,
+} from '@utils/constants';
+import clsx from 'clsx';
 
 interface IDateCountDown {
   months: number;
@@ -10,50 +17,56 @@ interface IDateCountDown {
   seconds: number;
 }
 
-const DateCountDown = ({months, days, hours, minutes, seconds}: IDateCountDown) => {
+const DateCountDown = ({
+  months,
+  days,
+  hours,
+  minutes,
+  seconds,
+}: IDateCountDown) => {
   const displayView = () => {
     if (months > 0)
       return [
-        {value: months, label: MONTHS_LABEL},
-        {value: days, label: DAYS_LABEL},
-        {value: hours, label: HOURS_LABEL}
+        { value: months, label: MONTHS_LABEL },
+        { value: days, label: DAYS_LABEL },
+        { value: hours, label: HOURS_LABEL },
       ];
     else if (months === 0 && days > 0)
       return [
-        {value: days, label: DAYS_LABEL},
-        {value: hours, label: HOURS_LABEL},
-        {value: minutes, label: MINUTES_LABEL}
+        { value: days, label: DAYS_LABEL },
+        { value: hours, label: HOURS_LABEL },
+        { value: minutes, label: MINUTES_LABEL },
       ];
     else if (days === 0)
       return [
-        {value: hours, label: HOURS_LABEL},
-        {value: minutes, label: MINUTES_LABEL},
-        {value: seconds, label: SECONDS_LABEL}
+        { value: hours, label: HOURS_LABEL },
+        { value: minutes, label: MINUTES_LABEL },
+        { value: seconds, label: SECONDS_LABEL },
       ];
     else
       return [
-        {value: months, label: MONTHS_LABEL},
-        {value: days, label: DAYS_LABEL},
-        {value: hours, label: HOURS_LABEL}
+        { value: months, label: MONTHS_LABEL },
+        { value: days, label: DAYS_LABEL },
+        { value: hours, label: HOURS_LABEL },
       ];
   };
 
   return (
-    <Box className="flex justify-center items-center">
-      <Box className="flex items-center w-full justify-around">
-        {displayView().map(({value, label}, index) => (
-          <Box key={index} className="flex items-center">
-            <Box className="text-center">
+    <Box className='flex justify-center items-center'>
+      <Box className='flex items-center w-full justify-around'>
+        {displayView().map(({ value, label }, index) => (
+          <Box key={index} className='flex items-center'>
+            <Box className='text-center'>
               <Box
                 className={clsx(
-                  "bg-white/40 rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 border border-black/10 shadow-2xl transition-all duration-200 hover:scale-105 hover:shadow-2xl w-26 lg:w-36",
+                  'bg-white/40 rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 border border-black/10 shadow-2xl transition-all duration-200 hover:scale-105 hover:shadow-2xl w-26 lg:w-36',
                   `${BACKDROP_BLUR}`
                 )}
               >
-                <Box className="text-5xl md:text-6xl lg:text-7xl font-alice-regular text-primary font-bold leading-none">
+                <Box className='text-4xl md:text-5xl lg:text-6xl font-alice-regular text-primary font-bold leading-none'>
                   {value}
                 </Box>
-                <Box className="text-xs md:text-base lg:text-lg text-black/80 font-bold mt-2 uppercase tracking-wider">
+                <Box className='text-xs md:text-base lg:text-lg text-black/80 font-bold mt-2 uppercase tracking-wider'>
                   {label}
                 </Box>
               </Box>

@@ -4,6 +4,7 @@ import { BACKDROP_BLUR } from '@utils/constants';
 import { useInView } from '@utils/hooks/useInView';
 import EventDetailsModal from '@components/EventDetailsModal';
 import clsx from 'clsx';
+import { MoveRight } from 'lucide-react';
 
 interface EventCardProps {
   name: string;
@@ -85,8 +86,8 @@ const EventCard = ({
               <Box className='text-sm text-gray-800 font-brandon-regular'>
                 {info}
               </Box>
-              <Box className='text-xs text-gray-600 font-brandon-regular mt-2 text-right'>
-                More details →
+              <Box className='text-xs text-gray-600 font-brandon-regular mt-6 text-right flex items-center justify-end gap-2'>
+                Explore <MoveRight size={14} />
               </Box>
             </Box>
           </Box>
