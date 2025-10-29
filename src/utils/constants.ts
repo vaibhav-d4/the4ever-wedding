@@ -3,7 +3,7 @@ import loaderLogo from '@assets/logo/loader-logo.svg';
 import haldiMainImg from '@assets/events/haldi-main-1.svg';
 import haldiEventImg from '@assets/events/haldi-event-1.svg';
 import garbaMainImg from '@assets/events/garba-main-1.svg';
-import weddingEventImg from '@assets/events/wedding-event-1.svg';
+import weddingEventImg from '@assets/events/wedding-event-3.svg';
 import weddingMainImg from '@assets/events/wedding-main-1.svg';
 import garbaEventImg from '@assets/events/garba-event-1.svg';
 import coupleLogo from '@assets/couple/couple-info-2.svg';
@@ -56,7 +56,7 @@ export const WEDDING_EVENTS = [
     quote: 'Let the yellow shine and the love bloom.',
     info: 'Haldi ceremony marks the beginning of the wedding festivities, bringing joy and blessings.',
     date: '7th February 2026',
-    time: '1 PM onwards (followed by lunch)',
+    time: '1 PM onwards \_(followed by lunch)\_',
     dressCode: 'Bright yellow & floral',
     description:
       "Let's kick off the celebrations with sunshine, smiles, and a splash of color. Join us for a joyful afternoon as we celebrate love and laughter amidst the glow of haldi and blooming hues."
@@ -68,7 +68,7 @@ export const WEDDING_EVENTS = [
     quote: 'Dance to the rhythm of love and tradition.',
     info: 'A night of music, dance, and celebration with family and friends, making memories that last forever.',
     date: '7th February 2026',
-    time: '7 PM onwards — Ring Ceremony, followed by Garba Night and Dinner',
+    time: '7 PM - Ring Ceremony\n8 PM - Garba Night',
     dressCode: 'Indo-Western multicolor glam',
     description:
       'An evening of sparkle and celebration awaits! Celebrate love and tradition as we exchange rings and dance the night away in vibrant hues and festive beats.'

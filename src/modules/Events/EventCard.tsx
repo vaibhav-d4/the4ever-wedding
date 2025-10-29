@@ -118,16 +118,15 @@ const EventCard = ({
               <span className='font-semibold'>Date: </span>
               <span>{date}</span>
             </div>
-            <div>
+            <div className='flex gap-1'>
               <span className='font-semibold'>Time: </span>
-
               <span className='whitespace-pre-line'>{time}</span>
             </div>
             <div>
               <span className='font-semibold'>Dress Code: </span>
               <span>{dressCode}</span>
             </div>
-            <div className='font-caveat text-xl mt-3 mb-12 lg:mb-6 leading-tight pr-4 lg:pr-8'>
+            <div className='font-caveat text-xl mt-3 mb-13 lg:mb-6 leading-tight pr-10 lg:pr-16'>
               {description}
             </div>
           </div>
