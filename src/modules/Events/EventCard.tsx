@@ -120,7 +120,11 @@ const EventCard = ({
             </div>
             <div className='flex gap-1'>
               <span className='font-semibold'>Time: </span>
-              <span className='whitespace-pre-line'>{time}</span>
+              {/* time may contain simple HTML (from constants.ts) and is trusted in this app */}
+              <span
+                className='whitespace-pre-line'
+                dangerouslySetInnerHTML={{ __html: time }}
+              />
             </div>
             <div>
               <span className='font-semibold'>Dress Code: </span>

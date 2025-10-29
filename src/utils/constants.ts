@@ -56,7 +56,7 @@ export const WEDDING_EVENTS = [
     quote: 'Let the yellow shine and the love bloom.',
     info: 'Haldi ceremony marks the beginning of the wedding festivities, bringing joy and blessings.',
     date: '7th February 2026',
-    time: '1 PM onwards \_(followed by lunch)\_',
+        time: '1 PM onwards <em>(followed by lunch)</em>',
     dressCode: 'Bright yellow & floral',
     description:
       "Let's kick off the celebrations with sunshine, smiles, and a splash of color. Join us for a joyful afternoon as we celebrate love and laughter amidst the glow of haldi and blooming hues."
@@ -68,7 +68,7 @@ export const WEDDING_EVENTS = [
     quote: 'Dance to the rhythm of love and tradition.',
     info: 'A night of music, dance, and celebration with family and friends, making memories that last forever.',
     date: '7th February 2026',
-    time: '7 PM - Ring Ceremony\n8 PM - Garba Night',
+    time: '7 PM - Ring Ceremony\n8 PM - Garba Night <em>(followed by dinner)</em>',
     dressCode: 'Indo-Western multicolor glam',
     description:
       'An evening of sparkle and celebration awaits! Celebrate love and tradition as we exchange rings and dance the night away in vibrant hues and festive beats.'
@@ -80,7 +80,7 @@ export const WEDDING_EVENTS = [
     quote: 'Two souls, one journey, endless love.',
     info: 'The grand wedding and reception, where we begin our new chapter together.',
     date: '8th February 2026',
-    time: '11 AM - Baarat Aagman\n12 PM - Wedding Ceremony\n1:30 PM - Reception\n',
+    time: '11 AM - Baarat Aagman\n12 PM - Wedding Ceremony\n1:30 PM - Reception <em>(followed by lunch)</em>',
     dressCode: 'Elegant & pastel shades of Indian attire',
     description:
       'A day of love, vows, and togetherness. Join us as we tie the knot in an elegant wedding ceremony, followed by a graceful reception to celebrate the start of our forever.'

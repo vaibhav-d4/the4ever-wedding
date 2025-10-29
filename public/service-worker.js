@@ -9,44 +9,44 @@ const STATIC_ASSETS = ['/', '/index.html', '/vy-logo-bg-black-font-1.svg'];
 // Image assets to cache
 const IMAGE_ASSETS = [
   // Logo assets
-  '/assets/images/logo/vy-logo-black-1.svg',
-  '/assets/images/logo/loader-logo.svg',
-  '/assets/images/logo/vy-logo-blue-1.svg',
-  '/assets/images/logo/vy-logo-blue-2.svg',
-  '/assets/images/logo/vy-logo-black-2.svg',
-  '/assets/images/logo/vy-logo-blue-bg-t.svg',
+  // '/assets/logo/vy-logo-black-1.svg',
+  '/assets/logo/loader-logo.svg',
+  // '/assets/logo/vy-logo-blue-1.svg',
+  // '/assets/logo/vy-logo-blue-2.svg',
+  // '/assets/logo/vy-logo-black-2.svg',
+  '/assets/logo/vy-logo-blue-bg-t.svg',
 
   // Common assets
-  '/assets/images/common/single-black-floral-moments.svg',
-  '/assets/images/common/floral-top-left.svg',
-  '/assets/images/common/floral-bottom-right.svg',
+  // '/assets/common/single-black-floral-moments.svg',
+  '/assets/common/floral-top-left.svg',
+  '/assets/common/floral-bottom-right.svg',
 
   // Couple photos
-  '/assets/images/couple/mid-3.jpg',
-  '/assets/images/couple/image-6.jpg',
+  // '/assets/couple/mid-3.jpg',
+  // '/assets/couple/image-6.jpg',
 
   // Event assets
-  '/assets/images/events/garba-event-1.svg',
-  '/assets/images/events/garba-main-1.svg',
-  '/assets/images/events/sangeet-temp-1.jpg',
-  '/assets/images/events/haldi-event-1.svg',
-  '/assets/images/events/haldi-main-1.svg',
-  '/assets/images/events/haldi-temp-1.jpg',
-  '/assets/images/events/wedding-event-1.svg',
-  '/assets/images/events/wedding-main-1.svg',
-  '/assets/images/events/wedding-temp-1.jpg',
+  '/assets/events/garba-event-1.svg',
+  '/assets/events/garba-main-1.svg',
+  '/assets/events/sangeet-temp-1.jpg',
+  '/assets/events/haldi-event-1.svg',
+  '/assets/events/haldi-main-1.svg',
+  '/assets/events/haldi-temp-1.jpg',
+  // '/assets/events/wedding-event-1.svg',
+  '/assets/events/wedding-main-1.svg',
+  '/assets/events/wedding-event-3.svg',
 ];
 
 // Font files to cache
 const FONT_FILES = [
-  '/assets/fonts/Alice-Regular.ttf',
-  '/assets/fonts/Brandon-medium.otf',
-  '/assets/fonts/Brandon_reg.otf',
-  '/assets/fonts/Hannah_Regular.otf',
-  '/assets/fonts/Malarkey-Regular.otf',
-  '/assets/fonts/Somersette.otf',
-  '/assets/fonts/amsterdam.ttf',
-  '/assets/fonts/rottering.otf',
+  '/fonts/Alice-Regular.ttf',
+  '/fonts/Brandon-medium.otf',
+  '/fonts/Brandon_reg.otf',
+  '/fonts/Hannah_Regular.otf',
+  '/fonts/Malarkey-Regular.otf',
+  '/fonts/Somersette.otf',
+  '/fonts/amsterdam.ttf',
+  '/fonts/rottering.otf',
 ];
 
 self.addEventListener('install', (event) => {
