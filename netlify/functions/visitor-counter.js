@@ -20,8 +20,10 @@ export async function handler(event) {
     };
   }
 
-  const workspace = import.meta.env.COUNTER_WORKSPACE;
-  const token = import.meta.env.COUNTER_TOKEN;
+  //   const workspace = import.meta.env.COUNTER_WORKSPACE;
+  //   const token = import.meta.env.COUNTER_TOKEN;
+  const workspace = 'the4ever';
+  const token = 'ut_dpsmbEuxP969g3XR7jhWt9sZSxWWreywJllkWy4j';
 
   if (!workspace || !token) {
     console.error(
@@ -41,7 +43,7 @@ export async function handler(event) {
       accessToken: token,
       timeout: 5000,
     });
-    const result = await counter.up('api-usage');
+    const result = await counter.up('total-visitors-v1');
     return {
       statusCode: 200,
       body: JSON.stringify(result),
