@@ -9,7 +9,7 @@ const useVisitorCounter = () => {
   useEffect(() => {
     async function incrementCounter() {
       try {
-        const res = await fetch('/netlify/functions/visitor-counter', {
+        const res = await fetch('/.netlify/functions/visitor-counter', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
         });
