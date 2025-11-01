@@ -9,8 +9,10 @@ export async function handler(event) {
     };
   }
 
-  const workspace = 'the4ever';
-  const token = 'ut_dpsmbEuxP969g3XR7jhWt9sZSxWWreywJllkWy4j';
+  const workspace = process.env.COUNTER_WORKSPACE;
+  const token = process.env.COUNTER_TOKEN;
+  // const workspace = 'the4ever';
+  // const token = 'ut_dpsmbEuxP969g3XR7jhWt9sZSxWWreywJllkWy4j';
 
   try {
     const counter = new Counter({
