@@ -1,24 +1,26 @@
-import {Box} from "@mui/material";
-import "./App.css";
+import { Box } from '@mui/material';
+import './App.css';
 
-import {Route, Routes} from "react-router";
-import {Home} from "@modules/Home";
-import {AdminPanel} from "@modules/AdminPanel";
-import {Invite} from "@modules/Invite";
-import AnimatedBackground from "./components/AnimatedBackground";
-import usePageTracking from "@utils/hooks/usePageTracking";
+import { Route, Routes } from 'react-router';
+import { Home } from '@modules/Home';
+import { AdminPanel } from '@modules/AdminPanel';
+import { Invite } from '@modules/Invite';
+import AnimatedBackground from './components/AnimatedBackground';
+import usePageTracking from '@utils/hooks/usePageTracking';
+import useVisitorCounter from '@utils/hooks/useVisitorCounter';
 
 const App = () => {
   usePageTracking();
+  useVisitorCounter();
 
   return (
-    <Box sx={{position: "relative", minHeight: "100vh", overflow: "hidden"}}>
+    <Box sx={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
       <AnimatedBackground />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/admin-panel" element={<AdminPanel />} />
-        <Route path="/invite/:user_name" element={<Invite />} />
-        <Route path="/invite" element={<Invite />} />
+        <Route path='/admin-panel' element={<AdminPanel />} />
+        <Route path='/invite/:user_name' element={<Invite />} />
+        <Route path='/invite' element={<Invite />} />
       </Routes>
     </Box>
   );
