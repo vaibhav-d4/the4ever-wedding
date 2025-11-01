@@ -5,8 +5,15 @@ import { useEffect } from 'react';
  * This function calls the Netlify function at /.netlify/functions/visitor-counter
  * which performs the Counter API call server-side using a secret token.
  */
+
+const SESSION_KEY = 'visitor-counter-incremented';
 const useVisitorCounter = () => {
   useEffect(() => {
+    if (sessionStorage.getItem(SESSION_KEY)) {
+      // Already incremented in this session/tab
+      return;
+    }
+
     async function incrementCounter() {
       try {
         const res = await fetch('/.netlify/functions/visitor-counter', {
@@ -22,6 +29,8 @@ const useVisitorCounter = () => {
 
         const json = await res.json();
         console.log('V ~ visitor-counter result:', json);
+        // Mark as incremented for this session
+        sessionStorage.setItem(SESSION_KEY, JSON.stringify(true));
         return json;
       } catch (error: unknown) {
         const message = error instanceof Error ? error.message : String(error);
