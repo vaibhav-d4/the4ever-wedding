@@ -24,6 +24,9 @@ const IMAGE_ASSETS = [
   // Couple photos
   // '/assets/couple/mid-3.jpg',
   // '/assets/couple/image-6.jpg',
+  // '/assets/couple/couple-info-1.svg',
+  // '/assets/couple/couple-info-2.svg',
+  '/assets/couple/couple-info-3.svg',
 
   // Event assets
   '/assets/events/garba-event-1.svg',

@@ -6,7 +6,7 @@ import garbaMainImg from '@assets/events/garba-main-1.svg';
 import weddingEventImg from '@assets/events/wedding-event-3.svg';
 import weddingMainImg from '@assets/events/wedding-main-1.svg';
 import garbaEventImg from '@assets/events/garba-event-1.svg';
-import coupleLogo from '@assets/couple/couple-info-2.svg';
+import coupleLogo from '@assets/couple/couple-info-3.svg';
 import galleryImg1 from '@assets/couple/left-1.jpg';
 import galleryImg2 from '@assets/couple/mid-1.jpg';
 import galleryImg3 from '@assets/couple/mid-2.jpeg';
@@ -17,8 +17,8 @@ export const WEDDING_DATE = import.meta.env.VITE_WEDDING_DATE || '08-Feb-2026 06
 // export const WEDDING_DATE = '08-Feb-2025 06:00:00';
 
 export const WEBSITE_TYPES = [
-  {label: 'Website 1', value: 1},
-  {label: 'Website 2', value: 2}
+  { label: 'Website 1', value: 1 },
+  { label: 'Website 2', value: 2 }
 ];
 
 export const LOGO_TIMEOUT = 3000;
@@ -56,7 +56,7 @@ export const WEDDING_EVENTS = [
     quote: 'Let the yellow shine and the love bloom.',
     info: 'Haldi ceremony marks the beginning of the wedding festivities, bringing joy and blessings.',
     date: '7th February 2026',
-        time: '1 PM onwards <em>(followed by lunch)</em>',
+    time: '1 PM onwards <em>(followed by lunch)</em>',
     dressCode: 'Bright yellow & floral',
     description:
       "Let's kick off the celebrations with sunshine, smiles, and a splash of color. Join us for a joyful afternoon as we celebrate love and laughter amidst the glow of haldi and blooming hues."
