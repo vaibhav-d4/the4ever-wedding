@@ -22,20 +22,20 @@ const useVisitorCounter = () => {
         });
 
         if (!res.ok) {
-          const text = await res.text();
-          console.error('V ~ Server error incrementing counter:', res.status, text);
+          // const text = await res.text();
+          // console.error('V ~ Server error incrementing counter:', res.status, text);
           return null;
         }
 
         const json = await res.json();
-        console.log('V ~ visitor-counter result:', json);
+        // console.log('V ~ visitor-counter result:', json);
         // Mark as incremented for this session
         sessionStorage.setItem(SESSION_KEY, JSON.stringify(true));
         return json;
       } catch (error: unknown) {
-        const message = error instanceof Error ? error.message : String(error);
-        console.error('V ~ Error calling visitor-counter function:', message);
-        return null;
+        // const message = error instanceof Error ? error.message : String(error);
+        // console.error('V ~ Error calling visitor-counter function:', message);
+        return String(error);
       }
     }
 

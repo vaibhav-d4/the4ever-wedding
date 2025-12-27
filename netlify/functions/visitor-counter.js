@@ -26,7 +26,7 @@ export async function handler(event) {
       body: JSON.stringify(result),
     };
   } catch (err) {
-    console.error('visitor-counter: error calling Counter API', err);
+    // console.error('visitor-counter: error calling Counter API', err);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: String(err) }),
