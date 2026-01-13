@@ -1,6 +1,6 @@
 // Service Worker for The4Ever Wedding Site
 // Use a simple cache version so we can update it on new deployments.
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE_NAME = `the4ever-wedding-cache-${CACHE_VERSION}`;
 
 // Only cache known static assets (avoid hard-coded unhashed JS filenames)
