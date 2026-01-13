@@ -1,5 +1,5 @@
 import moment from "moment";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const useCountdown = (targetDate: Date) => {
   const [timeLeft, setTimeLeft] = useState(getReturnValues(targetDate));
@@ -22,9 +22,9 @@ const getReturnValues = (targetDate: Date) => {
   const end = moment(targetDate);
   if (now > end) return [0, 0, 0, 0, 0];
 
-  let months = end.diff(now, "months");
+  const months = end.diff(now, "months");
   const afterMonths = now.clone().add(months, "months");
-  let days = end.diff(afterMonths, "days");
+  const days = end.diff(afterMonths, "days");
   const afterDays = afterMonths.clone().add(days, "days");
   const hours = end.diff(afterDays, "hours");
   const afterHours = afterDays.clone().add(hours, "hours");
@@ -32,13 +32,7 @@ const getReturnValues = (targetDate: Date) => {
   const afterMinutes = afterHours.clone().add(minutes, "minutes");
   const seconds = end.diff(afterMinutes, "seconds");
 
-  // If the day of the month matches, show full months and zero days
-  if (now.date() === end.date()) {
-    months += 1;
-    days = 0;
-  }
-
   return [months, days, hours, minutes, seconds];
 };
 
-export {useCountdown};
+export { useCountdown };
